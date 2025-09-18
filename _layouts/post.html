@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<article class="post h-entry">
+  <header class="post-header">
+    <h1 class="p-name">{{ page.title }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%d %b %Y" }}
+      </time>
+      {% if page.updated %}
+        · <span>Updated:</span>
+        <time datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: "%d %b %Y" }}</time>
+      {% endif %}
+      {% if page.tags and page.tags.size > 0 %}
+        · <span>Tags:</span>
+        {% for tag in page.tags %}
+          <a class="p-category" href="{{ '/tags/#' | append: tag | replace: ' ', '-' | downcase | relative_url }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      {% endif %}
+    </p>
+  </header>
+
+  <section class="post-content e-content">
+    {{ content }}
+  </section>
+
+  {% include share.html %}
+
+  {% include giscus.html %}
+</article>
