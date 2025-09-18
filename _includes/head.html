@@ -10,14 +10,22 @@
   {% endif %}
 </title>
 
-{% assign is_post = page.layout == "post" %}
-{% assign meta_desc = is_post and page.excerpt ? page.excerpt | strip_html | strip_newlines | truncate: 300 : site.description %}
-<meta name="description" content="{{ meta_desc }}"/>
+{%- comment -%}
+  Build a meta description without using ternary (Liquid doesn't have it).
+{%- endcomment -%}
+{%- capture _desc -%}
+  {%- if page.layout == "post" and page.excerpt -%}
+    {{ page.excerpt | strip_html | strip_newlines | truncate: 300 }}
+  {%- else -%}
+    {{ site.description }}
+  {%- endif -%}
+{%- endcapture -%}
+<meta name="description" content="{{ _desc | strip }}" />
 
 <link rel="canonical" href="{{ page.url | absolute_url }}" />
 {% if site.mastodon %}<link rel="me" href="{{ site.mastodon }}">{% endif %}
 
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}"/>
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 
 <!-- SEO tag (OG, Twitter, JSON-LD) -->
 {% seo %}
