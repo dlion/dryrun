@@ -1,0 +1,82 @@
+# ————— Site identity —————
+title: "Domenico Luciani"
+name: "Domenico Luciani"
+description: "Software engineer notes on Go, distributed systems, infra, and pragmatic engineering."
+url: "https://dlion.github.io/dryrun/"   # prod URL
+baseurl: ""                           # no subpath, leave empty
+
+# ————— Author —————
+author: "Domenico Luciani"
+email:
+mastodon: "https://mastodon.social/@dlion"   # used for rel=me
+links:
+  - label: "GitHub"
+    url: "https://github.com/dlion"
+    rel: "me"
+  - label: "LinkedIn"
+    url: "https://linkedin.com/in/dlion"
+  - label: "Twitter"
+    url: "https://twitter.com/DLion92"
+
+# ————— Writing —————
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: true              # single newline becomes <br>
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    line_numbers: false
+
+permalink: /:year/:month/:day/:title/
+timezone: Europe/Madrid
+paginate: 10                   # jekyll-paginate
+paginate_path: "/page:num/"
+
+# ————— Collections —————
+collections:
+  posts:
+    output: true
+
+# ————— Plugins supported by GitHub Pages —————
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-mentions
+  - jekyll-seo-tag        # ok on GH Pages
+  - jemoji
+  - jekyll-paginate
+
+# ————— Build —————
+exclude:
+  - README.md
+  - node_modules
+  - .github
+  - Gemfile
+  - Gemfile.lock
+
+# ————— Navigation —————
+defaults:
+  - scope: { path: "" , type: "posts" }
+    values:
+      layout: post
+      lang: en
+      categories: []
+      tags: []
+      toc: false
+
+# ————— Analytics/Comments toggles —————
+plausible_domain: ""       # e.g., domenicoluciani.com (leave blank to disable)
+giscus:
+  repo: "dlion/dryrun"                 # e.g., dlion/your-blog
+  repo_id: ""
+  category: "General"
+  category_id: ""
+  mapping: "pathname"
+  reactions_enabled: "1"
+  emit_metadata: "0"
+  theme: "preferred_color_scheme"
+  lang: "en"
+
+# ————— Feed metadata —————
+feed:
+  path: feed.xml

@@ -1,0 +1,67 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>{{ site.name }}{% if page.title and page.title != 'Home' %} - {{ page.title }}{% endif %}</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {% assign is_post = page.layout == 'post' %}
+  {% assign meta_desc = is_post and page.excerpt ? page.excerpt | strip_html | strip_newlines | truncate: 300 : site.description %}
+  <meta name="description" content="{{ meta_desc }}" />
+
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+  {% if site.mastodon %}<link rel="me" href="{{ site.mastodon }}">{% endif %}
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ site.name }}{% if page.title and page.title != 'Home' %} - {{ page.title }}{% endif %}">
+  <meta name="twitter:description" content="{{ meta_desc }}">
+  <meta name="twitter:site" content="@dlion92">
+  <meta name="twitter:creator" content="@dlion92">
+  <meta name="twitter:image" content="{{ site.url }}{% if page.seo_image %}{{ page.seo_image }}{% elsif page.cover %}{{ page.cover }}{% else %}/assets/images/covers/robot.png{% endif %}">
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="{% if page.lang == 'ita' %}it_IT{% else %}en_US{% endif %}">
+  <meta property="og:type" content="{% if is_post %}article{% else %}website{% endif %}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ site.name }}{% if page.title and page.title != 'Home' %} - {{ page.title }}{% endif %}">
+  <meta property="og:description" content="{{ meta_desc }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}{% if page.seo_image %}{{ page.seo_image }}{% elsif page.cover %}{{ page.cover }}{% else %}/assets/images/covers/robot.png{% endif %}">
+
+  <!-- JSON-LD Article (only on posts) -->
+  {% if is_post %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ page.title | jsonify }},
+    "description": {{ meta_desc | jsonify }},
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    {% if page.updated %}"dateModified": "{{ page.updated | date_to_xmlschema }}",{% endif %}
+    "author": { "@type": "Person", "name": {{ site.author | jsonify }} },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ site.url }}{{ page.url }}" },
+    "image": "{{ site.url }}{% if page.seo_image %}{{ page.seo_image }}{% elsif page.cover %}{{ page.cover }}{% else %}/assets/images/covers/robot.png{% endif %}",
+    "publisher": { "@type": "Organization", "name": {{ site.name | jsonify }} }
+  }
+  </script>
+  {% endif %}
+
+  <!-- Icons & manifest (keep as-is) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ site.url }}/assets/css/fonts.css" />
+  <link rel="stylesheet" href="{{ site.url }}/assets/css/screen.css" />
+  <link rel="stylesheet" href="{{ site.url }}/assets/css/syntax.css" />
+  <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
+
+  <!-- Ethical Ads (fixed) -->
+  <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
+</head>
