@@ -1,0 +1,26 @@
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>
+  {% if page.title and page.title != "Home" %}
+    {{ page.title }} · {{ site.title }}
+  {% else %}
+    {{ site.title }}
+  {% endif %}
+</title>
+
+{% assign is_post = page.layout == "post" %}
+{% assign meta_desc = is_post and page.excerpt ? page.excerpt | strip_html | strip_newlines | truncate: 300 : site.description %}
+<meta name="description" content="{{ meta_desc }}"/>
+
+<link rel="canonical" href="{{ page.url | absolute_url }}" />
+{% if site.mastodon %}<link rel="me" href="{{ site.mastodon }}">{% endif %}
+
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}"/>
+
+<!-- SEO tag (OG, Twitter, JSON-LD) -->
+{% seo %}
+
+<!-- RSS -->
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">

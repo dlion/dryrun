@@ -2,13 +2,12 @@
 title: "Domenico Luciani"
 name: "Domenico Luciani"
 description: "Software engineer notes on Go, distributed systems, infra, and pragmatic engineering."
-url: "https://dlion.github.io/dryrun/"   # prod URL
-baseurl: ""                           # no subpath, leave empty
+url: "https://dlion.github.io"     # for project sites use domain root
+baseurl: "/dryrun"                  # the repo name
 
 # ————— Author —————
 author: "Domenico Luciani"
-email:
-mastodon: "https://mastodon.social/@dlion"   # used for rel=me
+mastodon: "https://mastodon.social/@dlion"
 links:
   - label: "GitHub"
     url: "https://github.com/dlion"
@@ -22,41 +21,26 @@ links:
 markdown: kramdown
 kramdown:
   input: GFM
-  hard_wrap: true              # single newline becomes <br>
+  hard_wrap: true
   syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    line_numbers: false
 
 permalink: /:year/:month/:day/:title/
 timezone: Europe/Madrid
-paginate: 10                   # jekyll-paginate
+paginate: 10
 paginate_path: "/page:num/"
-
-# ————— Collections —————
-collections:
-  posts:
-    output: true
 
 # ————— Plugins supported by GitHub Pages —————
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-mentions
-  - jekyll-seo-tag        # ok on GH Pages
   - jemoji
+  - jekyll-seo-tag
   - jekyll-paginate
 
-# ————— Build —————
-exclude:
-  - README.md
-  - node_modules
-  - .github
-  - Gemfile
-  - Gemfile.lock
-
-# ————— Navigation —————
+# ————— Defaults —————
 defaults:
-  - scope: { path: "" , type: "posts" }
+  - scope: { path: "", type: "posts" }
     values:
       layout: post
       lang: en
@@ -64,10 +48,11 @@ defaults:
       tags: []
       toc: false
 
-# ————— Analytics/Comments toggles —————
-plausible_domain: ""       # e.g., domenicoluciani.com (leave blank to disable)
+# ————— Analytics/Comments (off for now) —————
+plausible_domain: ""  # e.g., domenicoluciani.com
+
 giscus:
-  repo: "dlion/dryrun"                 # e.g., dlion/your-blog
+  repo: "dlion/dryrun"
   repo_id: ""
   category: "General"
   category_id: ""
@@ -77,6 +62,13 @@ giscus:
   theme: "preferred_color_scheme"
   lang: "en"
 
-# ————— Feed metadata —————
+# ————— Build —————
+exclude:
+  - README.md
+  - node_modules
+  - .github
+  - Gemfile
+  - Gemfile.lock
+
 feed:
   path: feed.xml
