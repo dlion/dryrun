@@ -33,3 +33,7 @@ Expect hands-on examples, fewer buzzwords, and trade-offs called out explicitly.
   <figcaption>How requests flow through the resolver.</figcaption>
 </figure>
 
+
+```go linenos
+func f() {}
+```
