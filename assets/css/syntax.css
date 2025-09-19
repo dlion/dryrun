@@ -1,16 +1,58 @@
-/* GitHub-like syntax theme (light/dark aware) */
-.highlight { background: var(--code-bg); color: var(--code-ink); }
+/* Rouge theme driven by CSS vars - works in light & dark */
+:root {
+  --syntax-bg: var(--code-bg);
+  --syntax-border: #1f2937;
+  --syntax-fg: #e6edf3;
+  --syntax-dim: #a1a1aa;
+  --syntax-keyword: #c678dd;
+  --syntax-func: #61afef;
+  --syntax-type: #e5c07b;
+  --syntax-string: #98c379;
+  --syntax-number: #d19a66;
+  --syntax-const: #56b6c2;
+  --syntax-error: #e06c75;
+  --syntax-comment: #7f8ea3;
+}
 
-.highlight .k { color: #cf222e; font-weight: 600 }      /* keyword */
-.highlight .s { color: #0a7aca }                        /* string */
-.highlight .n { color: var(--fg); }                     /* name */
-.highlight .c { color: #6e7781; font-style: italic }    /* comment */
-.highlight .o { color: #d73a49 }                        /* operator */
-.highlight .p { color: var(--fg); }                     /* punctuation */
-.highlight .m { color: #0550ae }                        /* number */
-.highlight .gd { color: #82071e; background: #ffebe9 }  /* deleted */
-.highlight .gi { color: #116329; background: #dafbe1 }  /* inserted */
-.highlight .na { color: #6f42c1 }                       /* attribute */
-.highlight .nb { color: #953800 }                       /* builtins */
-.highlight .nt { color: #22863a }                       /* tag */
-.highlight .err{ color: #f00; background: #fdd }        /* error */
+.highlight { background: var(--syntax-bg); color: var(--syntax-fg); border: 1px solid var(--syntax-border); border-radius: 10px; }
+.highlight pre { background: transparent; border: none; padding: 0; margin: 0; }
+.highlight .c  { color: var(--syntax-comment); font-style: italic } /* Comment */
+.highlight .err{ color: var(--syntax-error); background: #3b1e2b }     /* Error */
+.highlight .k  { color: var(--syntax-keyword); font-weight: 600 }      /* Keyword */
+.highlight .o  { color: var(--syntax-fg) }                              /* Operator */
+.highlight .cm { color: var(--syntax-comment); font-style: italic }     /* Comment.Multiline */
+.highlight .cp { color: var(--syntax-const) }                           /* Comment.Preproc */
+.highlight .c1 { color: var(--syntax-comment); font-style: italic }     /* Comment.Single */
+.highlight .cs { color: var(--syntax-comment); font-style: italic }     /* Comment.Special */
+.highlight .gd { color: var(--syntax-error) }                           /* Generic.Deleted */
+.highlight .ge { font-style: italic }
+.highlight .gh { color: var(--syntax-dim) }
+.highlight .gi { color: var(--syntax-string) }
+.highlight .go { color: var(--syntax-dim) }
+.highlight .gp { color: var(--syntax-dim) }
+.highlight .gs { font-weight: 600 }
+.highlight .gu { color: var(--syntax-dim) }
+.highlight .kc { color: var(--syntax-const); font-weight: 600 }
+.highlight .kd { color: var(--syntax-keyword); font-weight: 600 }
+.highlight .kp { color: var(--syntax-keyword) }
+.highlight .kr { color: var(--syntax-keyword) }
+.highlight .kt { color: var(--syntax-type) }                             /* Keyword.Type */
+.highlight .m  { color: var(--syntax-number) }                           /* Number */
+.highlight .s  { color: var(--syntax-string) }                           /* String */
+.highlight .na { color: var(--syntax-func) }                             /* Name.Attribute */
+.highlight .nb { color: var(--syntax-const) }                            /* Name.Builtin */
+.highlight .nc { color: var(--syntax-type) }                             /* Name.Class */
+.highlight .no { color: var(--syntax-const) }                            /* Name.Constant */
+.highlight .ni { color: var(--syntax-const) }                            /* Name.Entity */
+.highlight .ne { color: var(--syntax-func); font-weight: 600 }           /* Name.Exception */
+.highlight .nf { color: var(--syntax-func) }                             /* Name.Function */
+.highlight .nn { color: var(--syntax-dim) }                              /* Name.Namespace */
+.highlight .nt { color: var(--syntax-keyword) }                          /* Name.Tag */
+.highlight .nv { color: var(--syntax-const) }                            /* Name.Variable */
+.highlight .ow { color: var(--syntax-keyword) }                          /* Operator.Word */
+.highlight .w  { color: var(--syntax-dim) }                              /* Text.Whitespace */
+.highlight .mf, .mh, .mi, .mo { color: var(--syntax-number) }            /* Numbers */
+.highlight .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss { color: var(--syntax-string) }
+.highlight .bp { color: var(--syntax-const) }
+.highlight .vc, .vg, .vi { color: var(--syntax-const) }
+.highlight .il { color: var(--syntax-number) }

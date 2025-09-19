@@ -3,50 +3,54 @@ layout: default
 ---
 
 <article class="post">
-
-  {%- if page.image -%}
-  <div class="post-hero container" aria-hidden="true">
-    <img src="{{ page.image | relative_url }}" alt="">
-  </div>
-  {%- endif -%}
-
   <header class="post-header container">
     <h1 class="post-title">{{ page.title }}</h1>
-
     <div class="post-meta">
-      {%- if site.author_avatar -%}
-        <img class="avatar" src="{{ site.author_avatar | relative_url }}" alt="{{ site.author | default: site.author_name }}">
-      {%- endif -%}
-      <span>{{ site.author_name | default: site.author | default: site.title }}</span>
-      <span class="dot" aria-hidden="true"></span>
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
-        {{ page.date | date: "%d %b %Y" }}
-      </time>
-      <span class="dot" aria-hidden="true"></span>
-      {%- assign words = content | strip_html | replace:'  ',' ' | replace:'\n',' ' | split:' ' | size -%}
-      {%- assign minutes = words | divided_by:200 -%}
-      <span>
-        {%- if minutes < 1 -%}1 min read{%- else -%}{{ minutes }} min read{%- endif -%}
-      </span>
-      {%- if page.tags and page.tags != empty -%}
-        <span class="dot" aria-hidden="true"></span>
-        <span>
-          {% for t in page.tags %}
-            #{{ t }}{% unless forloop.last %}&nbsp;{% endunless %}
-          {% endfor %}
-        </span>
-      {%- endif -%}
+      {% assign avatar = site.author_avatar | default: '/assets/images/profile.png' %}
+      <img class="avatar" src="{{ avatar | relative_url }}" alt="{{ site.author_name | default: site.author | default: site.title }}">
+      <div class="meta-lines">
+        <div class="line">
+          <span class="by">{{ site.author_name | default: site.author | default: site.title }}</span>
+          <span aria-hidden="true">•</span>
+          <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time>
+          {% if page.updated %}
+            <span aria-hidden="true">•</span>
+            <span>Updated <time datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: "%d %b %Y" }}</time></span>
+          {% endif %}
+          {% assign wpm = 220 %}
+          {% assign words = content | number_of_words %}
+          {% assign mins = words | divided_by: wpm | plus: 1 %}
+          <span aria-hidden="true">•</span>
+          <span>{{ mins }} min read</span>
+        </div>
+        {% if page.tags and page.tags != empty %}
+          <div class="line tags">
+            {% for t in page.tags %}
+              <a class="chip" href="{{ '/tags/#' | append: t | downcase | relative_url }}">#{{ t }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
     </div>
   </header>
 
-  <section class="post-content main">
+  <div class="post-body container">
     {{ content }}
-  </section>
+  </div>
 
-  <section class="share">
-    <a href="https://twitter.com/intent/tweet?url={{ site.url | append: page.url | url_encode }}&text={{ page.title | uri_escape }}" rel="noopener" target="_blank">Tweet</a>
-    <a href="https://news.ycombinator.com/submitlink?u={{ site.url | append: page.url | url_encode }}&t={{ page.title | uri_escape }}" rel="noopener" target="_blank">HN</a>
-    <a href="{{ "/feed.xml" | relative_url }}">Subscribe (RSS)</a>
-  </section>
+  <footer class="post-footer container">
+    {% if page.hn or page.reddit %}
+      <div class="discuss">
+        <span>Discuss:</span>
+        {% if page.hn %}<a class="pill" href="{{ page.hn }}" target="_blank" rel="noopener">Hacker News</a>{% endif %}
+        {% if page.reddit %}<a class="pill" href="{{ page.reddit }}" target="_blank" rel="noopener">Reddit</a>{% endif %}
+      </div>
+    {% endif %}
 
+    <div class="share">
+      <a class="pill" href="https://twitter.com/intent/tweet?url={{ site.url }}{{ site.baseurl }}{{ page.url }}&text={{ page.title | uri_escape }}" target="_blank" rel="noopener">Tweet</a>
+      <a class="pill" href="https://news.ycombinator.com/submitlink?u={{ site.url }}{{ site.baseurl }}{{ page.url }}&t={{ page.title | uri_escape }}" target="_blank" rel="noopener">HN</a>
+      <a class="pill" href="{{ '/feed.xml' | relative_url }}">Subscribe (RSS)</a>
+    </div>
+  </footer>
 </article>

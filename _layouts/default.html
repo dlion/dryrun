@@ -1,58 +1,115 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}" data-theme="auto">
   <head>
-    <meta charset="utf-8">
-    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {%- seo -%}
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/syntax.css" | relative_url }}">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>
+      {% if page.title and page.title != site.title %}
+        {{ page.title }} • {{ site.title }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </title>
+
+    {% seo %}
+
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}"/>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
   </head>
+
   <body>
+    <!-- Reading progress bar -->
+    <div id="progress" aria-hidden="true"></div>
+
     <header class="site-header">
-      <div class="container bar">
-        <a href="{{ "/" | relative_url }}" class="site-title">{{ site.title }}</a>
-        <nav class="site-nav">
-          <a href="{{ "/" | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
-          <a href="{{ "/about/" | relative_url }}" {% if page.url contains "/about/" %}class="active"{% endif %}>About</a>
-          <a href="{{ "/tags/" | relative_url }}" {% if page.url contains "/tags/" %}class="active"{% endif %}>Tags</a>
-          <a href="{{ "/search/" | relative_url }}" {% if page.url contains "/search/" %}class="active"{% endif %}>Search</a>
-          <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
-          <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+      <div class="container">
+        <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <nav class="site-nav" aria-label="Primary">
+          {% for item in site.nav %}
+            <a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.title }}</a>
+          {% endfor %}
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color scheme" title="Toggle color scheme">
+            <span class="icon" aria-hidden="true">🌓</span>
+          </button>
         </nav>
       </div>
     </header>
 
-    <main class="container">
+    <main id="main" class="site-main">
       {{ content }}
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <div>© {{ site.time | date: "%Y" }} {{ site.title }} · <a href="{{ "/feed.xml" | relative_url }}">RSS</a></div>
-        <div>
-          <a href="https://github.com/dlion">GitHub</a> ·
-          <a href="https://linkedin.com/in/dlion">LinkedIn</a> ·
-          <a href="https://twitter.com/DLion92">Twitter</a>
-        </div>
+      <div class="container footer-grid">
+        <p>© {{ 'now' | date: '%Y' }} {{ site.author_name | default: site.author | default: site.title }} · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
+        <p class="social">
+          {% for l in site.links %}
+            <a href="{{ l.url }}" rel="{{ l.rel | default: 'noopener' }}" target="_blank">{{ l.label }}</a>{% unless forloop.last %} · {% endunless %}
+          {% endfor %}
+        </p>
       </div>
     </footer>
 
     <script>
-      function toggleTheme(){
-        const r = document.documentElement;
-        if(r.classList.contains('theme-dark')){
-          r.classList.remove('theme-dark'); r.classList.add('theme-light');
-          localStorage.setItem('theme','light');
-        } else {
-          r.classList.remove('theme-light'); r.classList.add('theme-dark');
-          localStorage.setItem('theme','dark');
+      // ---------- THEME: robust, one-time fix ----------
+      (function() {
+        const key = 'theme';
+        const root = document.documentElement;
+        const stored = localStorage.getItem(key);
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        function apply(theme) {
+          // theme: 'light' | 'dark' | 'auto'
+          root.dataset.theme = theme;
+          if (theme === 'dark' || (theme === 'auto' && prefersDark)) {
+            document.documentElement.classList.add('is-dark');
+          } else {
+            document.documentElement.classList.remove('is-dark');
+          }
         }
-      }
-      (function(){
-        const saved = localStorage.getItem('theme');
-        if(saved){ document.documentElement.classList.add('theme-'+saved); }
+
+        apply(stored || 'auto');
+
+        // update if OS preference changes while theme=auto
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+          if ((localStorage.getItem(key) || 'auto') === 'auto') apply('auto');
+        });
+
+        const btn = document.getElementById('theme-toggle');
+        if (btn) {
+          btn.addEventListener('click', () => {
+            const current = localStorage.getItem(key) || 'auto';
+            const next = current === 'auto' ? (prefersDark ? 'light' : 'dark') : (current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem(key, next);
+            apply(next);
+          });
+        }
+      })();
+
+      // ---------- PROGRESS BAR ----------
+      (function() {
+        const bar = document.getElementById('progress');
+        if (!bar) return;
+        const update = () => {
+          const el = document.querySelector('main');
+          if (!el) return;
+          const docH = el.scrollHeight - window.innerHeight;
+          const scrolled = Math.max(0, Math.min(1, window.scrollY / (docH || 1)));
+          bar.style.transform = 'scaleX(' + scrolled + ')';
+        };
+        update();
+        window.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
       })();
     </script>
+
+    <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   </body>
 </html>
