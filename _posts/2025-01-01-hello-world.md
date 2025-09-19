@@ -21,6 +21,6 @@ Expect hands-on examples, fewer buzzwords, and trade-offs called out explicitly.
 {: .callout .warn}
 
 
-```go linenos
+```go
 func f() {}
 ```

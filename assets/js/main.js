@@ -24,4 +24,15 @@
       history.pushState(null, '', '#' + id);
     }
   });
+
+  document.querySelectorAll('.highlight').forEach(function (block) {
+    if (!block.dataset.lang) {
+      var pre = block.querySelector('pre');
+      if (!pre) return;
+      var match = pre.className && pre.className.match(/language-([a-z0-9#+-]+)/i);
+      if (match) {
+        block.setAttribute('data-lang', match[1].toUpperCase());
+      }
+    }
+  });
 })();

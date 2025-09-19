@@ -56,17 +56,26 @@ layout: default
   </div>
 
   <footer class="post-footer">
-    <nav class="post-share">
-      <span class="label">Discuss:</span>
-      {% if page.hn_url or page.reddit_url %}
-        {% if page.hn_url %}<a href="{{ page.hn_url }}" rel="nofollow noopener" target="_blank">Hacker News</a>{% endif %}
-        {% if page.reddit_url %}<span class="dot">•</span><a href="{{ page.reddit_url }}" rel="nofollow noopener" target="_blank">Reddit</a>{% endif %}
-        <span class="dot">•</span>
+    <nav class="post-share" aria-label="Discuss or share">
+      <span class="label">Discuss</span>
+      {% if page.hn_url %}
+        <a href="{{ page.hn_url }}" rel="nofollow noopener" target="_blank">Hacker News</a>
       {% endif %}
-      <a href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ page.url | absolute_url | uri_escape }}">Tweet</a>
-      <span class="dot">•</span>
-      <a href="{{ '/feed.xml' | relative_url }}">Subscribe (RSS)</a>
+      {% if page.reddit_url %}
+        <a href="{{ page.reddit_url }}" rel="nofollow noopener" target="_blank">Reddit thread</a>
+      {% endif %}
+      <span class="divider" aria-hidden="true">·</span>
+      <span class="label">Share</span>
+      <a href="https://news.ycombinator.com/submitlink?u={{ page.url | absolute_url | uri_escape }}&t={{ page.title | uri_escape }}" rel="noopener" target="_blank">HN</a>
+      <a href="https://www.reddit.com/submit?url={{ page.url | absolute_url | uri_escape }}&title={{ page.title | uri_escape }}" rel="noopener" target="_blank">Reddit</a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | uri_escape }}&title={{ page.title | uri_escape }}" rel="noopener" target="_blank">LinkedIn</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | uri_escape }}" rel="noopener" target="_blank">Facebook</a>
+      <a href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ page.url | absolute_url | uri_escape }}" rel="noopener" target="_blank">X/Twitter</a>
     </nav>
+
+    <div class="post-subscribe">
+      <a class="rss" href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a>
+    </div>
 
     {% if site.comments and site.giscus.repo %}
       <section id="comments" class="comments">
