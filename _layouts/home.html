@@ -1,0 +1,31 @@
+---
+layout: default
+title: Home
+---
+<section class="post-list">
+  {% for post in paginator.posts | default: site.posts %}
+    <article class="post-item">
+      <h2 class="post-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+      <p class="post-meta">
+        {{ post.date | date: "%d %b %Y" }}{% if post.reading_time %} · {{ post.reading_time }} min read{% endif %}
+      </p>
+      {% if post.description %}
+        <p class="post-desc">{{ post.description }}</p>
+      {% endif %}
+    </article>
+  {% endfor %}
+</section>
+
+{% if paginator.total_pages and paginator.total_pages > 1 %}
+<nav class="pagination" aria-label="Pagination">
+  {% if paginator.previous_page %}
+    <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">← Newer</a>
+  {% endif %}
+  <span class="page-num">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">Older →</a>
+  {% endif %}
+</nav>
+{% endif %}

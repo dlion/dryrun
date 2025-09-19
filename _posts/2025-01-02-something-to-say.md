@@ -1,8 +1,9 @@
 ---
 title: "Something to say"
 description: "Random desc"
-hn: "https://news.ycombinator.com/item?id=XXXXXX"
-reddit: "https://www.reddit.com/r/.../..."
+hn_url: "https://news.ycombinator.com/item?id=XXXXXX"
+reddit_url: "https://www.reddit.com/r/…"
+image: https://domenicoluciani.com/assets/images/covers/go_generics.jpg
 ---
 
 This is a fresh start. I’ll write short, practical posts about:

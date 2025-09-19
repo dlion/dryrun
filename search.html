@@ -1,0 +1,44 @@
+---
+layout: default
+title: Search
+permalink: /search/
+---
+<section class="search">
+  <h1>Search</h1>
+  <input id="searchInput" class="search-input" type="search" placeholder="Search posts…"
+         aria-label="Search posts">
+  <ul id="results" class="search-results"></ul>
+</section>
+
+<script>
+  // Tiny client-side search (same as before if you kept it) – just wiring to theme vars
+  (function() {
+    var input = document.getElementById('searchInput');
+    var results = document.getElementById('results');
+    var data = [
+      {% for post in site.posts %}
+      { title: {{ post.title | jsonify }},
+        url: {{ post.url | relative_url | jsonify }},
+        date: "{{ post.date | date: '%Y-%m-%d' }}",
+        desc: {{ post.description | default: '' | jsonify }} }
+      {% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ];
+
+    function render(list) {
+      results.innerHTML = list.map(function(p) {
+        return '<li><a href="'+p.url+'">'+p.title+'</a><div class="meta">'+p.date+'</div><div class="desc">'+(p.desc||'')+'</div></li>';
+      }).join('');
+    }
+    render(data);
+
+    input.addEventListener('input', function() {
+      var q = input.value.toLowerCase().trim();
+      if (!q) return render(data);
+      render(data.filter(function(p){
+        return (p.title.toLowerCase().indexOf(q) > -1) ||
+               (p.desc && p.desc.toLowerCase().indexOf(q) > -1);
+      }));
+    });
+  })();
+</script>

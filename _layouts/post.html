@@ -1,56 +1,41 @@
 ---
 layout: default
 ---
-
 <article class="post">
-  <header class="post-header container">
+  <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
-    <div class="post-meta">
-      {% assign avatar = site.author_avatar | default: '/assets/images/profile.png' %}
-      <img class="avatar" src="{{ avatar | relative_url }}" alt="{{ site.author_name | default: site.author | default: site.title }}">
-      <div class="meta-lines">
-        <div class="line">
-          <span class="by">{{ site.author_name | default: site.author | default: site.title }}</span>
-          <span aria-hidden="true">•</span>
-          <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time>
-          {% if page.updated %}
-            <span aria-hidden="true">•</span>
-            <span>Updated <time datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: "%d %b %Y" }}</time></span>
-          {% endif %}
-          {% assign wpm = 220 %}
-          {% assign words = content | number_of_words %}
-          {% assign mins = words | divided_by: wpm | plus: 1 %}
-          <span aria-hidden="true">•</span>
-          <span>{{ mins }} min read</span>
-        </div>
-        {% if page.tags and page.tags != empty %}
-          <div class="line tags">
-            {% for t in page.tags %}
-              <a class="chip" href="{{ '/tags/#' | append: t | downcase | relative_url }}">#{{ t }}</a>
-            {% endfor %}
-          </div>
-        {% endif %}
-      </div>
+    <div class="post-byline">
+      <img class="avatar" src="{{ site.baseurl }}/assets/images/avatar.jpg" alt="" onerror="this.style.display='none'">
+      <span class="author">{{ site.author | default: site.title }}</span>
+      <span class="dot">•</span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time>
+      {% if page.reading_time %}<span class="dot">•</span><span>{{ page.reading_time }} min read</span>{% endif %}
     </div>
   </header>
 
-  <div class="post-body container">
+  <div class="post-content">
     {{ content }}
   </div>
 
-  <footer class="post-footer container">
-    {% if page.hn or page.reddit %}
-      <div class="discuss">
-        <span>Discuss:</span>
-        {% if page.hn %}<a class="pill" href="{{ page.hn }}" target="_blank" rel="noopener">Hacker News</a>{% endif %}
-        {% if page.reddit %}<a class="pill" href="{{ page.reddit }}" target="_blank" rel="noopener">Reddit</a>{% endif %}
-      </div>
+  <footer class="post-footer">
+    {% if page.tags and page.tags != empty %}
+      <p class="tags">
+        {% for t in page.tags %}<a class="tag" href="{{ '/tags/#' | append: t | relative_url }}">#{{ t }}</a>{% unless forloop.last %} {% endunless %}{% endfor %}
+      </p>
     {% endif %}
 
-    <div class="share">
-      <a class="pill" href="https://twitter.com/intent/tweet?url={{ site.url }}{{ site.baseurl }}{{ page.url }}&text={{ page.title | uri_escape }}" target="_blank" rel="noopener">Tweet</a>
-      <a class="pill" href="https://news.ycombinator.com/submitlink?u={{ site.url }}{{ site.baseurl }}{{ page.url }}&t={{ page.title | uri_escape }}" target="_blank" rel="noopener">HN</a>
-      <a class="pill" href="{{ '/feed.xml' | relative_url }}">Subscribe (RSS)</a>
-    </div>
+    {% if page.hn_url or page.reddit_url %}
+      <p class="discuss">
+        Discuss:
+        {% if page.hn_url %}<a href="{{ page.hn_url }}" rel="nofollow">Hacker News</a>{% endif %}
+        {% if page.hn_url and page.reddit_url %} · {% endif %}
+        {% if page.reddit_url %}<a href="{{ page.reddit_url }}" rel="nofollow">Reddit</a>{% endif %}
+      </p>
+    {% endif %}
+
+    <p class="share">
+      <a href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ page.url | absolute_url | uri_escape }}">Tweet</a>
+      · <a href="{{ site.baseurl }}/feed.xml">Subscribe (RSS)</a>
+    </p>
   </footer>
 </article>
