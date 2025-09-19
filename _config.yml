@@ -18,11 +18,14 @@ links:
     url: "https://twitter.com/DLion92"
 
 # ————— Writing —————
+highlighter: rouge
 markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: true
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    line_numbers: true  # you can turn to true per block: ```go linenos
 
 permalink: /:year/:month/:day/:title/
 timezone: Europe/Madrid
