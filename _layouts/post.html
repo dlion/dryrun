@@ -8,21 +8,17 @@ layout: default
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
         {{ page.date | date: "%d %b %Y" }}
       </time>
-      {% if page.updated %}
-        · Updated <time datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: "%d %b %Y" }}</time>
-      {% endif %}
-      {% if page.tags and page.tags != empty %}
-        · {% for t in page.tags %}<span class="tag">#{{ t }}</span>{% endfor %}
+      {% if page.updated %} · Updated <time datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: "%d %b %Y" }}</time>{% endif %}
+      {% if page.tags and page.tags != empty %} ·
+        {% for t in page.tags %}<span class="chip">#{{ t }}</span>{% endfor %}
       {% endif %}
     </p>
   </header>
 
   {% if page.toc %}
-  <details class="toc"><summary>Table of contents</summary>
-  <div>
-    <!-- Authoring hint: put `* TOC {:toc}` near the start of your post to auto-generate -->
-    <!-- This section just styles it -->
-  </div>
+  <details class="callout info"><summary><strong>Table of contents</strong></summary>
+  * TOC
+  {:toc}
   </details>
   {% endif %}
 
@@ -30,8 +26,32 @@ layout: default
     {{ content }}
   </section>
 
-  <hr style="border:0;border-top:1px solid var(--border);margin:2rem 0">
-  {% include share.html %}
+  <div class="post-actions">
+    <div class="share">
+      <a class="btn" href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | uri_escape }}&text={{ page.title | uri_escape }}">🐦 Tweet</a>
+      <a class="btn" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | uri_escape }}">in Share</a>
+      <a class="btn" href="https://news.ycombinator.com/submitlink?u={{ page.url | absolute_url | uri_escape }}&t={{ page.title | uri_escape }}">🗞 HN</a>
+    </div>
+    <a class="btn primary" href="{{ '/feed.xml' | relative_url }}">Subscribe (RSS)</a>
+  </div>
+
+  <div class="prevnext">
+    {% if page.previous %}
+    <a class="mini" href="{{ page.previous.url | relative_url }}">
+      <div class="meta">Previous</div>
+      <h3>{{ page.previous.title }}</h3>
+      <div class="meta">{{ page.previous.date | date: "%d %b %Y" }}</div>
+    </a>
+    {% endif %}
+    {% if page.next %}
+    <a class="mini" href="{{ page.next.url | relative_url }}">
+      <div class="meta">Next</div>
+      <h3>{{ page.next.title }}</h3>
+      <div class="meta">{{ page.next.date | date: "%d %b %Y" }}</div>
+    </a>
+    {% endif %}
+  </div>
+
   {% if page.comments != false %}
     {% include giscus.html %}
   {% endif %}

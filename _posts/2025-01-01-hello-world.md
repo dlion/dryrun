@@ -22,3 +22,14 @@ Expect hands-on examples, fewer buzzwords, and trade-offs called out explicitly.
   <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
 </div>
 
+
+> **Heads up**  
+> Avoid `io.Copy` without a timeout here.
+{: .callout .warn}
+
+
+<figure>
+  <img src="/assets/images/x.webp" alt="..." />
+  <figcaption>How requests flow through the resolver.</figcaption>
+</figure>
+

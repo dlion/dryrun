@@ -6,16 +6,17 @@ title: Home
 <section class="post-list">
   {% assign posts = paginator.posts | default: site.posts %}
   {% for post in posts %}
-    <article class="post-item h-entry">
+    <article class="card h-entry">
       <h2 class="p-name"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-      <p class="meta">
+      <div class="meta">
         <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
-        {% if post.tags and post.tags != empty %}
-          · {% for t in post.tags %}<span class="tag">#{{ t }}</span>{% endfor %}
-        {% endif %}
-      </p>
-      {% assign desc = post.description | default: post.excerpt | strip_html | strip_newlines %}
-      <p class="excerpt">{{ desc | truncate: 180 }}</p>
+      </div>
+      <p>{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
+      {% if post.tags and post.tags != empty %}
+      <div class="chips" aria-label="tags">
+        {% for t in post.tags %}<span class="chip">#{{ t }}</span>{% endfor %}
+      </div>
+      {% endif %}
     </article>
   {% endfor %}
 </section>
