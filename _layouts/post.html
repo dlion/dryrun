@@ -1,64 +1,52 @@
 ---
 layout: default
 ---
-<article class="post h-entry">
-  <header class="post-header">
-    <h1 class="p-name">{{ page.title }}</h1>
-    <p class="post-meta">
-  <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
-    {{ page.date | date: "%d %b %Y" }}
-  </time>
-  {% if page.updated %}
-    · Updated <time datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: "%d %b %Y" }}</time>
-  {% endif %}
-  {% if page.tags and page.tags != empty %} ·
-    {% for t in page.tags %}<span class="chip">#{{ t }}</span>{% endfor %}
-  {% endif %}
 
-  {%- assign words = page.content | strip_html | number_of_words -%}
-  {%- assign mins  = words | plus: 199 | divided_by: 200 -%} {# ceiling at 200 wpm #}
-  · {{ mins }} min read
-</p>
+<article class="post">
+
+  {%- if page.image -%}
+  <div class="post-hero container" aria-hidden="true">
+    <img src="{{ page.image | relative_url }}" alt="">
+  </div>
+  {%- endif -%}
+
+  <header class="post-header container">
+    <h1 class="post-title">{{ page.title }}</h1>
+
+    <div class="post-meta">
+      {%- if site.author_avatar -%}
+        <img class="avatar" src="{{ site.author_avatar | relative_url }}" alt="{{ site.author | default: site.author_name }}">
+      {%- endif -%}
+      <span>{{ site.author_name | default: site.author | default: site.title }}</span>
+      <span class="dot" aria-hidden="true"></span>
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%d %b %Y" }}
+      </time>
+      <span class="dot" aria-hidden="true"></span>
+      {%- assign words = content | strip_html | replace:'  ',' ' | replace:'\n',' ' | split:' ' | size -%}
+      {%- assign minutes = words | divided_by:200 -%}
+      <span>
+        {%- if minutes < 1 -%}1 min read{%- else -%}{{ minutes }} min read{%- endif -%}
+      </span>
+      {%- if page.tags and page.tags != empty -%}
+        <span class="dot" aria-hidden="true"></span>
+        <span>
+          {% for t in page.tags %}
+            #{{ t }}{% unless forloop.last %}&nbsp;{% endunless %}
+          {% endfor %}
+        </span>
+      {%- endif -%}
+    </div>
   </header>
 
-  {% if page.toc %}
-  <details class="callout info"><summary><strong>Table of contents</strong></summary>
-  * TOC
-  {:toc}
-  </details>
-  {% endif %}
-
-  <section class="post-content e-content">
+  <section class="post-content main">
     {{ content }}
   </section>
 
-  <div class="post-actions">
-    <div class="share">
-      <a class="btn" href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | uri_escape }}&text={{ page.title | uri_escape }}">🐦 Tweet</a>
-      <a class="btn" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | uri_escape }}">in Share</a>
-      <a class="btn" href="https://news.ycombinator.com/submitlink?u={{ page.url | absolute_url | uri_escape }}&t={{ page.title | uri_escape }}">🗞 HN</a>
-    </div>
-    <a class="btn primary" href="{{ '/feed.xml' | relative_url }}">Subscribe (RSS)</a>
-  </div>
+  <section class="share">
+    <a href="https://twitter.com/intent/tweet?url={{ site.url | append: page.url | url_encode }}&text={{ page.title | uri_escape }}" rel="noopener" target="_blank">Tweet</a>
+    <a href="https://news.ycombinator.com/submitlink?u={{ site.url | append: page.url | url_encode }}&t={{ page.title | uri_escape }}" rel="noopener" target="_blank">HN</a>
+    <a href="{{ "/feed.xml" | relative_url }}">Subscribe (RSS)</a>
+  </section>
 
-  <div class="prevnext">
-    {% if page.previous %}
-    <a class="mini" href="{{ page.previous.url | relative_url }}">
-      <div class="meta">Previous</div>
-      <h3>{{ page.previous.title }}</h3>
-      <div class="meta">{{ page.previous.date | date: "%d %b %Y" }}</div>
-    </a>
-    {% endif %}
-    {% if page.next %}
-    <a class="mini" href="{{ page.next.url | relative_url }}">
-      <div class="meta">Next</div>
-      <h3>{{ page.next.title }}</h3>
-      <div class="meta">{{ page.next.date | date: "%d %b %Y" }}</div>
-    </a>
-    {% endif %}
-  </div>
-
-  {% if page.comments != false %}
-    {% include giscus.html %}
-  {% endif %}
 </article>

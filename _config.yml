@@ -1,13 +1,19 @@
-# ————— Site identity —————
+# ——— Site identity ———
 title: "Domenico Luciani"
-name: "Domenico Luciani"
+name:  "Domenico Luciani"
 description: "Software engineer notes on Go, distributed systems, infra, and pragmatic engineering."
-url: "https://dlion.github.io"     # for project sites use domain root
-baseurl: "/dryrun"                  # the repo name
 
-# ————— Author —————
-author: "Domenico Luciani"
+# For project sites: url is the domain root, baseurl is the repo path
+url: "https://dlion.github.io"
+baseurl: "/dryrun"
+
+# ——— Author ———
+author_name: "Domenico Luciani"              # used in post header meta
+author: "Domenico Luciani"                   # fallback for older includes
+author_avatar: "/assets/images/profile.png"  # used by post layout (add the file)
 mastodon: "https://mastodon.social/@dlion"
+
+# Social links (render anywhere)
 links:
   - label: "GitHub"
     url: "https://github.com/dlion"
@@ -17,22 +23,30 @@ links:
   - label: "Twitter"
     url: "https://twitter.com/DLion92"
 
-# ————— Writing —————
-highlighter: rouge
+# ——— Navigation ——— (consumed by the header)
+nav:
+  - { title: Home,   url: "/" }
+  - { title: About,  url: "/about/" }
+  - { title: Tags,   url: "/tags/" }
+  - { title: Search, url: "/search/" }
+  - { title: RSS,    url: "/feed.xml" }
+
+# ——— Writing ———
 markdown: kramdown
+highlighter: rouge
 kramdown:
   input: GFM
   hard_wrap: true
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    line_numbers: true  # you can turn to true per block: ```go linenos
+    line_numbers: true   # can override per block: ```go linenos
 
 permalink: /:year/:month/:day/:title/
 timezone: Europe/Madrid
 paginate: 10
 paginate_path: "/page:num/"
 
-# ————— Plugins supported by GitHub Pages —————
+# ——— Plugins (all supported by GitHub Pages) ———
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -41,7 +55,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
 
-# ————— Defaults —————
+# ——— Defaults ———
 defaults:
   - scope: { path: "", type: "posts" }
     values:
@@ -51,8 +65,8 @@ defaults:
       tags: []
       toc: false
 
-# ————— Analytics/Comments (off for now) —————
-plausible_domain: ""  # e.g., domenicoluciani.com
+# ——— Analytics/Comments (off by default) ———
+plausible_domain: ""  # e.g., domenicoluciani.com (empty disables)
 
 giscus:
   repo: "dlion/dryrun"
@@ -65,7 +79,7 @@ giscus:
   theme: "preferred_color_scheme"
   lang: "en"
 
-# ————— Build —————
+# ——— Build ———
 exclude:
   - README.md
   - node_modules
@@ -76,14 +90,5 @@ exclude:
 feed:
   path: feed.xml
 
-# toggles
-comments: false          # default: enable comments on posts (can override per post)
-plausible_domain: ""    # e.g. domenicoluciani.com (leave blank to disable)
-
-# navigation (so we can render automatically)
-nav:
-  - { title: Home, url: / }
-  - { title: About, url: /about/ }
-  - { title: Tags,  url: /tags/ }
-  - { title: Search, url: /search/ }
-  - { title: RSS,   url: /feed.xml }
+# ——— Design knobs (optional, used by CSS if you want) ———
+accent_color: "#4f46e5"   # you can wire this into :root --accent later if desired
