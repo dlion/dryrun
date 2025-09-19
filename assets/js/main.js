@@ -1,7 +1,7 @@
 // Optional: add anchor links to headings and smooth-scroll on hash links
 (function () {
-  const headings = document.querySelectorAll('.post-body h2, .post-body h3');
-  headings.forEach(h => {
+  const headings = document.querySelectorAll('.post-content h2, .post-content h3');
+  headings.forEach(function (h) {
     if (!h.id) {
       h.id = h.textContent.trim().toLowerCase().replace(/[^\w]+/g, '-').replace(/(^-|-$)/g, '');
     }
@@ -12,7 +12,7 @@
     h.appendChild(a);
   });
 
-  document.addEventListener('click', (e) => {
+  document.addEventListener('click', function (e) {
     const a = e.target.closest('a[href^="#"]');
     if (!a) return;
     const id = a.getAttribute('href').slice(1);

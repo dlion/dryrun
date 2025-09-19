@@ -2,6 +2,7 @@
 title: "Domenico Luciani"
 name:  "Domenico Luciani"
 description: "Software engineer notes on Go, distributed systems, infra, and pragmatic engineering."
+comments: false
 
 # For project sites: url is the domain root, baseurl is the repo path
 url: "https://dlion.github.io"
@@ -36,7 +37,7 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
-  hard_wrap: true
+  hard_wrap: false
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     line_numbers: true   # can override per block: ```go linenos
