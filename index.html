@@ -3,20 +3,23 @@ layout: default
 title: Home
 ---
 
-<section class="post-list">
+<section class="list">
   {% assign posts = paginator.posts | default: site.posts %}
   {% for post in posts %}
-    <article class="card h-entry">
+    <article class="item h-entry">
       <h2 class="p-name"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
       <div class="meta">
-        <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+        <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%d %b %Y" }}
+        </time>
+        {% comment %}optional reading time{% endcomment %}
+        {% assign words = post.content | number_of_words %}
+        {% assign mins  = words | divided_by: 200 | plus: 1 %}
+        · {{ mins }} min read
       </div>
-      <p>{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
-      {% if post.tags and post.tags != empty %}
-      <div class="chips" aria-label="tags">
-        {% for t in post.tags %}<span class="chip">#{{ t }}</span>{% endfor %}
-      </div>
-      {% endif %}
+      <p class="excerpt">
+        {{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 180 }}
+      </p>
     </article>
   {% endfor %}
 </section>
