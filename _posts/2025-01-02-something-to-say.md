@@ -3,7 +3,7 @@ title: "Something to say"
 description: "Random desc"
 hn_url: "https://news.ycombinator.com/item?id=XXXXXX"
 reddit_url: "https://www.reddit.com/r/…"
-image: https://domenicoluciani.com/assets/images/covers/go_generics.jpg
+cover: https://domenicoluciani.com/assets/images/covers/go_generics.jpg
 ---
 
 This is a fresh start. I’ll write short, practical posts about:
@@ -38,18 +38,6 @@ Expect hands-on examples, fewer buzzwords, and trade-offs called out explicitly.
 
 
 ```js
-window.onload = () => {
-  const director = new Director('gameCanvas');
-  const pet = new Pet(window.STATE.IDLE);
-
-  director.bg.onload = () => {
-    const game = new Game(director, pet);
-    game.loop();
-  };
-};
-```
-
-```js lineos
 window.onload = () => {
   const director = new Director('gameCanvas');
   const pet = new Pet(window.STATE.IDLE);

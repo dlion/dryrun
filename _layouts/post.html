@@ -1,41 +1,82 @@
 ---
 layout: default
 ---
-<article class="post">
+
+<article class="post h-entry" itemscope itemtype="https://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <div class="post-byline">
-      <img class="avatar" src="{{ site.baseurl }}/assets/images/avatar.jpg" alt="" onerror="this.style.display='none'">
-      <span class="author">{{ site.author | default: site.title }}</span>
+    <h1 class="post-title p-name" itemprop="headline">{{ page.title }}</h1>
+
+    <div class="post-meta">
+      <img class="author-avatar" src="{{ '/assets/images/avatar.jpg' | relative_url }}" alt="{{ site.author }}" width="28" height="28" />
+      <span class="author-name">{{ site.author }}</span>
       <span class="dot">•</span>
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time>
-      {% if page.reading_time %}<span class="dot">•</span><span>{{ page.reading_time }} min read</span>{% endif %}
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%d %b %Y" }}
+      </time>
+      {% if page.updated %}
+        <span class="dot">•</span>
+        <time class="dt-updated" datetime="{{ page.updated | date_to_xmlschema }}" itemprop="dateModified">
+          Updated {{ page.updated | date: "%d %b %Y" }}
+        </time>
+      {% endif %}
+      <span class="dot">•</span>
+      <span class="reading-time">{{ page.content | number_of_words | divided_by:200 | plus:1 }} min read</span>
     </div>
+
+    {%- comment -%}
+      Hero image: will use page.image or page.cover.
+      Accepts absolute URLs or local paths. Optional caption via page.image_caption.
+    {%- endcomment -%}
+    {% assign hero = page.image | default: page.cover %}
+    {% if hero %}
+      {% if hero contains '://' %}
+        {% assign hero_url = hero %}
+      {% else %}
+        {% assign hero_url = hero | relative_url %}
+      {% endif %}
+      <figure class="post-hero">
+        <img src="{{ hero_url }}"
+             alt="{{ page.image_alt | default: page.title }}"
+             loading="lazy" decoding="async" width="1600" height="840">
+        {% if page.image_caption %}
+          <figcaption>{{ page.image_caption }}</figcaption>
+        {% endif %}
+      </figure>
+    {% endif %}
   </header>
 
-  <div class="post-content">
+  <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
 
   <footer class="post-footer">
-    {% if page.tags and page.tags != empty %}
-      <p class="tags">
-        {% for t in page.tags %}<a class="tag" href="{{ '/tags/#' | append: t | relative_url }}">#{{ t }}</a>{% unless forloop.last %} {% endunless %}{% endfor %}
-      </p>
-    {% endif %}
-
-    {% if page.hn_url or page.reddit_url %}
-      <p class="discuss">
-        Discuss:
-        {% if page.hn_url %}<a href="{{ page.hn_url }}" rel="nofollow">Hacker News</a>{% endif %}
-        {% if page.hn_url and page.reddit_url %} · {% endif %}
-        {% if page.reddit_url %}<a href="{{ page.reddit_url }}" rel="nofollow">Reddit</a>{% endif %}
-      </p>
-    {% endif %}
-
-    <p class="share">
+    <nav class="post-share">
+      <span class="label">Discuss:</span>
+      {% if page.hn_url or page.reddit_url %}
+        {% if page.hn_url %}<a href="{{ page.hn_url }}" rel="nofollow noopener" target="_blank">Hacker News</a>{% endif %}
+        {% if page.reddit_url %}<span class="dot">•</span><a href="{{ page.reddit_url }}" rel="nofollow noopener" target="_blank">Reddit</a>{% endif %}
+        <span class="dot">•</span>
+      {% endif %}
       <a href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ page.url | absolute_url | uri_escape }}">Tweet</a>
-      · <a href="{{ site.baseurl }}/feed.xml">Subscribe (RSS)</a>
-    </p>
+      <span class="dot">•</span>
+      <a href="{{ '/feed.xml' | relative_url }}">Subscribe (RSS)</a>
+    </nav>
+
+    {% if site.comments and site.giscus.repo %}
+      <section id="comments" class="comments">
+        <script src="https://giscus.app/client.js"
+                data-repo="{{ site.giscus.repo }}"
+                data-repo-id="{{ site.giscus.repo_id }}"
+                data-category="{{ site.giscus.category }}"
+                data-category-id="{{ site.giscus.category_id }}"
+                data-mapping="{{ site.giscus.mapping }}"
+                data-reactions-enabled="{{ site.giscus.reactions_enabled }}"
+                data-emit-metadata="{{ site.giscus.emit_metadata }}"
+                data-theme="{{ site.giscus.theme }}"
+                data-lang="{{ site.giscus.lang }}"
+                crossorigin="anonymous" async>
+        </script>
+      </section>
+    {% endif %}
   </footer>
 </article>

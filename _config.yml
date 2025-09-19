@@ -92,3 +92,10 @@ feed:
 
 # ——— Design knobs (optional, used by CSS if you want) ———
 accent_color: "#4f46e5"   # you can wire this into :root --accent later if desired
+
+
+# Hide any onboarding hints on Home
+onboarding_banner: false
+
+# allow either key for hero image
+front_matter_image_keys: ["image", "cover"]
