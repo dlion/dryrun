@@ -2,6 +2,9 @@
 <html lang="{{ page.lang | default: 'en' }}">
 <head>
   {% include head.html %}
+  {% if site.plausible_domain and site.plausible_domain != "" %}
+    <script defer data-domain="{{ site.plausible_domain }}" src="https://plausible.io/js/script.js"></script>
+  {% endif %}
 </head>
 <body>
   {% include header.html %}
@@ -13,11 +16,31 @@
   {% include footer.html %}
 
   <script>
-    // Add lazy loading to any image missing it (progressive enhancement)
-    document.querySelectorAll('img:not([loading])').forEach(img => {
-      img.setAttribute('loading','lazy');
-      img.setAttribute('decoding','async');
-    });
+    // Theme: respect user preference + remember choice
+    (function () {
+      const root = document.documentElement;
+      const key = 'theme';
+      const stored = localStorage.getItem(key);
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const init = stored || (prefersDark ? 'dark' : 'light');
+      root.classList.toggle('theme-dark', init === 'dark');
+      root.classList.toggle('theme-light', init === 'light');
+
+      const btn = document.getElementById('theme-toggle');
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const isDark = root.classList.toggle('theme-dark');
+          root.classList.toggle('theme-light', !isDark);
+          localStorage.setItem(key, isDark ? 'dark' : 'light');
+        });
+      }
+
+      // Progressive enhancement: lazy-load images if missing attributes
+      document.querySelectorAll('img:not([loading])').forEach(img => {
+        img.setAttribute('loading','lazy');
+        img.setAttribute('decoding','async');
+      });
+    })();
   </script>
 </body>
 </html>

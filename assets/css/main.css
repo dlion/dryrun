@@ -1,16 +1,109 @@
-:root { --max: 760px; }
+:root {
+  --max: 760px;
+  --bg: #ffffff;
+  --fg: #1f2328;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --link: #0f62fe;
+  --code-bg: #f6f8fa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0d10;
+    --fg: #e6edf3;
+    --muted: #9aa6b2;
+    --border: #1f2a37;
+    --link: #82aaff;
+    --code-bg: #0f1620;
+  }
+}
+
+:root.theme-light {
+  --bg: #ffffff;
+  --fg: #1f2328;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --link: #0f62fe;
+  --code-bg: #f6f8fa;
+}
+
+:root.theme-dark {
+  --bg: #0b0d10;
+  --fg: #e6edf3;
+  --muted: #9aa6b2;
+  --border: #1f2a37;
+  --link: #82aaff;
+  --code-bg: #0f1620;
+}
+
 * { box-sizing: border-box; }
-body { margin: 0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; color: #222; }
-a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  color: var(--fg);
+  background: var(--bg);
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--link); text-decoration: underline; text-decoration-thickness: .08em; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: .12em; }
+
 .container { max-width: var(--max); margin: 0 auto; padding: 1.25rem; }
-.site-header, .site-footer { background: #fafafa; border-block: 1px solid #eee; }
-.site-header .container, .site-footer .container { display: flex; gap: 1rem; align-items: center; justify-content: space-between; }
-.site-title { font-weight: 700; text-decoration: none; }
-.site-nav a { margin-left: 1rem; text-decoration: none; }
-.post-list .post-item { padding: 1.25rem 0; border-bottom: 1px solid #eee; }
-.post-header h1 { margin-bottom: .25rem; }
-.post-meta { color: #666; font-size: .9rem; }
-.excerpt { color: #444; }
-.pagination { display:flex; gap:1rem; align-items:center; justify-content:center; margin: 2rem 0; color:#666; }
-.pagination a { text-decoration: none; border:1px solid #ddd; padding:.35rem .6rem; border-radius:4px; }
-img { max-width: 100%; height: auto; }
+
+.site-header, .site-footer {
+  background: color-mix(in oklab, var(--bg), var(--fg) 3%);
+  border-block: 1px solid var(--border);
+}
+.site-header .container, .site-footer .container {
+  display: flex; gap: 1rem; align-items: center; justify-content: space-between;
+}
+
+.site-title { font-weight: 700; text-decoration: none; color: var(--fg); }
+.site-nav a { margin-left: 1rem; text-decoration: none; color: var(--fg); }
+.site-nav a:hover { text-decoration: underline; }
+
+.theme-toggle { border: 1px solid var(--border); padding: .3rem .55rem; border-radius: 6px; font-size: .9rem; background: transparent; color: var(--fg); }
+.theme-toggle:hover { background: color-mix(in oklab, var(--bg), var(--fg) 6%); cursor: pointer; }
+
+.post-list .post-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+.post-item h2 { margin: 0 0 .25rem 0; }
+.meta { color: var(--muted); font-size: .9rem; }
+
+.post-header h1 { margin: 0 0 .25rem 0; }
+.post-meta { color: var(--muted); font-size: .9rem; }
+
+img, video { max-width: 100%; height: auto; }
+blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid var(--border); color: var(--muted); }
+
+pre, code, kbd, samp { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+pre {
+  background: var(--code-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow: auto;
+  border: 1px solid var(--border);
+}
+code {
+  background: var(--code-bg);
+  padding: .15rem .3rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th, td { border: 1px solid var(--border); padding: .5rem; text-align: left; }
+th { background: color-mix(in oklab, var(--bg), var(--fg) 3%); }
+
+.pagination { display:flex; gap:1rem; align-items:center; justify-content:center; margin: 2rem 0; color: var(--muted); }
+.pagination a { text-decoration: none; border:1px solid var(--border); padding:.35rem .6rem; border-radius:6px; color: var(--fg); }
+.pagination a:hover { background: color-mix(in oklab, var(--bg), var(--fg) 6%); }
+
+.tag, .category {
+  display: inline-block; font-size: .82rem; color: var(--muted);
+  border: 1px solid var(--border); border-radius: 999px; padding: .1rem .5rem; margin-right: .3rem;
+}
+
+.toc { border:1px solid var(--border); border-radius:8px; padding: .75rem 1rem; background: color-mix(in oklab, var(--bg), var(--fg) 3%); }
+details.toc summary { cursor: pointer; font-weight: 600; }

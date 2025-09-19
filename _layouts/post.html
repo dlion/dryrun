@@ -11,10 +11,26 @@ layout: default
       {% if page.updated %}
         · Updated <time datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: "%d %b %Y" }}</time>
       {% endif %}
+      {% if page.tags and page.tags != empty %}
+        · {% for t in page.tags %}<span class="tag">#{{ t }}</span>{% endfor %}
+      {% endif %}
     </p>
   </header>
+
+  {% if page.toc %}
+  <details class="toc"><summary>Table of contents</summary>
+  <div>
+    <!-- Authoring hint: put `* TOC {:toc}` near the start of your post to auto-generate -->
+    <!-- This section just styles it -->
+  </div>
+  </details>
+  {% endif %}
 
   <section class="post-content e-content">
     {{ content }}
   </section>
+
+  {% if page.comments != false %}
+    {% include giscus.html %}
+  {% endif %}
 </article>

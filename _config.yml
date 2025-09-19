@@ -72,3 +72,18 @@ exclude:
 
 feed:
   path: feed.xml
+
+# toggles
+comments: false          # default: enable comments on posts (can override per post)
+plausible_domain: ""    # e.g. domenicoluciani.com (leave blank to disable)
+
+# navigation (so we can render automatically)
+nav:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Tags
+    url: /tags/
+  - title: RSS
+    url: /feed.xml
