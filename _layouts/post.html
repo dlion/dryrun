@@ -30,6 +30,8 @@ layout: default
     {{ content }}
   </section>
 
+  <hr style="border:0;border-top:1px solid var(--border);margin:2rem 0">
+  {% include share.html %}
   {% if page.comments != false %}
     {% include giscus.html %}
   {% endif %}
