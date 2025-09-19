@@ -1,70 +1,16 @@
-/* Rouge token map:
-   k=Keyword; kc=Constant; kd=Declaration; kn=Namespace; kt=Type;
-   n=Name; nb=Builtin; nc=Class; no=Constant; nf=Function; nn=Namespace;
-   s=String; sb=Backtick; sc=Char; s1=Single; s2=Double; se=Escape; sr=Regex;
-   mi, mf, mh, il = Numbers; o=Operator; c=Comment; cm=c.Multiline; cp=Preproc; c1=c.Single; cs=c.Special
-*/
+/* GitHub-like syntax theme (light/dark aware) */
+.highlight { background: var(--code-bg); color: var(--code-ink); }
 
-:root{
-  /* light */
-  --code-bg: #f6f8fa;
-  --code-ink: #24292f;
-  --code-muted: #6e7781;
-
-  --tok-key: #cf222e;
-  --tok-type: #953800;
-  --tok-func: #0550ae;
-  --tok-class: #8250df;
-  --tok-num: #116329;
-  --tok-str: #0a7d2c;
-  --tok-regex:#116329;
-  --tok-op:  #1f2328;
-}
-
-@media (prefers-color-scheme: dark){
-  :root{
-    --code-bg: #0e1116;
-    --code-ink: #e6edf3;
-    --code-muted: #8b949e;
-
-    --tok-key: #ff7b72;
-    --tok-type:#d2a8ff;
-    --tok-func:#7aa2f7;
-    --tok-class:#c297ff;
-    --tok-num: #7ee787;
-    --tok-str: #a5d6a7;
-    --tok-regex:#7ee787;
-    --tok-op:  #e6edf3;
-  }
-}
-
-/* respect manual theme toggle */
-:root.theme-light{
-  --code-bg:#f6f8fa; --code-ink:#24292f; --code-muted:#6e7781;
-  --tok-key:#cf222e; --tok-type:#953800; --tok-func:#0550ae; --tok-class:#8250df;
-  --tok-num:#116329; --tok-str:#0a7d2c; --tok-regex:#116329; --tok-op:#1f2328;
-}
-:root.theme-dark{
-  --code-bg:#0e1116; --code-ink:#e6edf3; --code-muted:#8b949e;
-  --tok-key:#ff7b72; --tok-type:#d2a8ff; --tok-func:#7aa2f7; --tok-class:#c297ff;
-  --tok-num:#7ee787; --tok-str:#a5d6a7; --tok-regex:#7ee787; --tok-op:#e6edf3;
-}
-
-/* Base */
-.highlight, pre, pre.highlight { background: var(--code-bg) !important; color: var(--code-ink); }
-.highlight { border-radius: 12px; border: 1px solid var(--border); }
-.highlight pre { margin: 0; padding: 1rem 1rem; }
-pre code { background: transparent; border: none; color: inherit; }
-
-/* Tokens */
-.highlight .c, .highlight .cm, .highlight .cp, .highlight .c1, .highlight .cs { color: var(--code-muted); font-style: italic; } /* comments */
-.highlight .k, .highlight .kd, .highlight .kc, .highlight .kr, .highlight .kp { color: var(--tok-key); } /* keywords */
-.highlight .kt { color: var(--tok-type); }  /* type */
-.highlight .nf { color: var(--tok-func); }  /* function */
-.highlight .nc, .highlight .nn { color: var(--tok-class); } /* class/namespace */
-.highlight .mi, .highlight .mf, .highlight .mh, .highlight .il { color: var(--tok-num); } /* numbers */
-.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s1, .highlight .s2, .highlight .se { color: var(--tok-str); } /* strings */
-.highlight .sr { color: var(--tok-regex); }
-.highlight .o, .highlight .ow { color: var(--tok-op); } /* operators */
-.highlight .nb, .highlight .bp { color: var(--tok-func); } /* builtins */
-.highlight .na, .highlight .nv, .highlight .no { color: var(--tok-type); } /* attrs/vars */
+.highlight .k { color: #cf222e; font-weight: 600 }      /* keyword */
+.highlight .s { color: #0a7aca }                        /* string */
+.highlight .n { color: var(--fg); }                     /* name */
+.highlight .c { color: #6e7781; font-style: italic }    /* comment */
+.highlight .o { color: #d73a49 }                        /* operator */
+.highlight .p { color: var(--fg); }                     /* punctuation */
+.highlight .m { color: #0550ae }                        /* number */
+.highlight .gd { color: #82071e; background: #ffebe9 }  /* deleted */
+.highlight .gi { color: #116329; background: #dafbe1 }  /* inserted */
+.highlight .na { color: #6f42c1 }                       /* attribute */
+.highlight .nb { color: #953800 }                       /* builtins */
+.highlight .nt { color: #22863a }                       /* tag */
+.highlight .err{ color: #f00; background: #fdd }        /* error */
