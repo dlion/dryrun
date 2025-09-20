@@ -181,6 +181,45 @@ p { margin: .9em 0; color: var(--text); }
   border: 1px solid rgba(249,115,22,.35);
   background: color-mix(in hsl, rgba(249,115,22,.12) 30%, var(--surface-1));
 }
+.post-content .callout pre,
+.post-content .callout code {
+  font-size: 1rem;
+}
+.post-content .callout pre {
+  display: inline;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+}
+.post-content .callout pre code {
+  background: color-mix(in hsl, var(--code-bg) 20%, var(--surface-1));
+  border: 1px solid color-mix(in hsl, var(--code-border) 35%, transparent);
+  border-radius: 6px;
+  padding: .15em .5em;
+}
+.post-content .callout .highlight {
+  display: inline-block;
+  margin: 0;
+  box-shadow: none;
+  border-radius: 8px;
+  background: color-mix(in hsl, var(--code-bg) 15%, var(--surface-1));
+  border: 1px solid color-mix(in hsl, var(--code-border) 35%, transparent);
+  grid-template-columns: 1fr;
+  padding: 0;
+}
+.post-content .callout .highlight::before { display: none; }
+.post-content .callout .highlight td.gutter,
+.post-content .callout .highlight .lineno { display: none; }
+.post-content .callout .highlight td.code pre {
+  padding: .1rem .6rem;
+  overflow: visible;
+}
+.post-content .callout .highlight td.code pre code {
+  padding: 0;
+}
+.post-content .callout pre code { color: var(--text); }
 
 /* Code (inline + blocks) */
 code, pre, kbd, samp {
@@ -195,6 +234,9 @@ code {
 
 .highlight {
   position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: 100%;
   background: var(--code-bg);
   color: var(--code-text);
   border: 1px solid var(--code-border);
@@ -218,13 +260,13 @@ code {
   content: '';
 }
 
-.highlight table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
+.highlight table,
+.highlight tbody,
+.highlight tr {
+  display: contents;
 }
 .highlight td {
-  vertical-align: top;
+  display: block;
   background: transparent;
   padding: 0;
 }
@@ -234,10 +276,12 @@ code {
   border-right: 1px solid color-mix(in hsl, var(--code-border) 60%, transparent);
   user-select: none;
   font-size: .85rem;
+  padding: 1rem .95rem 1rem 1.4rem;
+  position: relative;
 }
 .highlight td.gutter pre {
   margin: 0;
-  padding: 1rem .95rem 1rem 1.2rem;
+  padding: 0;
   background: none;
   border: 0;
   line-height: 1.55;
@@ -248,6 +292,15 @@ code {
   padding: 0;
   color: inherit;
   display: block;
+}
+.highlight td.gutter::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: -.5px;
+  bottom: 12px;
+  width: 1px;
+  background: color-mix(in hsl, var(--code-border) 70%, transparent);
 }
 .highlight td.code {
   padding: 0;

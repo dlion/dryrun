@@ -2,6 +2,7 @@
 title: "Something to say"
 description: "Random desc"
 hn_url: "https://news.ycombinator.com/item?id=XXXXXX"
+reddit_url: "https://www.reddit.com/r/programming/comments/XXXXXX"
 cover: https://domenicoluciani.com/assets/images/covers/go_generics.jpg
 ---
 
