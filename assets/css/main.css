@@ -160,7 +160,22 @@ p { margin: .9em 0; color: var(--text); }
   border-radius: 12px;
 }
 
-/* (Callouts removed by request) */
+/* Callouts — variant-tinted, theme-aware */
+.post-content blockquote.callout {
+  border: 1px solid currentColor;
+  border-left-width: 4px;
+  background: color-mix(in hsl, var(--callout-accent, var(--link)) 12%, var(--bg));
+  color: color-mix(in hsl, var(--callout-accent, var(--link)) 55%, var(--text));
+}
+.post-content blockquote.callout strong:first-child {
+  display: block; margin-bottom: .35rem; font-weight: 700; color: currentColor;
+}
+.post-content blockquote.callout.info   { --callout-accent: #3b82f6; }
+.post-content blockquote.callout.warn,
+.post-content blockquote.callout.warning{ --callout-accent: #f59e0b; }
+.post-content blockquote.callout.error,
+.post-content blockquote.callout.danger { --callout-accent: #ef4444; }
+.post-content blockquote.callout.success{ --callout-accent: #10b981; }
 
 /* Code (inline + blocks) */
 code, pre, kbd, samp {
@@ -201,6 +216,7 @@ code {
 .highlight td { padding: 0; background: transparent; vertical-align: top; }
 .highlight td.gutter { min-width: 3rem; text-align: right; padding: .9rem .9rem .9rem 1.2rem;
   color: color-mix(in hsl, var(--code-text) 55%, transparent); user-select: none; font-size: .85rem;
+  background: color-mix(in hsl, var(--code-bg) 85%, #000);
   border-right: 1px solid color-mix(in hsl, var(--code-border) 65%, transparent); }
 .highlight td.gutter pre {
   margin: 0;
@@ -429,4 +445,13 @@ code {
   --code-attr:    #60a5fa;   /* blue-400 */
   --code-func:    #f87171;   /* red-400 */
   --code-type:    #5eead4;   /* teal-300 */
+}
+.post-content :not(pre) > code {
+  background: color-mix(in hsl, var(--code-bg) 22%, var(--bg));
+  color: var(--code-text);
+  border: 1px solid color-mix(in hsl, var(--code-border) 40%, transparent);
+  border-radius: 999px;
+  padding: .12rem .5rem;
+  font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: .93em;
 }
