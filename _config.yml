@@ -34,13 +34,11 @@ nav:
 
 # ——— Writing ———
 markdown: kramdown
-highlighter: rouge
+highlighter: none
 kramdown:
   input: GFM
   hard_wrap: false
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    line_numbers: true   # can override per block: ```go linenos
+  syntax_highlighter: null
 
 permalink: /:year/:month/:day/:title/
 timezone: Europe/Madrid
