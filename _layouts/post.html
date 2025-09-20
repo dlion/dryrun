@@ -56,9 +56,8 @@ layout: default
   </div>
 
   <footer class="post-footer">
-    {% assign has_discuss = page.hn_url or page.reddit_url %}
     <nav class="post-actions" aria-label="Post meta links">
-      {% if has_discuss %}
+      {% if page.hn_url or page.reddit_url %}
         <div class="actions-group">
           <span class="label">Discuss</span>
           {% if page.hn_url %}
