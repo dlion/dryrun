@@ -235,8 +235,8 @@ code {
 .highlight td { padding: 0; background: transparent; vertical-align: top; }
 .highlight td.gutter { min-width: 3rem; text-align: right; padding: .9rem .9rem .9rem 1.2rem;
   color: color-mix(in hsl, var(--code-text) 55%, transparent); user-select: none; font-size: .85rem;
-  background: color-mix(in hsl, var(--code-bg) 85%, #000);
-  border-right: 1px solid color-mix(in hsl, var(--code-border) 65%, transparent); }
+  background: transparent;
+  border-right: 1px solid color-mix(in hsl, var(--code-border) 55%, transparent); }
 .highlight td.gutter pre {
   margin: 0;
   background: transparent;
