@@ -40,7 +40,10 @@ kramdown:
   hard_wrap: false
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    line_numbers: true   # can override per block: ```go linenos
+    block:
+      line_numbers: true   # can override per block: ```go linenos
+    span:
+      disable: true
 
 permalink: /:year/:month/:day/:title/
 timezone: Europe/Madrid
