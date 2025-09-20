@@ -2,7 +2,7 @@
 title: "Something to say"
 description: "Random desc"
 hn_url: "https://news.ycombinator.com/item?id=XXXXXX"
-cover: /assets/images/covers/generics.svg
+cover: https://domenicoluciani.com/assets/images/covers/go_generics.jpg
 ---
 
 This is a fresh start. I’ll write short, practical posts about:

@@ -26,13 +26,17 @@
   });
 
   document.querySelectorAll('.highlight').forEach(function (block) {
-    if (!block.dataset.lang) {
-      var pre = block.querySelector('pre');
-      if (!pre) return;
+    var pre = block.querySelector('pre');
+    if (!pre) return;
+    var lang = block.dataset.lang;
+    if (!lang) {
       var match = pre.className && pre.className.match(/language-([a-z0-9#+-]+)/i);
       if (match) {
-        block.setAttribute('data-lang', match[1].toUpperCase());
+        lang = match[1].toUpperCase();
       }
     }
+    if (!lang) return;
+    block.setAttribute('data-lang', lang);
+    pre.setAttribute('data-lang', lang);
   });
 })();
