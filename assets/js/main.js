@@ -25,18 +25,15 @@
     }
   });
 
-  document.querySelectorAll('.highlight').forEach(function (block) {
+  document.querySelectorAll('.highlight, .highlighter-rouge').forEach(function (block) {
     var pre = block.querySelector('pre');
     if (!pre) return;
-    var lang = block.dataset.lang;
-    if (!lang) {
-      var match = pre.className && pre.className.match(/language-([a-z0-9#+-]+)/i);
-      if (match) {
-        lang = match[1].toUpperCase();
-      }
+    var lang = (pre.className || '').match(/language-([\w#+-]+)/i);
+    if (!lang && block.className) {
+      lang = block.className.match(/language-([\w#+-]+)/i);
     }
-    if (!lang) return;
-    block.setAttribute('data-lang', lang);
-    pre.setAttribute('data-lang', lang);
+    if (lang && lang[1]) {
+      block.setAttribute('data-lang', lang[1].toUpperCase());
+    }
   });
 })();
