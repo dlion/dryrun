@@ -59,9 +59,93 @@
     if (!match && block.className) {
       match = block.className.match(/language-([\w#+-]+)/i);
     }
-    if (match && match[1]) {
-      block.setAttribute('data-lang', prettifyLang(match[1]));
+    const langName = match && match[1] ? prettifyLang(match[1]) : '';
+    if (langName) {
+      block.setAttribute('data-lang', langName);
     }
+
+    if (block.dataset.toolbar === 'ready') return;
+
+    const highlight = block.querySelector('.highlight');
+    if (!highlight) return;
+
+    const toolbar = document.createElement('div');
+    toolbar.className = 'code-toolbar';
+
+    const langLabel = document.createElement('span');
+    langLabel.className = 'code-lang';
+    langLabel.textContent = langName || 'Code';
+
+    const copyButton = document.createElement('button');
+    copyButton.type = 'button';
+    copyButton.className = 'code-copy';
+    copyButton.dataset.label = 'Copy';
+    copyButton.setAttribute('aria-label', 'Copy code');
+
+    const copyIcon = document.createElement('span');
+    copyIcon.className = 'code-copy-icon';
+    copyIcon.setAttribute('aria-hidden', 'true');
+
+    const copyText = document.createElement('span');
+    copyText.className = 'code-copy-text visually-hidden';
+    copyText.textContent = 'Copy code';
+
+    copyButton.appendChild(copyIcon);
+    copyButton.appendChild(copyText);
+
+    toolbar.appendChild(langLabel);
+    toolbar.appendChild(copyButton);
+
+    block.insertBefore(toolbar, highlight);
+
+    const resetCopyState = function () {
+      copyButton.dataset.label = 'Copy';
+      copyButton.classList.remove('copied');
+      copyButton.setAttribute('aria-label', 'Copy code');
+    };
+
+    copyButton.addEventListener('click', function () {
+      const codeElement = block.querySelector('pre code') || block.querySelector('pre');
+      if (!codeElement) return;
+      const text = codeElement.innerText;
+      const finish = function (success) {
+        if (!success) return;
+        copyButton.dataset.label = 'Copied';
+        copyButton.classList.add('copied');
+        copyButton.setAttribute('aria-label', 'Code copied');
+        setTimeout(resetCopyState, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          finish(true);
+        }).catch(function () {
+          finish(false);
+        });
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        const selected = document.getSelection && document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : null;
+        textarea.select();
+        try {
+          const successful = document.execCommand('copy');
+          finish(successful);
+        } catch (err) {
+          finish(false);
+        }
+        document.body.removeChild(textarea);
+        if (selected) {
+          const selection = document.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(selected);
+        }
+      }
+    });
+
+    block.dataset.toolbar = 'ready';
   });
 
 })();
