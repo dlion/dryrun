@@ -127,16 +127,6 @@ p { margin: .9em 0; color: var(--text); }
   box-shadow: var(--shadow); background: #000;
 }
 
-/* Blockquote */
-.post-content blockquote {
-  margin: 1.2rem 0;
-  padding: 1rem 1.2rem;
-  border-left: 3px solid var(--link);
-  background: color-mix(in hsl, var(--surface-1) 90%, transparent);
-  border-radius: 12px;
-}
-
-
 /* Post footer */
 .post-footer {
   margin-top: 48px;

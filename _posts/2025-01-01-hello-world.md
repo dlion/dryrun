@@ -15,11 +15,6 @@ Expect hands-on examples, fewer buzzwords, and trade-offs called out explicitly.
   <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
 </div>
 
-
-> **Heads up**  
-> Avoid `io.Copy` without a timeout here.
-
-
 ```go
 func f() {}
 ```
