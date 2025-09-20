@@ -3,7 +3,7 @@ title: "Something to say"
 description: "Random desc"
 hn_url: "https://news.ycombinator.com/item?id=XXXXXX"
 reddit_url: "https://www.reddit.com/r/programming/comments/XXXXXX"
-cover: https://domenicoluciani.com/assets/images/covers/go_generics.jpg
+cover: https://images.pexels.com/photos/5874965/pexels-photo-5874965.jpeg
 ---
 
 This is a fresh start. I’ll write short, practical posts about:
