@@ -182,14 +182,15 @@ p { margin: .9em 0; color: var(--text); }
 }
 
 .highlighter-rouge .rouge-gutter {
-  width: 3.5rem;
-  background: linear-gradient(90deg, var(--code-gutter), transparent);
+  width: 3.4rem;
+  background: linear-gradient(90deg, var(--code-gutter) 70%, transparent);
   border-right: 1px solid var(--code-border);
   color: var(--code-number);
-  font-size: .85rem;
+  font-size: .9rem;
   font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-feature-settings: "tnum" 1;
   text-align: right;
-  padding: 1.6rem .95rem 1.4rem 1.4rem;
+  padding: 1.55rem .9rem 1.35rem 1.35rem;
 }
 
 .highlighter-rouge .rouge-gutter pre {
@@ -197,7 +198,7 @@ p { margin: .9em 0; color: var(--text); }
   background: transparent;
   border: 0;
   padding: 0;
-  line-height: 1.6;
+  line-height: 1.58;
 }
 
 .highlighter-rouge .rouge-gutter .lineno {
@@ -207,10 +208,10 @@ p { margin: .9em 0; color: var(--text); }
 }
 
 .highlighter-rouge .rouge-code {
-  padding: 1.6rem 1.8rem 1.4rem;
+  padding: 1.55rem 1.8rem 1.35rem;
   font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  font-size: .96rem;
-  line-height: 1.6;
+  font-size: .9rem;
+  line-height: 1.58;
   color: var(--code-text);
 }
 
