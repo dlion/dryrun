@@ -72,9 +72,22 @@
     const toolbar = document.createElement('div');
     toolbar.className = 'code-toolbar';
 
+    const meta = document.createElement('div');
+    meta.className = 'code-meta';
+
+    const toggleButton = document.createElement('button');
+    toggleButton.type = 'button';
+    toggleButton.className = 'code-toggle';
+    toggleButton.setAttribute('aria-expanded', 'true');
+    toggleButton.setAttribute('aria-label', 'Collapse code');
+    toggleButton.innerHTML = '<svg viewBox="0 0 12 8" aria-hidden="true"><polyline points="1 1 6 7 11 1"></polyline></svg>';
+
     const langLabel = document.createElement('span');
     langLabel.className = 'code-lang';
     langLabel.textContent = langName || 'Code';
+
+    meta.appendChild(toggleButton);
+    meta.appendChild(langLabel);
 
     const copyButton = document.createElement('button');
     copyButton.type = 'button';
@@ -82,21 +95,32 @@
     copyButton.dataset.label = 'Copy';
     copyButton.setAttribute('aria-label', 'Copy code');
 
-    const copyIcon = document.createElement('span');
-    copyIcon.className = 'code-copy-icon';
-    copyIcon.setAttribute('aria-hidden', 'true');
+    const copyIconWrapper = document.createElement('span');
+    copyIconWrapper.className = 'code-copy-icon';
+    copyIconWrapper.innerHTML = '<svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="9" height="9" rx="2"></rect><path d="M4 13V5a2 2 0 0 1 2-2h8"/></svg>';
 
-    const copyText = document.createElement('span');
-    copyText.className = 'code-copy-text visually-hidden';
-    copyText.textContent = 'Copy code';
+    const copySrText = document.createElement('span');
+    copySrText.className = 'visually-hidden';
+    copySrText.textContent = 'Copy code';
 
-    copyButton.appendChild(copyIcon);
-    copyButton.appendChild(copyText);
+    copyButton.appendChild(copyIconWrapper);
+    copyButton.appendChild(copySrText);
 
-    toolbar.appendChild(langLabel);
+    toolbar.appendChild(meta);
     toolbar.appendChild(copyButton);
 
     block.insertBefore(toolbar, highlight);
+
+    const updateCollapsedState = function (collapsed) {
+      block.classList.toggle('is-collapsed', collapsed);
+      toggleButton.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+      toggleButton.setAttribute('aria-label', collapsed ? 'Expand code' : 'Collapse code');
+      if (highlight) {
+        highlight.setAttribute('aria-hidden', collapsed ? 'true' : 'false');
+      }
+    };
+
+    updateCollapsedState(false);
 
     const resetCopyState = function () {
       copyButton.dataset.label = 'Copy';
@@ -143,6 +167,11 @@
           selection.addRange(selected);
         }
       }
+    });
+
+    toggleButton.addEventListener('click', function () {
+      const collapsed = block.classList.contains('is-collapsed');
+      updateCollapsedState(!collapsed);
     });
 
     block.dataset.toolbar = 'ready';
