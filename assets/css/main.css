@@ -164,7 +164,15 @@ p { margin: .9em 0; color: var(--text); }
 .post-list { margin-top: 8px; }
 .post-item { padding: 18px 0; border-bottom: 1px solid var(--border); }
 .post-title { margin: 0 0 6px; font-size: clamp(20px, 2.3vw, 26px); }
-.post-title a { color: var(--link); text-decoration: none; }
+.post-title a,
+.post-card-title a {
+  color: color-mix(in srgb, var(--link) 72%, var(--text) 28%);
+  text-decoration: none;
+}
+.post-title a:hover,
+.post-card-title a:hover {
+  color: var(--link);
+}
 .post-title a:hover { text-decoration: underline; }
 .post-meta { margin: 0; color: var(--muted); font-size: 14px; }
 .post-desc { margin-top: 6px; color: var(--text); }
