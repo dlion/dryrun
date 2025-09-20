@@ -24,4 +24,44 @@
       history.pushState(null, '', '#' + id);
     }
   });
+
+  var prettifyLang = function (lang) {
+    if (!lang) return '';
+    var normalized = lang.toLowerCase();
+    var map = {
+      js: 'JS', javascript: 'JS', jsx: 'JSX',
+      ts: 'TS', typescript: 'TS', tsx: 'TSX',
+      go: 'Go', golang: 'Go',
+      py: 'Python', python: 'Python',
+      rb: 'Ruby', ruby: 'Ruby',
+      rs: 'Rust', rust: 'Rust',
+      java: 'Java', kotlin: 'Kotlin', swift: 'Swift',
+      php: 'PHP',
+      c: 'C', cpp: 'C++', cxx: 'C++', 'c++': 'C++',
+      cs: 'C#', csharp: 'C#', 'c#': 'C#',
+      objc: 'Obj-C', objectivec: 'Obj-C',
+      scala: 'Scala',
+      bash: 'Bash', sh: 'Shell', shell: 'Shell', zsh: 'Zsh', fish: 'Fish',
+      sql: 'SQL', yaml: 'YAML', yml: 'YAML', json: 'JSON', toml: 'TOML', ini: 'INI',
+      dockerfile: 'Docker', make: 'Make', makefile: 'Make',
+      diff: 'Diff', html: 'HTML', xml: 'XML', css: 'CSS', scss: 'SCSS', sass: 'Sass',
+      plaintext: 'Text', text: 'Text'
+    };
+    if (map[normalized]) return map[normalized];
+    return normalized.replace(/\b\w+/g, function (part) {
+      return part.charAt(0).toUpperCase() + part.slice(1);
+    }).replace(/\+/g, '+').replace(/#/g, '#').replace(/-/g, ' ');
+  };
+
+  document.querySelectorAll('.highlight, .highlighter-rouge').forEach(function (block) {
+    var pre = block.querySelector('pre');
+    if (!pre) return;
+    var lang = (pre.className || '').match(/language-([\w#+-]+)/i);
+    if (!lang && block.className) {
+      lang = block.className.match(/language-([\w#+-]+)/i);
+    }
+    if (lang && lang[1]) {
+      block.setAttribute('data-lang', prettifyLang(lang[1]));
+    }
+  });
 })();
