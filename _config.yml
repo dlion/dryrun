@@ -90,6 +90,7 @@ exclude:
   - .github
   - Gemfile
   - Gemfile.lock
+  - vendor
 
 feed:
   path: feed.xml

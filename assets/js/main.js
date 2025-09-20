@@ -129,7 +129,7 @@
     };
 
     copyButton.addEventListener('click', function () {
-      const codeElement = block.querySelector('pre code') || block.querySelector('pre');
+      const codeElement = block.querySelector('.rouge-code pre code') || block.querySelector('.rouge-code pre');
       if (!codeElement) return;
       const text = codeElement.innerText;
       const finish = function (success) {
