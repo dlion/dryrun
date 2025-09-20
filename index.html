@@ -6,8 +6,8 @@ title: Home
 <section class="post-list">
   <h1 class="visually-hidden">Latest posts</h1>
 
-  {% assign posts = paginator.posts | default: site.posts %}
-  {% for post in posts %}
+{% assign posts = site.posts | sort: 'date' | reverse %}
+{% for post in posts %}
     <article class="post-card">
       <h2 class="post-card-title">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
