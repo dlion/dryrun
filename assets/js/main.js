@@ -25,6 +25,63 @@
     }
   });
 
+  var prettifyLang = function (lang) {
+    if (!lang) return '';
+    var normalized = lang.toLowerCase();
+    var map = {
+      js: 'JS',
+      javascript: 'JS',
+      ts: 'TS',
+      typescript: 'TS',
+      jsx: 'JSX',
+      tsx: 'TSX',
+      go: 'Go',
+      golang: 'Go',
+      bash: 'Bash',
+      shell: 'Shell',
+      sh: 'Shell',
+      zsh: 'Zsh',
+      fish: 'Fish',
+      python: 'Python',
+      ruby: 'Ruby',
+      rust: 'Rust',
+      java: 'Java',
+      kotlin: 'Kotlin',
+      swift: 'Swift',
+      php: 'PHP',
+      c: 'C',
+      cpp: 'C++',
+      cxx: 'C++',
+      'c++': 'C++',
+      csharp: 'C#',
+      'c#': 'C#',
+      objc: 'Obj-C',
+      objectivec: 'Obj-C',
+      scala: 'Scala',
+      sql: 'SQL',
+      yaml: 'YAML',
+      yml: 'YAML',
+      json: 'JSON',
+      toml: 'TOML',
+      ini: 'INI',
+      dockerfile: 'Docker',
+      make: 'Make',
+      makefile: 'Make',
+      diff: 'Diff',
+      html: 'HTML',
+      xml: 'XML',
+      css: 'CSS',
+      scss: 'SCSS',
+      sass: 'Sass',
+      plaintext: 'Text',
+      text: 'Text'
+    };
+    if (map[normalized]) return map[normalized];
+    return normalized.replace(/\b\w+/g, function (part) {
+      return part.charAt(0).toUpperCase() + part.slice(1);
+    }).replace(/\+/g, '+').replace(/#/g, '#').replace(/-/g, ' ');
+  };
+
   document.querySelectorAll('.highlight, .highlighter-rouge').forEach(function (block) {
     var pre = block.querySelector('pre');
     if (!pre) return;
@@ -33,7 +90,7 @@
       lang = block.className.match(/language-([\w#+-]+)/i);
     }
     if (lang && lang[1]) {
-      block.setAttribute('data-lang', lang[1].toUpperCase());
+      block.setAttribute('data-lang', prettifyLang(lang[1]));
     }
   });
 })();
