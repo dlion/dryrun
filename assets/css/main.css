@@ -213,6 +213,56 @@ p { margin: .9em 0; color: var(--text); }
   box-shadow: var(--shadow); background: #000;
 }
 
+.post-content blockquote {
+  margin: 1.3rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--link);
+  background: color-mix(in srgb, var(--surface-2) 85%, transparent);
+  border-radius: 12px;
+}
+
+.post-content blockquote.callout {
+  --callout-icon: "💡";
+  --callout-accent: var(--link);
+  --callout-border: color-mix(in srgb, var(--callout-accent) 65%, transparent);
+  --callout-bg: color-mix(in srgb, var(--callout-accent) 10%, var(--code-surface) 90%);
+  margin: 1.6rem 0;
+  padding: 1.1rem 1.2rem 1.1rem 3.2rem;
+  border-radius: 16px;
+  border-left: none;
+  background: var(--callout-bg);
+  box-shadow: 0 12px 32px rgba(15,23,42,.08);
+  position: relative;
+  color: var(--text);
+}
+
+.post-content blockquote.callout::before {
+  content: var(--callout-icon);
+  position: absolute;
+  left: 1.2rem;
+  top: 1.1rem;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.post-content blockquote.callout strong:first-child {
+  display: block;
+  margin-bottom: .35rem;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  letter-spacing: .01em;
+}
+
+.post-content blockquote.callout p { margin: .6rem 0; }
+.post-content blockquote.callout p:first-of-type { margin-top: 0; }
+.post-content blockquote.callout p:last-of-type { margin-bottom: 0; }
+
+.post-content blockquote.callout.info    { --callout-accent: #2563eb; --callout-icon: "ℹ️"; }
+.post-content blockquote.callout.tip     { --callout-accent: #0ea5e9; --callout-icon: "💡"; }
+.post-content blockquote.callout.warn    { --callout-accent: #f59e0b; --callout-icon: "⚠️"; }
+.post-content blockquote.callout.danger  { --callout-accent: #ef4444; --callout-icon: "⛔"; }
+.post-content blockquote.callout.success { --callout-accent: #10b981; --callout-icon: "✅"; }
+.post-content blockquote.callout.note    { --callout-accent: #6366f1; --callout-icon: "📝"; }
+
 /* Code blocks */
 .highlighter-rouge {
   position: relative;

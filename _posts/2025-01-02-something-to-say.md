@@ -19,8 +19,9 @@ Expect hands-on examples, fewer buzzwords, and trade-offs called out explicitly.
 </div>
 
 
-> **Heads up**  
+> **Heads up**
 > Avoid `io.Copy` without a timeout here.
+{: .callout .warn}
 
 
 ```js
