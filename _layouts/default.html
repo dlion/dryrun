@@ -33,7 +33,10 @@ layout: nil
 
     <header class="site-header">
       <div class="wrap">
-        <a class="brand" href="{{ '/' | relative_url }}">{{ site.name | default: site.title }}</a>
+        <div class="header-bar">
+          <a class="brand" href="{{ '/' | relative_url }}">{{ site.name | default: site.title }}</a>
+          <button class="nav-toggle" type="button" aria-label="Toggle navigation" title="Toggle navigation" aria-expanded="false">☰</button>
+        </div>
 
         <nav class="site-nav" aria-label="Primary">
           {% assign here = page.url | default: '/' %}

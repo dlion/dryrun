@@ -112,9 +112,19 @@ body {
   z-index: 20;
 }
 .site-header .wrap { display: flex; align-items: center; gap: 24px; height: 56px; }
-
+.header-bar { display: flex; align-items: center; gap: 12px; }
 .brand { font-weight: 700; letter-spacing: .2px; text-decoration: none; color: var(--text); }
 .site-nav { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+.nav-toggle {
+  display: none;
+  margin-left: auto;
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 4px;
+}
 
 /* Ghost-like underline (no pill boxes) */
 .site-nav a {
@@ -574,8 +584,14 @@ p { margin: .9em 0; color: var(--text); }
 .footer-inner a[href$='feed.xml']:hover { color: var(--link); }
 
 /* Responsive tweaks */
-@media (max-width: 740px) {
-  .site-nav a::after { bottom: -6px; }
+@media (max-width: 780px) {
+  .site-header .wrap { flex-direction: column; align-items: stretch; gap: 0; height: auto; padding-block: 12px; }
+  .header-bar { width: 100%; justify-content: space-between; }
+  .nav-toggle { display: inline-flex; }
+  .site-nav { display: none; flex-direction: column; align-items: flex-start; gap: 12px; width: 100%; margin-left: 0; margin-top: 12px; }
+  .site-header.open .site-nav { display: flex; }
+  .site-nav a { padding: 0; display: block; width: 100%; }
+  .site-nav a::after { display: none; }
   .footer-inner { flex-direction: column; gap: 8px; }
 }
 
