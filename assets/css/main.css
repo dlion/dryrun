@@ -43,6 +43,12 @@
   --code-attr: #0f766e;
   --code-operator: #475467;
   --code-punctuation: rgba(71,84,103,0.6);
+
+  /* Callouts */
+  --callout-warn: #f97316;
+  --callout-error: #ef4444;
+  --callout-info: #2563eb;
+  --callout-success: #16a34a;
 }
 
 html[data-theme="dark"] {
@@ -80,6 +86,11 @@ html[data-theme="dark"] {
   --code-attr: #7de2d1;
   --code-operator: #9aa8cc;
   --code-punctuation: rgba(148,163,184,0.6);
+
+  --callout-warn: #fb923c;
+  --callout-error: #f87171;
+  --callout-info: #60a5fa;
+  --callout-success: #34d399;
 }
 
 * { box-sizing: border-box; }
@@ -174,13 +185,11 @@ p { margin: .9em 0; color: var(--text); }
 .post-list { margin-top: 8px; }
 .post-item { padding: 18px 0; border-bottom: 1px solid var(--border); }
 .post-title { margin: 0 0 6px; font-size: clamp(20px, 2.3vw, 26px); }
-.post-title a,
-.post-card-title a {
-  color: color-mix(in srgb, var(--link) 72%, var(--text) 28%);
+.post-title a {
+  color: var(--text);
   text-decoration: none;
 }
-.post-title a:hover,
-.post-card-title a:hover {
+.post-title a:hover {
   color: var(--link);
 }
 .post-title a:hover { text-decoration: underline; }
@@ -223,15 +232,16 @@ p { margin: .9em 0; color: var(--text); }
 
 .post-content blockquote.callout {
   --callout-icon: "💡";
-  --callout-accent: var(--link);
-  --callout-border: color-mix(in srgb, var(--callout-accent) 65%, transparent);
-  --callout-bg: color-mix(in srgb, var(--callout-accent) 10%, var(--code-surface) 90%);
+  --callout-accent: var(--callout-info);
   margin: 1.6rem 0;
   padding: 1.1rem 1.2rem 1.1rem 3.2rem;
   border-radius: 16px;
   border-left: none;
-  background: var(--callout-bg);
-  box-shadow: 0 12px 32px rgba(15,23,42,.08);
+  background: linear-gradient(135deg,
+      color-mix(in srgb, var(--callout-accent) 14%, var(--code-surface) 86%) 0%,
+      color-mix(in srgb, var(--callout-accent) 6%, var(--code-surface) 94%) 100%);
+  border: 1px solid color-mix(in srgb, var(--callout-accent) 35%, transparent);
+  box-shadow: 0 16px 36px rgba(15,23,42,.09);
   position: relative;
   color: var(--text);
 }
@@ -256,12 +266,10 @@ p { margin: .9em 0; color: var(--text); }
 .post-content blockquote.callout p:first-of-type { margin-top: 0; }
 .post-content blockquote.callout p:last-of-type { margin-bottom: 0; }
 
-.post-content blockquote.callout.info    { --callout-accent: #2563eb; --callout-icon: "ℹ️"; }
-.post-content blockquote.callout.tip     { --callout-accent: #0ea5e9; --callout-icon: "💡"; }
-.post-content blockquote.callout.warn    { --callout-accent: #f59e0b; --callout-icon: "⚠️"; }
-.post-content blockquote.callout.danger  { --callout-accent: #ef4444; --callout-icon: "⛔"; }
-.post-content blockquote.callout.success { --callout-accent: #10b981; --callout-icon: "✅"; }
-.post-content blockquote.callout.note    { --callout-accent: #6366f1; --callout-icon: "📝"; }
+.post-content blockquote.callout.info    { --callout-accent: var(--callout-info);    --callout-icon: "ℹ️"; }
+.post-content blockquote.callout.warn    { --callout-accent: var(--callout-warn);    --callout-icon: "⚠️"; }
+.post-content blockquote.callout.error   { --callout-accent: var(--callout-error);   --callout-icon: "⛔"; }
+.post-content blockquote.callout.success { --callout-accent: var(--callout-success); --callout-icon: "✅"; }
 
 /* Code blocks */
 .highlighter-rouge {
@@ -669,11 +677,9 @@ p { margin: .9em 0; color: var(--text); }
 .post-card { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
 .post-card:last-child { border-bottom: 0; }
 .post-card-title { font-size: 1.6rem; line-height: 1.3; margin: 0 0 .25rem; }
-.post-card-title a { text-decoration: none; }
-.post-card-title a:hover { text-decoration: underline; }
-.post-card-title a:visited {
-  color: color-mix(in hsl, var(--link) 60%, var(--text) 40%);
-}
+.post-card-title a { text-decoration: none; color: var(--text); }
+.post-card-title a:hover { text-decoration: underline; color: var(--link); }
+.post-card-title a:visited { color: var(--text); }
 .post-card-meta { color: var(--muted); margin: 0 0 .5rem; font-size: .95rem; }
 .post-card-excerpt { margin: 0; color: var(--text); }
 

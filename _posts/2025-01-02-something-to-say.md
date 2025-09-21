@@ -23,6 +23,18 @@ Expect hands-on examples, fewer buzzwords, and trade-offs called out explicitly.
 > Avoid `io.Copy` without a timeout here.
 {: .callout .warn}
 
+> **Heads up**
+> Avoid `io.Copy` without a timeout here.
+{: .callout .info}
+
+> **Heads up**
+> Avoid `io.Copy` without a timeout here.
+{: .callout .error}
+
+> **Heads up**
+> Avoid `io.Copy` without a timeout here.
+{: .callout .success}
+
 
 ```js
 window.onload = () => {
