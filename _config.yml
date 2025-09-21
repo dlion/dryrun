@@ -98,6 +98,16 @@ feed:
 # ——— Design knobs (optional, used by CSS if you want) ———
 accent_color: "#4f46e5"   # you can wire this into :root --accent later if desired
 
+hero:
+  image: https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg
+  kicker: Domenico Luciani
+  title: Pragmatic engineering notes on Go, infra, and the systems we ship.
+  subtext: >-
+    Field notes, debugging war stories, and practical trade-offs for distributed systems engineers.
+    No hype—just the lessons learned building reliable software.
+  cta_label: Follow via RSS
+  cta_url: /feed.xml
+
 
 # Hide any onboarding hints on Home
 onboarding_banner: false
