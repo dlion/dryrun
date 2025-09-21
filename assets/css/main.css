@@ -297,7 +297,21 @@ p { margin: .9em 0; color: var(--text); }
 .post-content h6 {
   font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
-.post-content img { max-width: 100%; border-radius: var(--radius); }
+.post-content img,
+.post-content video,
+.post-content iframe {
+  display: block;
+  max-width: 100%;
+  border-radius: var(--radius);
+  margin: 1.6rem auto;
+}
+.post-content figure {
+  margin: 1.6rem auto;
+  text-align: center;
+}
+.post-content figure img {
+  margin: 0 auto;
+}
 .post-content iframe { border: 0; }
 .post-content iframe[src*="youtube.com"], .post-content iframe[src*="vimeo.com"] {
   width: 100%; aspect-ratio: 16/9; height: auto; display: block; border-radius: var(--radius);
