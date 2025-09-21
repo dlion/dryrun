@@ -81,6 +81,8 @@ layout: default
       <a class="rss" href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a>
     </nav>
 
+    {% include related-posts.html %}
+
     {% if site.comments and site.giscus.repo %}
       <section id="comments" class="comments">
         <script src="https://giscus.app/client.js"
