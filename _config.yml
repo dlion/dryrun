@@ -72,17 +72,6 @@ defaults:
 # ——— Analytics/Comments (off by default) ———
 plausible_domain: ""  # e.g., domenicoluciani.com (empty disables)
 
-giscus:
-  repo: "dlion/dryrun"
-  repo_id: ""
-  category: "General"
-  category_id: ""
-  mapping: "pathname"
-  reactions_enabled: "1"
-  emit_metadata: "0"
-  theme: "preferred_color_scheme"
-  lang: "en"
-
 # ——— Build ———
 exclude:
   - README.md
