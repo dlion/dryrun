@@ -44,7 +44,7 @@ kramdown:
 permalink: /:year/:month/:day/:title/
 timezone: Europe/Madrid
 paginate: 10
-paginate_path: "/page:num/"
+paginate_path: "/page/:num/"
 
 # ——— Plugins (all supported by GitHub Pages) ———
 plugins:

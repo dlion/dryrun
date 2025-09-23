@@ -717,6 +717,11 @@ p { margin: .9em 0; color: var(--text); }
   .hero-title { font-size: clamp(28px, 8vw, 38px); }
   .hero-subtext { font-size: 1.05rem; }
 
+  .pagination { margin-top: 2.2rem; padding-inline: 16px; }
+  .pagination-inner { flex-direction: column; align-items: center; gap: 10px; max-width: 100%; }
+  .pagination-link { font-size: .95rem; }
+  .pagination-status { font-size: .88rem; }
+
   .related-split { margin-left: 0; margin-right: 0; padding: 2.6rem 0; }
   .related-split-grid { grid-template-columns: 1fr; }
   .related-split-card { min-height: 320px; }
@@ -734,6 +739,20 @@ p { margin: .9em 0; color: var(--text); }
   .site-nav a::after { display: none; }
 
   .footer-inner { flex-direction: column; gap: 8px; }
+}
+
+@media (max-width: 520px) {
+  .pagination {
+    margin-top: 2rem;
+    padding-inline: 12px;
+  }
+  .pagination-link {
+    font-size: .92rem;
+    gap: .24rem;
+  }
+  .pagination-status {
+    font-size: .86rem;
+  }
 }
 
 
@@ -765,6 +784,58 @@ p { margin: .9em 0; color: var(--text); }
 .post-card-title a:visited { color: var(--text); }
 .post-card-meta { color: var(--muted); margin: 0 0 .5rem; font-size: .95rem; }
 .post-card-excerpt { margin: 0; color: var(--text); }
+
+/* Pagination (match header nav style) */
+.pagination {
+  margin: clamp(2rem, 5vw, 2.6rem) auto 0;
+}
+
+.pagination-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  max-width: 760px; /* align with .post-list */
+  margin-inline: auto;
+}
+
+.pagination-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: 6px 2px;
+  color: var(--text);
+  font-weight: 600;
+  font-size: .95rem;
+  text-decoration: none;
+}
+
+.pagination-link .icon { font-size: .95em; opacity: .9; }
+
+/* underline hover like .site-nav a */
+.pagination-link::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px;
+  background: var(--link); transform: scaleX(0); transform-origin: left;
+  transition: transform .18s ease;
+}
+.pagination-link:hover::after, .pagination-link:focus-visible::after { transform: scaleX(1); }
+.pagination-link:focus-visible { outline: none; }
+
+.pagination-link.is-disabled { color: var(--muted); pointer-events: none; }
+.pagination-link.is-disabled::after { display: none; }
+
+.pagination-status {
+  color: var(--muted);
+  font-size: .92rem;
+  font-weight: 600;
+}
+
+.pagination-status .page { color: var(--text); }
+
+.pagination-prev .icon { transform: translateX(-1px); }
+.pagination-next .icon { transform: translateX(1px); }
 
 .related-split {
   margin-top: 3rem;
