@@ -15,6 +15,10 @@ permalink: /search/
   (function() {
     var input = document.getElementById('searchInput');
     var results = document.getElementById('results');
+    if (results) {
+      results.setAttribute('aria-live', 'polite');
+    }
+
     var data = [
       {% for post in site.posts %}
       { title: {{ post.title | jsonify }},
@@ -25,20 +29,47 @@ permalink: /search/
       {% endfor %}
     ];
 
-    function render(list) {
+    function escapeHtml(str) {
+      var map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      };
+      return str.replace(/[&<>'"]/g, function(ch) { return map[ch]; });
+    }
+
+    function render(list, query) {
+      if (!query) {
+        results.innerHTML = '';
+        return;
+      }
+
+      if (!list.length) {
+        results.innerHTML = '<li class="search-empty">No articles match <strong>&ldquo;' + escapeHtml(query) + '&rdquo;</strong>. Try another keyword.</li>';
+        return;
+      }
+
       results.innerHTML = list.map(function(p) {
-        return '<li><a href="'+p.url+'">'+p.title+'</a><div class="meta">'+p.date+'</div><div class="desc">'+(p.desc||'')+'</div></li>';
+        var description = p.desc || '';
+        return '<li><a href="'+p.url+'">'+p.title+'</a><div class="meta">'+p.date+'</div><div class="desc">'+description+'</div></li>';
       }).join('');
     }
-    render(data);
 
     input.addEventListener('input', function() {
-      var q = input.value.toLowerCase().trim();
-      if (!q) return render(data);
-      render(data.filter(function(p){
+      var raw = input.value;
+      var q = raw.toLowerCase().trim();
+      if (!q) {
+        render([], '');
+        return;
+      }
+
+      var matches = data.filter(function(p){
         return (p.title.toLowerCase().indexOf(q) > -1) ||
                (p.desc && p.desc.toLowerCase().indexOf(q) > -1);
-      }));
+      });
+      render(matches, raw.trim());
     });
   })();
 </script>

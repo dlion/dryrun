@@ -728,6 +728,14 @@ p { margin: .9em 0; color: var(--text); }
 .search-results a { color: var(--link); text-decoration: none; }
 .search-results .meta { font-size: 13px; color: var(--muted); }
 .search-results .desc { margin-top: 2px; }
+.search-results .search-empty {
+  color: var(--muted);
+  border-bottom: 0;
+}
+.search-results .search-empty strong {
+  color: var(--text);
+  font-weight: 600;
+}
 
 /* Footer */
 .site-footer { border-top: 1px solid var(--border); background: var(--surface-1); }
