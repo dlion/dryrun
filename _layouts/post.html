@@ -40,10 +40,30 @@ layout: default
       {% else %}
         {% assign hero_url = hero | relative_url %}
       {% endif %}
+
+      {%- comment -%}
+        Build a responsive srcset for well-known CDNs that accept width (w=) query params
+        like Unsplash and Pexels. Fall back to plain src if unknown host.
+      {%- endcomment -%}
+      {% assign host = hero_url | replace: 'http://','' | replace: 'https://','' | split: '/' | first %}
+      {% assign supports_w = false %}
+      {% if host contains 'images.unsplash.com' or host contains 'unsplash.com' or host contains 'images.pexels.com' %}
+        {% assign supports_w = true %}
+      {% endif %}
+      {% assign sizes_attr = '(max-width: 780px) 100vw, 980px' %}
+      {% if supports_w %}
+        {% assign joiner = '?' %}{% if hero_url contains '?' %}{% assign joiner = '&' %}{% endif %}
+        {% assign widths = '480,768,1024,1366,1600' | split: ',' %}
+        {% capture hero_srcset %}
+          {% for w in widths %}{{ hero_url }}{{ joiner }}w={{ w }} {{ w }}w{% unless forloop.last %}, {% endunless %}{% endfor %}
+        {% endcapture %}
+      {% endif %}
+
       <figure class="post-hero">
         <img src="{{ hero_url }}"
+             {% if supports_w %}srcset="{{ hero_srcset | strip }}" sizes="{{ sizes_attr }}"{% endif %}
              alt="{{ page.image_alt | default: page.title }}"
-             loading="lazy" decoding="async" width="1600" height="840">
+             loading="eager" fetchpriority="high" decoding="async" width="1600" height="840">
         {% if page.image_caption %}
           <figcaption>{{ page.image_caption }}</figcaption>
         {% endif %}

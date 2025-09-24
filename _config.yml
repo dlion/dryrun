@@ -26,7 +26,6 @@ nav:
   - { title: About,  url: "/about/" }
   - { title: Tags,   url: "/tags/" }
   - { title: Search, url: "/search/" }
-  - { title: RSS,    url: "/feed.xml" }
 
 # ——— Writing ———
 markdown: kramdown
@@ -73,6 +72,10 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+
+# Copy dot-directories like .well-known to the output
+include:
+  - .well-known
 
 hero:
   image: https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg
