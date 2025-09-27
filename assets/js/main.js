@@ -206,16 +206,48 @@
     });
   };
 
+  var mermaidConfigFor = function (themeName) {
+    var isDark = (themeName === 'dark');
+    // Amber accent that works on both themes
+    var amber500 = '#f59e0b';
+    var amber400 = '#fbbf24';
+    var amber300 = '#fcd34d';
+    var textDark = '#e5e7eb';
+    var textLight = '#111827';
+    return {
+      startOnLoad: false,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', 'Helvetica Neue', Arial",
+        primaryColor: isDark ? '#1f2937' : '#fff7ed',
+        secondaryColor: isDark ? '#111827' : '#fffbeb',
+        tertiaryColor: isDark ? '#1f2937' : '#fef3c7',
+        primaryTextColor: isDark ? textDark : textLight,
+        lineColor: amber400,
+        primaryBorderColor: amber500,
+        clusterBkg: isDark ? '#111827' : '#fff7ed',
+        clusterBorder: amber500,
+        edgeLabelBackground: isDark ? '#334155' : '#fde68a',
+        noteBkgColor: isDark ? '#374151' : '#fff7ed',
+        noteBorderColor: amber500,
+        activationBkgColor: isDark ? '#1f2937' : '#fff7ed',
+        activationBorderColor: amber500
+      }
+    };
+  };
+
   var renderMermaid = function (themeOverride) {
     if (typeof window.mermaid === 'undefined') return;
     collectMermaidSources();
     var containers = document.querySelectorAll('.mermaid');
     if (!containers.length) return;
-    var theme = themeOverride || (document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default');
-    window.mermaid.initialize({ startOnLoad: false, theme: theme });
+    var themeName = themeOverride || (document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+    window.mermaid.initialize(mermaidConfigFor(themeName));
     containers.forEach(function (el) {
       var diagram = el.dataset.diagram || el.textContent.trim();
       if (!diagram) return;
+      // Allow re-render on theme change
+      el.removeAttribute('data-processed');
       el.textContent = diagram;
     });
     try {
