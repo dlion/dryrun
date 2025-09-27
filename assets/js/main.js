@@ -1,15 +1,27 @@
 // Optional: add anchor links to headings and smooth-scroll on hash links
 (function () {
-  const headings = document.querySelectorAll('.post-content h2, .post-content h3');
+  const headings = document.querySelectorAll('.post-content h2, .post-content h3, .post-content h4');
   headings.forEach(function (h) {
+    if (!h.textContent.trim()) return;
     if (!h.id) {
       h.id = h.textContent.trim().toLowerCase().replace(/[^\w]+/g, '-').replace(/(^-|-$)/g, '');
     }
-    const a = document.createElement('a');
-    a.href = '#' + h.id;
-    a.className = 'anchor';
-    a.innerText = '¶';
-    h.appendChild(a);
+    if (h.querySelector('.heading-anchor')) return;
+
+    const anchor = document.createElement('a');
+    anchor.href = '#' + h.id;
+    anchor.className = 'heading-anchor';
+    anchor.setAttribute('aria-label', 'Copy link to "' + h.textContent.trim() + '"');
+    anchor.innerHTML = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M13.44 2.56a3.75 3.75 0 0 1 5.3 5.3l-2.12 2.12a.75.75 0 1 1-1.06-1.06l2.12-2.12a2.25 2.25 0 1 0-3.18-3.18l-2.12 2.12a.75.75 0 1 1-1.06-1.06l2.12-2.12Zm-6.88 6.88a.75.75 0 0 1 1.06 0l2.12 2.12a.75.75 0 0 1-1.06 1.06L6.56 10.5a.75.75 0 0 1 0-1.06Zm-1.06 1.06a.75.75 0 0 1 0 1.06l-2.12 2.12a2.25 2.25 0 1 0 3.18 3.18l2.12-2.12a.75.75 0 1 1 1.06 1.06l-2.12 2.12a3.75 3.75 0 1 1-5.3-5.3l2.12-2.12Zm8.25-2.12a.75.75 0 0 1 1.06 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06l5.25-5.25Z"/></svg>';
+
+    h.classList.add('has-anchor');
+    h.appendChild(anchor);
+
+    h.addEventListener('click', function (event) {
+      if (event.target.closest('.heading-anchor')) return;
+      if (window.getSelection && window.getSelection().toString()) return;
+      anchor.click();
+    });
   });
 
   document.addEventListener('click', function (e) {
@@ -175,6 +187,48 @@
     });
 
     block.dataset.toolbar = 'ready';
+  });
+
+  var collectMermaidSources = function () {
+    document.querySelectorAll('pre code.language-mermaid, code.language-mermaid').forEach(function (code) {
+      var source = code.textContent.trim();
+      if (!source) return;
+      var container = document.createElement('div');
+      container.className = 'mermaid';
+      container.dataset.diagram = source;
+      container.textContent = source;
+      var pre = code.closest('pre');
+      if (pre && typeof pre.replaceWith === 'function') {
+        pre.replaceWith(container);
+      } else if (code.parentNode) {
+        code.parentNode.replaceChild(container, code);
+      }
+    });
+  };
+
+  var renderMermaid = function (themeOverride) {
+    if (typeof window.mermaid === 'undefined') return;
+    collectMermaidSources();
+    var containers = document.querySelectorAll('.mermaid');
+    if (!containers.length) return;
+    var theme = themeOverride || (document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default');
+    window.mermaid.initialize({ startOnLoad: false, theme: theme });
+    containers.forEach(function (el) {
+      var diagram = el.dataset.diagram || el.textContent.trim();
+      if (!diagram) return;
+      el.textContent = diagram;
+    });
+    try {
+      window.mermaid.run({ nodes: containers });
+    } catch (err) {
+      console.error('Mermaid render failed', err);
+    }
+  };
+
+  renderMermaid();
+  document.addEventListener('theme:change', function (event) {
+    var nextTheme = event && event.detail ? event.detail : null;
+    renderMermaid(nextTheme);
   });
 
   var header = document.querySelector('.site-header');

@@ -104,11 +104,15 @@ layout: nil
           var next = cur === 'dark' ? 'light' : 'dark';
           document.documentElement.setAttribute('data-theme', next);
           try { localStorage.setItem('theme', next); } catch(e) {}
+          try {
+            document.dispatchEvent(new CustomEvent('theme:change', { detail: next }));
+          } catch (err) {}
           label();
         });
         label();
       })();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>
     <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   </body>
 </html>

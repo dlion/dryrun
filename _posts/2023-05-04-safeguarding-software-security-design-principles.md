@@ -1,6 +1,9 @@
 ---
 title: "Safeguarding Software: Embracing Security Design Principles in Software Development"
-description: "LALALALA"
+description: "In today's digital landscape, developing software with a security-oriented mindset is no longer an option – it's a top priority. I've had the opportunity to attend the Secure…"
+tags:
+  - Programming
+cover: "/assets/images/covers/security-principles.png"
 ---
 
 In today's digital landscape, developing software with a security-oriented mindset is no longer an option – it's a top priority.   

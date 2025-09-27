@@ -352,6 +352,53 @@ p { margin: .9em 0; color: var(--text); }
   box-shadow: var(--shadow); background: #000;
 }
 
+.post-content .has-anchor {
+  position: relative;
+}
+
+.post-content .heading-anchor {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin-left: .55rem;
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0;
+  transform: scale(.92);
+  transition: opacity .18s ease, transform .18s ease, background .18s ease;
+}
+
+.post-content .heading-anchor svg {
+  width: 16px;
+  height: 16px;
+}
+
+.post-content .heading-anchor svg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.post-content .heading-anchor:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--link) 65%, transparent);
+  outline-offset: 2px;
+}
+
+.post-content .has-anchor:hover .heading-anchor,
+.post-content .has-anchor:focus-within .heading-anchor {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.post-content .has-anchor .heading-anchor:hover {
+  background: color-mix(in srgb, var(--surface-2) 80%, transparent);
+}
+
 .post-content blockquote {
   margin: 1.3rem 0;
   padding: 1rem 1.2rem;
@@ -401,6 +448,77 @@ p { margin: .9em 0; color: var(--text); }
 .post-content blockquote.callout.error   { --callout-accent: var(--callout-error);   --callout-icon: "⛔"; }
 .post-content blockquote.callout.success { --callout-accent: var(--callout-success); --callout-icon: "✅"; }
 
+.post-content table:not(.rouge-table) {
+  /* Keep table styling minimal so code tables (Rouge) are unaffected */
+  overflow: hidden;
+}
+
+.post-content table:not(.rouge-table) caption {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: .8rem;
+  color: var(--muted);
+}
+
+.post-content table:not(.rouge-table) thead tr {
+  background: color-mix(in srgb, var(--surface-2) 92%, transparent);
+}
+
+.post-content table:not(.rouge-table) th,
+.post-content table:not(.rouge-table) td {
+  padding: .75rem 1rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  text-align: left;
+}
+
+.post-content table:not(.rouge-table) tbody tr:nth-child(2n) {
+  background: color-mix(in srgb, var(--surface-2) 85%, transparent);
+}
+
+.post-content table:not(.rouge-table) tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.post-content table:not(.rouge-table) { display: block; overflow-x: auto; }
+.post-content table:not(.rouge-table) thead,
+.post-content table:not(.rouge-table) tbody,
+.post-content table:not(.rouge-table) tfoot {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.post-content table:not(.rouge-table) th:first-child,
+.post-content table:not(.rouge-table) td:first-child { padding-left: 1.3rem; }
+.post-content table:not(.rouge-table) th:last-child,
+.post-content table:not(.rouge-table) td:last-child { padding-right: 1.3rem; }
+
+.post-content .mermaid {
+  position: relative;
+  margin: 1.6rem 0;
+  padding: 1.2rem 1.4rem;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--code-surface) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--code-border) 78%, transparent);
+  box-shadow: 0 16px 34px rgba(15,23,42,0.08);
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.post-content .mermaid svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.post-content .mermaid[data-processed="true"] {
+  padding: 1.2rem;
+}
+
 /* Code blocks */
 .highlighter-rouge {
   position: relative;
@@ -417,8 +535,13 @@ p { margin: .9em 0; color: var(--text); }
 .highlighter-rouge > .highlight {
   flex: 1;
   margin: 0;
-  background: var(--code-surface);
+  background: transparent;
   overflow: auto;
+}
+
+.highlighter-rouge .highlight {
+  margin: 0;
+  background: transparent;
 }
 
 .code-toolbar {
@@ -542,20 +665,21 @@ p { margin: .9em 0; color: var(--text); }
   border-collapse: collapse;
   border-spacing: 0;
   table-layout: fixed;
-  background: var(--code-surface);
+  background: transparent; /* remove inner box */
 }
 
 .highlighter-rouge .rouge-table td {
   padding: 0;
   vertical-align: top;
-  background: var(--code-surface);
+  background: transparent; /* remove inner box */
 }
 
 .highlighter-rouge .rouge-gutter {
   width: var(--code-gutter-width);
-  background: var(--code-surface);
+  background: transparent;
   border-right: 1px solid color-mix(in srgb, var(--code-border) 82%, transparent);
-  padding: var(--code-pad-y) calc(var(--code-pad-x) * 0.35);
+  /* tighten numbers spacing: minimal left pad, modest right pad */
+  padding: var(--code-pad-y) 0.6rem var(--code-pad-y) 0rem;
 }
 
 .highlighter-rouge .rouge-gutter pre {
@@ -585,7 +709,7 @@ p { margin: .9em 0; color: var(--text); }
   font-size: .92rem;
   line-height: 1.6;
   color: var(--code-text);
-  background: var(--code-surface);
+  background: transparent; /* remove inner box */
 }
 
 
@@ -634,6 +758,10 @@ p { margin: .9em 0; color: var(--text); }
 .highlight .s2,
 .highlight .sh,
 .highlight .sr,
+.highlight .ss,
+.highlight .si,
+.highlight .se,
+.highlight .dl,
 .highlight .sx { color: var(--code-string); }
 
 .highlight .m,
@@ -646,12 +774,18 @@ p { margin: .9em 0; color: var(--text); }
 
 .highlight .nf,
 .highlight .fm,
+.highlight .nd,
+.highlight .me,
 .highlight .nv.rs { color: var(--code-function); }
 
 .highlight .na,
 .highlight .vi,
 .highlight .vc,
-.highlight .vg { color: var(--code-attr); }
+.highlight .vg,
+.highlight .nb,
+.highlight .bp,
+.highlight .bu,
+.highlight .bx { color: var(--code-attr); }
 
 .highlight .nc,
 .highlight .nn,
@@ -662,7 +796,6 @@ p { margin: .9em 0; color: var(--text); }
 }
 
 .highlight .no,
-.highlight .bp,
 .highlight .ne { color: var(--code-class); }
 
 .highlight .o,
@@ -676,7 +809,8 @@ p { margin: .9em 0; color: var(--text); }
 .highlight .go { color: var(--code-comment); }
 
 .post-content pre:not(.highlight):not(.highlighter-rouge) {
-  margin: 1.2rem 0;
+  /* Keep generic pre minimal; code blocks already styled above */
+  margin: 0;
   padding: 1rem 1.25rem;
   background: var(--surface-2);
 }
@@ -909,6 +1043,10 @@ p { margin: .9em 0; color: var(--text); }
   align-items: stretch;
 }
 
+.related-split-grid.is-single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .related-split-card {
   display: grid;
   grid-template-columns: 1fr;
@@ -923,6 +1061,10 @@ p { margin: .9em 0; color: var(--text); }
 .related-split-card.related-slot-1 {
   grid-column: 2 / 3;
   border-left: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+.related-split-card.is-single {
+  grid-column: 1 / -1;
+  border-left: 0;
 }
 
 .related-slot-0 .related-split-body { border-left: 0; }
