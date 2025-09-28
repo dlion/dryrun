@@ -2,6 +2,7 @@
 layout: default
 title: Projects
 permalink: /projects/
+hide_progress: true
 ---
 
 # Projects

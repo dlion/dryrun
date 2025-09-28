@@ -996,6 +996,8 @@ p { margin: .9em 0; color: var(--text); }
 .tag-posts li { margin: .35rem 0; }
 .tag-posts a { text-decoration: none; }
 .tag-posts a:hover { text-decoration: underline; }
+
+/* (About page styles moved to assets/css/about.css) */
 .tag-posts .meta { color: var(--muted); margin-left: .35rem; }
 .post-actions a {
   color: var(--link);

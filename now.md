@@ -2,6 +2,7 @@
 layout: default
 title: Now
 permalink: /now/
+hide_progress: true
 ---
 
 # Now

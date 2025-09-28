@@ -2,6 +2,7 @@
 layout: default
 title: Tags
 permalink: /tags/
+hide_progress: true
 ---
 
 <section class="tags-page">

@@ -31,6 +31,16 @@ layout: nil
 
     <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/main.css?v=10' | relative_url }}">
+    {% if page.extra_css %}
+      {% for css in page.extra_css %}
+        <link rel="stylesheet" href="{{ '/assets/css/' | append: css | append: '.css?v=1' | relative_url }}">
+      {% endfor %}
+    {% endif %}
+    {% if page.cdn_css %}
+      {% for url in page.cdn_css %}
+        <link rel="stylesheet" href="{{ url }}">
+      {% endfor %}
+    {% endif %}
   </head>
   <body>
     {% unless page.hide_progress %}
@@ -113,6 +123,16 @@ layout: nil
       })();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>
+    {% if page.cdn_js %}
+      {% for url in page.cdn_js %}
+        <script src="{{ url }}" defer></script>
+      {% endfor %}
+    {% endif %}
+    {% if page.extra_js %}
+      {% for js in page.extra_js %}
+        <script src="{{ '/assets/js/' | append: js | append: '.js?v=1' | relative_url }}" defer></script>
+      {% endfor %}
+    {% endif %}
     <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   </body>
 </html>
