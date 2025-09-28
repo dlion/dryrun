@@ -1,11 +1,11 @@
 ---
-title: "Hacktoberfest 2017"
-description: "Today I've got some swag from @github and @digitalocean for Hacktoberfest"
+title: Hacktoberfest 2017
+description: Today I've got some swag from @github and @digitalocean for Hacktoberfest
 tags:
-  - Programming
-  - Life
+- personal
 cover: "/assets/images/covers/hacktoberfest_17.jpg"
 ---
+
 
 Today I've got some swag from @github and @digitalocean for **Hacktoberfest**
 

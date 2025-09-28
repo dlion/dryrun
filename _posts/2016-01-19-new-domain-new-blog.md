@@ -1,10 +1,13 @@
 ---
-title: "New domain, new blog"
-description: "Ok, I bought a new domain name; my domain name, so I think it's right to make a new blog. From now I will post using only the english language to improve my knowledge about it and…"
+title: New domain, new blog
+description: Ok, I bought a new domain name; my domain name, so I think it's right
+  to make a new blog. From now I will post using only the english language to improve
+  my knowledge about it and…
 tags:
-  - Personal
+- personal
 cover: "/assets/images/covers/roger.jpg"
 ---
+
 
 Ok, I bought a new domain name; my domain name, so I think it's right to make a new blog. From now I will post using only the english language to improve my knowledge about it and to share my thoughts to everyone.
 

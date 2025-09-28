@@ -1,10 +1,13 @@
 ---
-title: "How to use  generics to avoid duplications and make your code better"
-description: "I recently worked on a project that had a lot of code duplication due to repeated implementations of the same interfaces. I quickly realized it was a great opportunity to refactor…"
+title: How to use  generics to avoid duplications and make your code better
+description: I recently worked on a project that had a lot of code duplication due
+  to repeated implementations of the same interfaces. I quickly realized it was a
+  great opportunity to refactor…
 tags:
-  - Programming
+- tutorials
 cover: "/assets/images/covers/go_generics.jpg"
 ---
+
 
 I recently worked on a project that had a lot of code duplication due to repeated implementations of the same interfaces. I quickly realized it was a great opportunity to refactor the code, remove the duplication and make the code more scalable and maintainable.
 

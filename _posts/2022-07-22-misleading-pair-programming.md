@@ -1,10 +1,13 @@
 ---
-title: "Misleading Pair Programming"
-description: "I often read tweets, threads and posts about a weird practice called Pair Programming, full of complaints. But I find this usually due to a lack of understanding and improper…"
+title: Misleading Pair Programming
+description: I often read tweets, threads and posts about a weird practice called
+  Pair Programming, full of complaints. But I find this usually due to a lack of understanding
+  and improper…
 tags:
-  - Programming
+- engineering
 cover: "/assets/images/covers/pairing.png"
 ---
+
 
 I often read tweets, threads and posts about a weird practice called **Pair Programming**, full of complaints. But I find this usually due to a lack of understanding and improper implementation.   
 I'd like to clarify why those complaints are misleading and why you shouldn't write pair programming off completely.

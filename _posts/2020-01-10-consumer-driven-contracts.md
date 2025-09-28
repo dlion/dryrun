@@ -1,10 +1,13 @@
 ---
-title: "Consumer Driven Contracts"
-description: "During our journey as developers, we often have to use external APIs, integrate our systems with them and be sure that everything works smoothly, sometimes it becomes difficult…"
+title: Consumer Driven Contracts
+description: During our journey as developers, we often have to use external APIs,
+  integrate our systems with them and be sure that everything works smoothly, sometimes
+  it becomes difficult…
 tags:
-  - Programming
+- engineering
 cover: "/assets/images/covers/consumer_driven_contracts.png"
 ---
+
 
 During our journey as developers, we often have to use external APIs, integrate our systems with them and be sure that everything works smoothly, sometimes it becomes difficult because suddenly the systems we are interacting with change their behaviour, breaking our integration.   
 How to prevent it?

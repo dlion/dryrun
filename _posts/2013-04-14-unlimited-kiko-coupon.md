@@ -1,12 +1,13 @@
 ---
-title: "Unlimited Kiko Coupon"
-description: "A few weeks ago I saw a Facebook application that allows to get a coupon to receive a \"free nail varnish\", it's very simple and clear: Put a \"like\", insert yours data and done,…"
+title: Unlimited Kiko Coupon
+description: 'A few weeks ago I saw a Facebook application that allows to get a coupon
+  to receive a "free nail varnish", it''s very simple and clear: Put a "like", insert
+  yours data and done,…'
 tags:
-  - Past
-  - Security
-  - Programming
+- security
 cover: "/assets/images/covers/kiko.jpg"
 ---
+
 
 A few weeks ago I saw a Facebook application that allows to get a coupon to receive a "free nail varnish", it's very simple and clear: Put a "like", insert yours data and done, you will receive your coupon and your free nail varnish, but there is a limitation: You can take it only once.... maybe.
 

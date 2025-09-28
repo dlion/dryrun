@@ -1,10 +1,12 @@
 ---
-title: "Why did I switch from Notion to Obsidian"
-description: "It's been a while when I started using notional tools for my day to day. I use these tools constantly, trying to use it as a second brain."
+title: Why did I switch from Notion to Obsidian
+description: It's been a while when I started using notional tools for my day to day.
+  I use these tools constantly, trying to use it as a second brain.
 tags:
-  - Life
+- engineering
 cover: "/assets/images/covers/obsidian.png"
 ---
+
 
 It's been a while when I started using notional tools for my day to day. I use these tools constantly, trying to use it as a second brain.   
 

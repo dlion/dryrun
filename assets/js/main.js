@@ -278,4 +278,54 @@
     });
   }
 
+  // Tags page enhancements: chip-driven filtering (+ support for query param t and hash)
+  (function() {
+    var page = document.querySelector('.tags-page');
+    if (!page) return;
+    var chips = Array.prototype.slice.call(document.querySelectorAll('.tag-chip'));
+    var sections = Array.prototype.slice.call(document.querySelectorAll('.tag-section'));
+
+    function setActive(slug) {
+      chips.forEach(function(c){ c.classList.toggle('is-active', c.dataset.tag === slug || (slug==='all' && c.dataset.tag==='all')); });
+    }
+    function showOnly(slug) {
+      if (!slug || slug === 'all') {
+        sections.forEach(function(sec){ sec.style.display = ''; });
+        setActive('all');
+        return;
+      }
+      sections.forEach(function(sec){ sec.style.display = (sec.dataset.tag === slug) ? '' : 'none'; });
+      setActive(slug);
+      // Scroll to visible section with slight offset
+      var target = document.getElementById(slug);
+      if (target) {
+        var y = target.getBoundingClientRect().top + window.scrollY - 70;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+
+    function getParam(name){
+      var m = new URLSearchParams(window.location.search).get(name);
+      return m ? m.toString() : null;
+    }
+
+    chips.forEach(function(chip){
+      chip.addEventListener('click', function(e){
+        var slug = chip.dataset.tag;
+        showOnly(slug);
+        if (history && history.replaceState) {
+          var url = new URL(window.location.href);
+          if (slug === 'all') { url.searchParams.delete('t'); }
+          else { url.searchParams.set('t', slug); }
+          history.replaceState(null, '', url.toString());
+        }
+        e.preventDefault();
+      });
+    });
+
+    // Initial state: ?t=slug or #slug fallback
+    var init = getParam('t') || (location.hash ? location.hash.slice(1) : 'all');
+    showOnly(init);
+  })();
+
 })();

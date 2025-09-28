@@ -1,11 +1,15 @@
 ---
-title: "Incident Management 101"
-description: "What's an incident? What to do in case of an incident? How to be a great incident commander? Are you a good incident responder? This is what I discover during my Incident…"
+title: Incident Management 101
+description: What's an incident? What to do in case of an incident? How to be a great
+  incident commander? Are you a good incident responder? This is what I discover during
+  my Incident…
 tags:
-  - Programming
-  - Security
+- work
+- security
+- devops
 cover: "/assets/images/covers/error.jpg"
 ---
+
 
 What's an incident? What to do in case of an incident? How to be a great incident commander? Are you a good incident responder? This is what I discover during my Incident Management workshop in @ThoughtWorks this week, let's take a look!
 

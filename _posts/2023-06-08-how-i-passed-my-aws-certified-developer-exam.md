@@ -1,11 +1,14 @@
 ---
-title: "How I Passed my AWS Certified Developer Exam"
-description: "A few weeks ago I passed my AWS Certified Developer Associate (DVA-02) exam and I thought it would have been nice to document how _heck_ I accomplished to do it on a first try,…"
+title: How I Passed my AWS Certified Developer Exam
+description: A few weeks ago I passed my AWS Certified Developer Associate (DVA-02)
+  exam and I thought it would have been nice to document how _heck_ I accomplished
+  to do it on a first try,…
 tags:
-  - Programming
-  - Life
+- learning
+- engineering
 cover: "/assets/images/covers/cloud_cert_aws.png"
 ---
+
 
 A few weeks ago [I passed my AWS Certified Developer Associate (DVA-02) exam](https://domenicoluciani.com/2023/05/16/aws-certified-developer-associate-certification.html) and I thought it would have been nice to document how _heck_ I accomplished to do it on a first try, and of course provide some hints to whoever wants to 
 do the same. 🧑🏻‍💻👨🏻‍💻

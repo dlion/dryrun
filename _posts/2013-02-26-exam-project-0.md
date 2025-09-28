@@ -1,13 +1,12 @@
 ---
-title: "Exam Project 0"
-description: "I'm very fascinated about the possibility to give sight to a machine so for my final high school exam I made a computer vision project..."
+title: Exam Project 0
+description: I'm very fascinated about the possibility to give sight to a machine
+  so for my final high school exam I made a computer vision project...
 tags:
-  - Past
-  - Programming
-  - ComputerVision
-  - OpenCV
+- learning
 cover: "/assets/images/covers/eyes.jpg"
 ---
+
 
 I'm very fascinated about the possibility to give sight to a machine so for my final high school exam I made a computer vision project...
 

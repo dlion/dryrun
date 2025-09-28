@@ -1,10 +1,14 @@
 ---
-title: "Distributed Tracing"
-description: "Recently I've seen a thread on Twitter regarding distributed tracing systems. I recognise that sometimes it's an underestimated topic, so I thought to write a short and…"
+title: Distributed Tracing
+description: Recently I've seen a thread on Twitter regarding distributed tracing
+  systems. I recognise that sometimes it's an underestimated topic, so I thought to
+  write a short and…
 tags:
-  - Programming
+- devops
+- engineering
 cover: "/assets/images/covers/distributed-tracing.png"
 ---
+
 
 Recently I've seen a thread on Twitter regarding distributed tracing systems. I recognise that sometimes it's an underestimated topic, so I thought to write a short and introductory article about it...
 

@@ -1,11 +1,12 @@
 ---
-title: "Hacktoberfest 2019"
-description: "My usual post of the year about the Hacktoberfest is back! Even this year I participated in it and gained some swags and an amazing t-shirt ~"
+title: Hacktoberfest 2019
+description: My usual post of the year about the Hacktoberfest is back! Even this
+  year I participated in it and gained some swags and an amazing t-shirt ~
 tags:
-  - Programming
-  - Life
+- personal
 cover: "/assets/images/covers/hacktoberfest_19.png"
 ---
+
 
 My usual post of the year about the Hacktoberfest is back! Even this year I participated in it and gained some swags and an amazing t-shirt ~
 

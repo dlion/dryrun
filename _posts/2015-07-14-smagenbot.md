@@ -1,12 +1,13 @@
 ---
-title: "SmagenBot"
-description: "I use Telegram, whatsapp alternative messaging application, it contains more features than whatsapp and many benefits, one of these is the possibility to create bots and to try it…"
+title: SmagenBot
+description: I use Telegram, whatsapp alternative messaging application, it contains
+  more features than whatsapp and many benefits, one of these is the possibility to
+  create bots and to try it…
 tags:
-  - Past
-  - Programming
-  - Node
+- engineering
 cover: "/assets/images/covers/hal.jpg"
 ---
+
 
 I use Telegram, whatsapp alternative messaging application, it contains more features than whatsapp and many benefits, one of these is the possibility to create bots and to try it I decided to make one just for fun.
 

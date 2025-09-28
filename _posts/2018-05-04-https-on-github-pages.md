@@ -1,10 +1,12 @@
 ---
-title: "Full HTTPS on your Github pages, for free"
-description: "From today this blog is full encrypted by a full SSL protocol, for free. How?"
+title: Full HTTPS on your Github pages, for free
+description: From today this blog is full encrypted by a full SSL protocol, for free.
+  How?
 tags:
-  - Security
+- security
 cover: "/assets/images/covers/letsencrypt.png"
 ---
+
 
 From today this blog is full encrypted by a full SSL protocol, for free. How?
 

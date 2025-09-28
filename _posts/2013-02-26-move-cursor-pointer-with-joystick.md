@@ -1,12 +1,13 @@
 ---
-title: "Move the cursor pointer with a joystick"
-description: "I found a cool library online to interface my pc with any usb joystick I have in my house... so why not to move my cursor pointer with a joystick ?"
+title: Move the cursor pointer with a joystick
+description: I found a cool library online to interface my pc with any usb joystick
+  I have in my house... so why not to move my cursor pointer with a joystick ?
 tags:
-  - Past
-  - Electronics
-  - Programming
+- hardware
+- tutorials
 cover: "/assets/images/covers/joystick.png"
 ---
+
 
 I found a cool library online to interface my pc with any usb joystick I have in my house... so why not to move my cursor pointer with a joystick ?
 

@@ -77,6 +77,16 @@ layout: default
 
   <footer class="post-footer">
     <nav class="post-actions" aria-label="Post meta links">
+      {% if page.tags and page.tags != empty %}
+        <div class="actions-group post-tags">
+          <span class="label">Tags</span>
+          {% assign tags_sorted = page.tags | sort_natural %}
+          {% for t in tags_sorted %}
+            {% assign slug = t | slugify %}
+            <a class="tag" href="{{ '/tags/?t=' | append: slug | relative_url }}">#{{ t }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
       {% if page.hn_url or page.reddit_url %}
         <div class="actions-group">
           <span class="label">Discuss</span>

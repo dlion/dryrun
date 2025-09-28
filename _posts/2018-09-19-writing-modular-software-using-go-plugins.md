@@ -1,11 +1,12 @@
 ---
-title: "Writing modular software using Go plugins"
-description: "The 1.8 version of Go bring with it the ability to writing modular software using plugins, how?"
+title: Writing modular software using Go plugins
+description: The 1.8 version of Go bring with it the ability to writing modular software
+  using plugins, how?
 tags:
-  - Programming
-  - Golang
+- engineering
 cover: "/assets/images/covers/gopher2.jpg"
 ---
+
 
 The 1.8 version of Go bring with it the ability to writing modular software using plugins, how?
 

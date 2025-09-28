@@ -1,13 +1,13 @@
 ---
-title: "Exam Project Part One"
-description: "In the previous article we saw a little library to semplify my work, today I'm going to talk about a software that allows to track any color and at the same time tell other…"
+title: Exam Project Part One
+description: In the previous article we saw a little library to semplify my work,
+  today I'm going to talk about a software that allows to track any color and at the
+  same time tell other…
 tags:
-  - Past
-  - Programming
-  - ComputerVision
-  - OpenCV
+- learning
 cover: "/assets/images/covers/roboteyes1.png"
 ---
+
 
 [In the previous article we saw a little library to semplify my work](https://domenicoluciani.com/2013/02/26/exam-project-prelude.html), today I'm going to talk about a software that allows to track any color and at the same time
 tell other softwares which colour we have chosen

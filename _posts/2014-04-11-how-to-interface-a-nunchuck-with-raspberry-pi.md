@@ -1,14 +1,14 @@
 ---
-title: "How to interface a nunchuck with raspberry pi"
-description: "Walking around the city I found a cheap nunchuck and obviously I felt the need to do something. This time I chose to interface my raspberry pi with it. Let's see how!"
+title: How to interface a nunchuck with raspberry pi
+description: Walking around the city I found a cheap nunchuck and obviously I felt
+  the need to do something. This time I chose to interface my raspberry pi with it.
+  Let's see how!
 tags:
-  - Past
-  - Programming
-  - Nunchuck
-  - RaspberryPi
-  - Electronics
+- tutorials
+- hardware
 cover: "/assets/images/covers/nunchuck.jpg"
 ---
+
 
 Walking around the city I found a cheap nunchuck and obviously I felt the need to do something. This time I chose to interface my raspberry pi with it.   
 Let's see how!

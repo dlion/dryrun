@@ -1,10 +1,13 @@
 ---
-title: "Stairway to vim"
-description: "Today I started to work on a Scala project, I spend most of my time using vim (or in this case neovim) so I started to looking for plugins to write Scala using [neo]vim."
+title: Stairway to vim
+description: Today I started to work on a Scala project, I spend most of my time using
+  vim (or in this case neovim) so I started to looking for plugins to write Scala
+  using [neo]vim.
 tags:
-  - Programming
+- engineering
 cover: "/assets/images/covers/scala.png"
 ---
+
 
 Today I started to work on a [Scala project](https://scala-lang.org/), I spend most of my time using vim (or in this case neovim) so I started to 
 looking for plugins to write Scala using [neo]vim.

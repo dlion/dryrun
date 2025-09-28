@@ -1,10 +1,13 @@
 ---
-title: "How to sync your Obsidian vault on your Android"
-description: "I recently moved from Notion to Obsidian and one big problem I've had to face was how to sync my desktop instance with my android mobile one without having a paid plan on…"
+title: How to sync your Obsidian vault on your Android
+description: I recently moved from Notion to Obsidian and one big problem I've had
+  to face was how to sync my desktop instance with my android mobile one without having
+  a paid plan on…
 tags:
-  - Life
+- tutorials
 cover: "/assets/images/covers/obsidian_sync.png"
 ---
+
 
 I recently [moved from Notion to Obsidian](https://domenicoluciani.com/2021/12/17/why-did-i-switch-from-notion-to-obsidian.html) and one big problem I've had to face was how to sync my desktop instance with my android mobile one without having a paid plan on Obsidian.   
 After some researches, I discovered how to do it smoothly...

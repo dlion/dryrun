@@ -1,11 +1,13 @@
 ---
-title: "How to show useful stats about your open source activities on your Github profile"
-description: "I've finally found the time to customise my Github's profile. It shows some interesting stats about my activities, without any external browser extension, how?"
+title: How to show useful stats about your open source activities on your Github profile
+description: I've finally found the time to customise my Github's profile. It shows
+  some interesting stats about my activities, without any external browser extension,
+  how?
 tags:
-  - Programming
-  - Life
+- tutorials
 cover: "/assets/images/covers/github_stats.png"
 ---
+
 
 I've finally found the time to customise my Github's profile. It shows some interesting stats about my activities, without any external browser extension, how?
 

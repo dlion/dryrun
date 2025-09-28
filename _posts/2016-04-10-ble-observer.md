@@ -1,15 +1,14 @@
 ---
-title: "BLE NUCLEO observer"
-description: "For academic purposes I have to work with BLE, a new technology often used nowadays, with a NUCLEO-F401RE board and the NUCLEO-IDB04A1 BLE extension board by ST"
+title: BLE NUCLEO observer
+description: For academic purposes I have to work with BLE, a new technology often
+  used nowadays, with a NUCLEO-F401RE board and the NUCLEO-IDB04A1 BLE extension board
+  by ST
 tags:
-  - Programming
-  - Electronics
-  - Nucleo
-  - MBED
-  - ST
-  - BLE
+- hardware
+- tutorials
 cover: "/assets/images/covers/observer.jpg"
 ---
+
 
 For academic purposes I have to work with BLE, a new technology often used nowadays, with a NUCLEO-F401RE board and the NUCLEO-IDB04A1 BLE extension board by ST
 

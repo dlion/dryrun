@@ -1,10 +1,13 @@
 ---
-title: "May 2018 - Bookmarks"
-description: "* SOLID Design principles : Software architecture, design and coding * Understanding SOLID Principles: Open Closed Principle * Lesser-Known Features of Go Test - Splice *…"
+title: May 2018 - Bookmarks
+description: "* SOLID Design principles : Software architecture, design and coding
+  * Understanding SOLID Principles: Open Closed Principle * Lesser-Known Features
+  of Go Test - Splice *…"
 tags:
-  - Bookmarks
+- learning
 cover: "/assets/images/covers/bookmark.png"
 ---
+
 
 * [SOLID Design principles : Software architecture, design and coding](http://marchoeijmans.blogspot.com/2012/05/design-principles.html)
 * [Understanding SOLID Principles: Open Closed Principle](https://codeburst.io/understanding-solid-principles-open-closed-principle-e2b588b6491f)

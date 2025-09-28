@@ -1,10 +1,13 @@
 ---
-title: "How to mock with Jest and Typescript"
-description: "As an Extreme Programmer I used to jumping often into different engagements, each of them has challenges I need to overcome and problems I need to solve. This time I jumped into…"
+title: How to mock with Jest and Typescript
+description: As an Extreme Programmer I used to jumping often into different engagements,
+  each of them has challenges I need to overcome and problems I need to solve. This
+  time I jumped into…
 tags:
-  - Programming
+- tutorials
 cover: "/assets/images/covers/mock_typescript.png"
 ---
+
 
 As an Extreme Programmer I used to jumping often into different engagements, each of them has challenges I need to overcome and problems I need to solve.   
 This time I jumped into an engagement with a legacy codebase composed mainly by AWS lambdas written in Typescript. Language and technology I've never used before.   

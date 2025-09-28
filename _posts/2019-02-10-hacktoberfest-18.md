@@ -1,11 +1,12 @@
 ---
-title: "Hacktoberfest 2018"
-description: "Last year, as the previous one I partecipated to the Hacktoberfest and of course I received a lot of swag, do you want it too? ~"
+title: Hacktoberfest 2018
+description: Last year, as the previous one I partecipated to the Hacktoberfest and
+  of course I received a lot of swag, do you want it too? ~
 tags:
-  - Programming
-  - Life
+- personal
 cover: "/assets/images/covers/hacktoberfest_18.jpg"
 ---
+
 
 Last year, as the previous one I partecipated to the Hacktoberfest and of course I received **a lot** of swag, do you want it too? ~
 

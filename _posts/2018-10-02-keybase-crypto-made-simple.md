@@ -1,11 +1,12 @@
 ---
-title: "Keybase - Crypto made simple"
-description: "For years cryptography was considered like a witchcraft, until now! Let's see how Keybase made it."
+title: Keybase - Crypto made simple
+description: For years cryptography was considered like a witchcraft, until now! Let's
+  see how Keybase made it.
 tags:
-  - Security
-  - Life
+- security
 cover: "/assets/images/covers/crypto.png"
 ---
+
 
 For years cryptography was considered like a witchcraft, until now! Let's see how Keybase made it.
 

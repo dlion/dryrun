@@ -1,10 +1,15 @@
 ---
-title: "Create a DNS Resolver with Golang"
-description: "Following the previous post about creating an Application Layer Load Balancer, today I'm going to share my journey about another challenge I took and completed: Create a simple…"
+title: Create a DNS Resolver with Golang
+description: 'Following the previous post about creating an Application Layer Load
+  Balancer, today I''m going to share my journey about another challenge I took and
+  completed: Create a simple…'
 tags:
-  - Programming
+- devops
+- engineering
+- tutorials
 cover: "/assets/images/covers/dns.png"
 ---
+
 
 Following the previous post about [creating an Application Layer Load Balancer](https://domenicoluciani.com/2024/02/12/creating-an-application-layer-load-balancer.html), today I'm going to share my journey about another challenge I took and completed:
 **Create a simple DNS Resolver with Go**, let's go! 🚀

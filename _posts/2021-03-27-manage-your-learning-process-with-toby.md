@@ -1,10 +1,13 @@
 ---
-title: "Manage your learning process with Toby"
-description: "As a greedy learner, I used to find myself full of bookmarks of stuff I want to read or watch. I've never had a good place to keep all the things I read/watched until I found Toby."
+title: Manage your learning process with Toby
+description: As a greedy learner, I used to find myself full of bookmarks of stuff
+  I want to read or watch. I've never had a good place to keep all the things I read/watched
+  until I found Toby.
 tags:
-  - Life
+- learning
 cover: "/assets/images/covers/toby.png"
 ---
+
 
 As a greedy learner, I used to find myself full of bookmarks of stuff I want to read or watch. I've never had a good place to keep all the things I read/watched until I found Toby.
 

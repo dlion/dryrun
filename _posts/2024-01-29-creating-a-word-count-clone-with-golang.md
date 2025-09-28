@@ -1,10 +1,14 @@
 ---
-title: "Create a WC clone with Golang"
-description: "I've been using Golang in the past months, and I was very happy about it, this language makes me feel entertained and productive and the same time. Studying for me is a lifelong…"
+title: Create a WC clone with Golang
+description: I've been using Golang in the past months, and I was very happy about
+  it, this language makes me feel entertained and productive and the same time. Studying
+  for me is a lifelong…
 tags:
-  - Programming
+- engineering
+- tutorials
 cover: "/assets/images/covers/wc.png"
 ---
+
 
 I've been using Golang in the past months, and I was very happy about it, this language makes me feel entertained and productive and the same time. Studying for me is a lifelong journey, and with that in mind, I decided to keep using it for another challenge/project that I found quite simple but interesting.   
 You'll see! I spent some of my free time on it and today, I'd like to share with you which route I took to accomplish it.   

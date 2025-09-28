@@ -1,10 +1,14 @@
 ---
-title: "Hello VMware"
-description: "Two years ago I completely changed my life joining Thoughtworks. I moved abroad (Spain) and I grew so much in so many levels that it's difficult to explain it..."
+title: Hello VMware
+description: Two years ago I completely changed my life joining Thoughtworks. I moved
+  abroad (Spain) and I grew so much in so many levels that it's difficult to explain
+  it...
 tags:
-  - Life
+- personal
+- work
 cover: "/assets/images/covers/tanzu.png"
 ---
+
 
 Two years ago I completely changed my life joining [Thoughtworks](https://www.thoughtworks.com/). I moved abroad (Spain) and I grew so much in so many levels that it's difficult to explain it...
 

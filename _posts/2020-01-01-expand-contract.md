@@ -1,10 +1,13 @@
 ---
-title: "Migrate a shared database with the expand/contract pattern"
-description: "Migrating a database is one of the most sensitive things that can happen to do at some point in our career, sometimes it is easy, sometimes it is not. Let's see how to use the…"
+title: Migrate a shared database with the expand/contract pattern
+description: Migrating a database is one of the most sensitive things that can happen
+  to do at some point in our career, sometimes it is easy, sometimes it is not. Let's
+  see how to use the…
 tags:
-  - Programming
+- engineering
 cover: "/assets/images/covers/expand_contract.png"
 ---
+
 
 Migrating a database is one of the most sensitive things that can happen to do at some point in our career, sometimes it is easy, sometimes it is not. Let's see how to use the expand/contract pattern to be able to do it in both cases ~
 

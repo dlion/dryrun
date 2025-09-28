@@ -1,10 +1,14 @@
 ---
-title: "Safeguarding Software: Embracing Security Design Principles in Software Development"
-description: "In today's digital landscape, developing software with a security-oriented mindset is no longer an option – it's a top priority. I've had the opportunity to attend the Secure…"
+title: 'Safeguarding Software: Embracing Security Design Principles in Software Development'
+description: In today's digital landscape, developing software with a security-oriented
+  mindset is no longer an option – it's a top priority. I've had the opportunity to
+  attend the Secure…
 tags:
-  - Programming
+- security
+- devops
 cover: "/assets/images/covers/security-principles.png"
 ---
+
 
 In today's digital landscape, developing software with a security-oriented mindset is no longer an option – it's a top priority.   
 I've had the opportunity to attend the [Secure Software Development Fundamentals Course](https://training.linuxfoundation.org/training/developing-secure-software-lfd121/) by the [Open Source Security Foundation](https://openssf.org/), and I found it enlightening and a must for passionate Software Engineers.   

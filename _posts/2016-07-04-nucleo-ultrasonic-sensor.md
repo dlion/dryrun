@@ -1,17 +1,16 @@
 ---
-title: "Interfacing an ultrasonic sensor with NUCLEO board"
-description: "For academic purpose I have to interface the F401RE NUCLEO board with the HY-SRF05 ultrasonic sensor, it uses the sonar principle to allow to measure the distance to an obstacle."
+title: Interfacing an ultrasonic sensor with NUCLEO board
+description: For academic purpose I have to interface the F401RE NUCLEO board with
+  the HY-SRF05 ultrasonic sensor, it uses the sonar principle to allow to measure
+  the distance to an obstacle.
 tags:
-  - Programming
-  - Electronics
-  - Nucleo
-  - MBED
-  - ST
-  - Ultrasonic
-  - Sensor
+- devops
+- hardware
+- tutorials
 cover: "/assets/images/covers/ultrasonic.jpg"
 excerpt_separator: "<!--more-->"
 ---
+
 
 For academic purpose I have to interface the F401RE NUCLEO board with the HY-SRF05 ultrasonic sensor, it uses the sonar principle to allow to measure the distance to an obstacle.
 

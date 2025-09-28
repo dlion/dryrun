@@ -1,10 +1,13 @@
 ---
-title: "Stop the data mess with the data mesh"
-description: "One of the hottest topics of the moment in Big Data is undoubtedly the Data Mesh, but what is it? Why is this better than the solutions we had before? Do we need it? Should we…"
+title: Stop the data mess with the data mesh
+description: One of the hottest topics of the moment in Big Data is undoubtedly the
+  Data Mesh, but what is it? Why is this better than the solutions we had before?
+  Do we need it? Should we…
 tags:
-  - Programming
+- engineering
 cover: "/assets/images/covers/data_mesh.png"
 ---
+
 
 One of the hottest topics of the moment in Big Data is undoubtedly the Data Mesh, but what is it? Why is this better than the solutions we had before? Do we need it? Should we adopt it?
 

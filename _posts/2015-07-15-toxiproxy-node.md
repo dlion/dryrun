@@ -1,12 +1,12 @@
 ---
-title: "ToxiProxy node client"
-description: "I saw on github a nice tool to test my applications under certain networks and system condition to prove that my tests never fail..."
+title: ToxiProxy node client
+description: I saw on github a nice tool to test my applications under certain networks
+  and system condition to prove that my tests never fail...
 tags:
-  - Past
-  - Programming
-  - Node
+- engineering
 cover: "/assets/images/covers/comment.jpg"
 ---
+
 
 I saw on github a nice tool to test my applications under certain networks and system condition to prove that my tests never fail...
 

@@ -1,13 +1,13 @@
 ---
-title: "Exam Project Prelude"
-description: "In the previous article I introduced you my exam project about computer vision, now I'm going to explain to you how it works but first let me introduce a small header file I wrote…"
+title: Exam Project Prelude
+description: In the previous article I introduced you my exam project about computer
+  vision, now I'm going to explain to you how it works but first let me introduce
+  a small header file I wrote…
 tags:
-  - Past
-  - Programming
-  - ComputerVision
-  - OpenCV
+- learning
 cover: "/assets/images/covers/roboteye.png"
 ---
+
 
 In the [previous article](https://domenicoluciani.com/2013/02/26/exam-project-0.html) I introduced you my exam project about computer vision, now I'm going to explain to you how it works but first let me introduce a small header file I wrote to reuse useful functions and structs.
 

@@ -1,10 +1,13 @@
 ---
-title: "How to create an always up to date alias for your Mastodon account"
-description: "Mastodon is a new hot-trend topic, so I spent some time trying to wrap my head around it. The decentralisation is an exciting part of Mastodon; if tomorrow I don't like the…"
+title: How to create an always up to date alias for your Mastodon account
+description: Mastodon is a new hot-trend topic, so I spent some time trying to wrap
+  my head around it. The decentralisation is an exciting part of Mastodon; if tomorrow
+  I don't like the…
 tags:
-  - Life
+- tutorials
 cover: "/assets/images/covers/mastodon.png"
 ---
+
 
 Mastodon is a new hot-trend topic, so I spent some time trying to wrap my head around it.   
 The decentralisation is an exciting part of Mastodon; if tomorrow I don't like the instance where my account resides anymore, I can always switch to another instance and bring all my data seamlessly. It's fantastic, except that now it's like having another account with a different address, so I need to share it with my "audience" again and again.   

@@ -1,13 +1,13 @@
 ---
-title: "Workflowy, how to change a theme with an hack"
-description: "I was advised about a nice site that allows to organize my thoughts using many hierarchical lists, every programmer should try it!"
+title: Workflowy, how to change a theme with an hack
+description: I was advised about a nice site that allows to organize my thoughts using
+  many hierarchical lists, every programmer should try it!
 tags:
-  - Past
-  - Programming
-  - Hacking
-  - Security
+- security
+- tutorials
 cover: "/assets/images/covers/mrobot.png"
 ---
+
 
 I was advised about a nice site that allows to organize my thoughts using many hierarchical lists, every programmer should try it!
 

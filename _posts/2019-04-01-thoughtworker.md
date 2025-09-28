@@ -1,10 +1,12 @@
 ---
-title: "ThoughtWorker"
-description: "Finally,, I found time to write this post, I want to say it to the world: I moved abroad."
+title: ThoughtWorker
+description: 'Finally,, I found time to write this post, I want to say it to the world:
+  I moved abroad.'
 tags:
-  - Life
+- personal
 cover: "/assets/images/covers/thoughtworks.jpg"
 ---
+
 
 Finally,, I found time to write this post, I want to say it to the world: I moved abroad.
 

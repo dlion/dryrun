@@ -1,10 +1,12 @@
 ---
-title: "Sviluppatori Italiani all'estero - coffeeBreak with ItalianCoders"
-description: "Today I've talked with ItalianCoders about my experience abroad as a Software Developer. With me other five developers who are working around the world, talking about their…"
+title: Sviluppatori Italiani all'estero - coffeeBreak with ItalianCoders
+description: Today I've talked with ItalianCoders about my experience abroad as a
+  Software Developer. With me other five developers who are working around the world,
+  talking about their…
 tags:
-  - Life
-  - Programming
+- personal
 ---
+
 
 Today I've talked with [ItalianCoders](https://italiancoders.it/) about my experience abroad as a Software Developer.
 With me other five developers who are working around the world, talking about their experiences and why/how they decided to move abroad.

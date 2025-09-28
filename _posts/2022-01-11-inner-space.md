@@ -1,10 +1,13 @@
 ---
-title: "InnerSpace 🚀"
-description: "This year one of my annual resolutions was to be more present online. I want to be more visible and share more content. I want to create more articles and share them with more…"
+title: "InnerSpace \U0001F680"
+description: This year one of my annual resolutions was to be more present online.
+  I want to be more visible and share more content. I want to create more articles
+  and share them with more…
 tags:
-  - Life
+- personal
 cover: "/assets/images/covers/innerspace.png"
 ---
+
 
 This year one of my annual resolutions was to be more present online.   
 I want to be more visible and share more content.   

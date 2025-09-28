@@ -1,10 +1,12 @@
 ---
-title: "You are doing your team retrospective wrong"
-description: "A team retrospective is not just another useless meeting, and if you feel so, it means you are doing it wrong, and this article is for you."
+title: You are doing your team retrospective wrong
+description: A team retrospective is not just another useless meeting, and if you
+  feel so, it means you are doing it wrong, and this article is for you.
 tags:
-  - Programming
+- work
 cover: "/assets/images/covers/go_generics.jpg"
 ---
+
 
 A team retrospective is not just another useless meeting, and if you feel so, it means you are doing it wrong, and this article is for you.
 
