@@ -132,8 +132,10 @@ about:
       year: 2013
     - label: Barcelona, ES
       year: 2019
-    - label: Málaga, ES
+    - label: Gran Canaria, ES
       year: 2022
+    - label: Málaga, ES
+      year: 2023
   github:
     username: dlion
     show_metrics: true
@@ -141,26 +143,11 @@ about:
   avatar_pos: 50% 50%    # default object-position for avatar (x y)
   # Places you've been / lived — configurable
   places:
-    - name: Rome
-      country: IT
-      lat: 41.9028
-      lon: 12.4964
-      kind: visited
-    - name: Paris
-      country: FR
-      lat: 48.8566
-      lon: 2.3522
-      kind: visited
     - name: Barcelona
       country: ES
       lat: 41.3874
       lon: 2.1686
       kind: lived
-    - name: Madrid
-      country: ES
-      lat: 40.4168
-      lon: -3.7038
-      kind: visited
     - name: Málaga
       country: ES
       lat: 36.7213
@@ -202,6 +189,7 @@ about:
     - { name: Favignana,  country: IT, lat: 37.9360, lon: 12.3290, kind: visited }
     - { name: Siracusa,   country: IT, lat: 37.0755, lon: 15.2866, kind: visited }
     - { name: Marzamemi,  country: IT, lat: 36.7420, lon: 15.1020, kind: visited }
+    - {name: Rome, country: IT, lat: 41.9028, lon: 12.4964, kind: visited }
     # Malta
     - { name: Malta,      country: MT, lat: 35.8989, lon: 14.5146, kind: visited }
     # France / Spain / Portugal / Canary Islands
@@ -216,6 +204,8 @@ about:
     - { name: Granada,    country: ES, lat: 37.1773, lon: -3.5986, kind: visited }
     - { name: Córdoba,    country: ES, lat: 37.8882, lon: -4.7794, kind: visited }
     - { name: Almería,    country: ES, lat: 36.8340, lon: -2.4637, kind: visited }
+    - { name: Paris, country: FR, lat: 48.8566, lon: 2.3522, kind: visited }
+    - { name: Madrid, country: ES, lat: 40.4168, lon: -3.7038, kind: visited }
     # Morocco / Greece
     - { name: Marrakesh,  country: MA, lat: 31.6295, lon: -7.9811, kind: visited }
     - { name: Fes,        country: MA, lat: 34.0331, lon: -4.9995, kind: visited }
@@ -241,3 +231,35 @@ about:
     - { name: Tokyo,      country: JP, lat: 35.6762, lon: 139.6503, kind: visited }
     - { name: Kyoto,      country: JP, lat: 35.0116, lon: 135.7681, kind: visited }
     - { name: Osaka,      country: JP, lat: 34.6937, lon: 135.5023, kind: visited }
+    # Thailand / Indonesia / Morocco extras
+    - { name: Bangkok,    country: TH, lat: 13.7563, lon: 100.5018, kind: visited }
+    - { name: Krabi,      country: TH, lat: 8.0863,  lon: 98.9063,  kind: visited }
+    - { name: Phi Phi Islands, country: TH, lat: 7.7400, lon: 98.7770, kind: visited }
+    - { name: Ubud,       country: ID, lat: -8.5069, lon: 115.2625, kind: visited }
+    - { name: Nusa Penida,country: ID, lat: -8.7276, lon: 115.5444, kind: visited }
+    - { name: Uluwatu,    country: ID, lat: -8.8187, lon: 115.0884, kind: visited }
+    - { name: Lombok,     country: ID, lat: -8.5833, lon: 116.1167, kind: visited }
+    - { name: Canggu,     country: ID, lat: -8.6478, lon: 115.1385, kind: visited }
+    - { name: Kuta,       country: ID, lat: -8.7177, lon: 115.1696, kind: visited }
+    - { name: Chefchaouen,country: MA, lat: 35.1715, lon: -5.2697, kind: visited }
+    # Iberia + Gibraltar + Balearic
+    - { name: Gibraltar,  country: GI, lat: 36.1408, lon: -5.3536, kind: visited }
+    - { name: Santiago de Compostela, country: ES, lat: 42.8782, lon: -8.5448, kind: visited }
+    - { name: Ronda,      country: ES, lat: 36.7460, lon: -5.1612, kind: visited }
+    - { name: Toledo,     country: ES, lat: 39.8628, lon: -4.0273, kind: visited }
+    - { name: Ibiza,      country: ES, lat: 38.9067, lon: 1.4206,  kind: visited }
+    - { name: Mallorca,   country: ES, lat: 39.5696, lon: 2.6502,  kind: visited }
+    # Japan extra
+    - { name: Hiroshima,  country: JP, lat: 34.3853, lon: 132.4553, kind: visited }
+    # New set — avoiding duplicates of Marsiglia/Zurigo/Praga already present
+    - { name: Essaouira,  country: MA, lat: 31.5085, lon: -9.7595,  kind: visited }
+    - { name: New York,   country: US, lat: 40.7128, lon: -74.0060, kind: visited }
+    - { name: Asilah,     country: MA, lat: 35.4653, lon: -6.0349,  kind: visited }
+    - { name: Mont Saint-Michel, country: FR, lat: 48.6361, lon: -1.5115, kind: visited }
+    - { name: Munich,     country: DE, lat: 48.1351, lon: 11.5820,  kind: visited }
+    - { name: Vienna,     country: AT, lat: 48.2082, lon: 16.3738,  kind: visited }
+    - { name: Terezin,    country: CZ, lat: 50.5100, lon: 14.1500,  kind: visited }
+    - { name: Dresden,    country: DE, lat: 51.0504, lon: 13.7373,  kind: visited }
+    - { name: Tarragona,  country: ES, lat: 41.1189, lon: 1.2445,   kind: visited }
+    - { name: Sitges,     country: ES, lat: 41.2379, lon: 1.8059,   kind: visited }
+    - { name: Costa Brava,country: ES, lat: 41.7740, lon: 3.0309,   kind: visited }
