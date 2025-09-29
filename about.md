@@ -37,12 +37,9 @@ hide_progress: true
 ## Experience
 
 {% assign jobs = site.about.experience %}
-{% assign limit = site.about.timeline_limit | default: 3 %}
-{% assign first = jobs | slice: 0, limit %}
-{% assign rest = jobs | slice: limit, jobs.size %}
 
 <ol class="timeline">
-  {% for job in first %}
+  {% for job in jobs %}
   <li class="timeline-item">
     <div class="timeline-dot" aria-hidden="true"></div>
     <div class="timeline-body">
@@ -55,27 +52,6 @@ hide_progress: true
   </li>
   {% endfor %}
 </ol>
-
-{% if rest and rest.size > 0 %}
-<details class="timeline-more">
-  <summary>Earlier roles</summary>
-  <ol class="timeline">
-    {% for job in rest %}
-    <li class="timeline-item">
-      <div class="timeline-dot" aria-hidden="true"></div>
-      <div class="timeline-body">
-        <div class="timeline-head">
-          <h3><a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.role }}</a> · {{ job.org }}</h3>
-          <span class="timeline-when">{{ job.from }}–{{ job.to }}</span>
-        </div>
-        {% if job.summary %}<p>{{ job.summary }}</p>{% endif %}
-      </div>
-    </li>
-    {% endfor %}
-  </ol>
-</details>
-{% endif %}
-
 ---
 
 ## Places I’ve been

@@ -55,12 +55,7 @@
 .timeline-body p { margin: 4px 0 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
 /* Collapsed older roles */
-.timeline-more { margin-top: 6px; }
-.timeline-more > summary {
-  cursor: pointer; user-select: none; list-style: none; outline: none; 
-  color: var(--link); font-weight: 600; margin: 4px 0 6px;
-}
-.timeline-more > summary::-webkit-details-marker { display: none; }
+/* (Removed collapse + residences timeline per request) */
 
 @media (min-width: 720px) {
   .about-hero { grid-template-columns: 80px 1fr; align-items: center; }
@@ -108,6 +103,10 @@
   box-shadow: 0 16px 36px rgba(15,23,42,.08);
   margin: 12px 0 6px;
 }
+.pin-live { background: transparent !important; border: 0 !important; }
+.pin-live .live-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--live-color, #22c55e); display: block; position: relative; border: 2px solid #fff; box-shadow: 0 3px 10px rgba(15,23,42,.4); }
+.pin-live .live-dot::after { content: ""; position: absolute; inset: -8px; border: 2px solid var(--live-color, #22c55e); border-radius: 50%; opacity: .65; animation: pulse 1.8s ease-out infinite; }
+@keyframes pulse { 0% { transform: scale(.6); opacity: .75; } 100% { transform: scale(1.6); opacity: 0; } }
 .map-legend { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin: 4px 0 12px; color: var(--muted); }
 .map-legend .leg { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; vertical-align:middle; }
 .map-legend .leg.living { background:#22c55e; }

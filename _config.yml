@@ -109,24 +109,66 @@ about:
       alt: Azulejos wall in Lisbon
       pos: 50% 50%
   experience:
-    - org: VMware Tanzu Labs
+    - org: Deel
       role: Senior Software Engineer
+      from: 2025
+      to: present
+      url: https://www.deel.com/
+      summary: Senior Software Engineer focused on developer experience and platform reliability; Node.js on AWS.
+    - org: Qonto
+      role: Staff Backend Engineer
+      from: 2024
+      to: 2025
+      url: https://qonto.com/
+      summary: Led technical excellence and scaling; microservices in Go on AWS, Kafka, strong observability.
+    - org: VMware Tanzu Labs
+      role: Senior Agile Software Engineer · Tech Lead
       from: 2021
-      to: 2023
+      to: 2024
       url: https://tanzu.vmware.com/labs
-      summary: Built and coached teams delivering cloud‑native systems with XP practices.
+      summary: Tech lead across multiple engagements; XP (TDD, pairing, CI/CD). Contributed to Buildpacks (Go) as OSS engineer.
     - org: Thoughtworks
-      role: Software Engineer
+      role: Senior Software Engineer
       from: 2019
       to: 2021
       url: https://www.thoughtworks.com/
-      summary: Product engineering across domains; continuous delivery, testing, and data platforms.
-    - org: Various
-      role: Backend Engineer
-      from: 2013
+      summary: Product engineering for EU marketplaces/retailers with Go/Java; Azure; modernization and CD improvements.
+    - org: Claranet Italia
+      role: Software Engineer
+      from: 2017
       to: 2019
-      url: https://github.com/dlion
-      summary: Backend, infra, and OSS work across Go/JS/Rust.
+      url: https://www.claranet.com/
+      summary: Java payment wallet; Scala + Spark/Zeppelin for big‑data ingestion. Agile/TDD and pairing.
+    - org: Intesa Sanpaolo
+      role: Software Engineer
+      from: 2017
+      to: 2017
+      url: https://www.intesasanpaolo.com/
+      summary: Spring Boot microservices with focus on agile methods and security.
+    - org: STMicroelectronics
+      role: Software Engineer
+      from: 2016
+      to: 2016
+      url: https://www.st.com/
+      summary: Short‑term software engineering role in Palermo.
+    - org: Hyperion
+      role: Back‑End Lead Developer
+      from: 2014
+      to: 2016
+      url: 
+      summary: Node.js backend with PostgreSQL/Sequelize; led delivery and technical decisions.
+    - org: PanoramaFull
+      role: Web Developer
+      from: 2013
+      to: 2014
+      url: 
+      summary: Hybrid mobile apps (Intel XDK) and REST APIs in PHP/Elgg.
+    - org: Primafila
+      role: Full‑stack Developer
+      from: 2012
+      to: 2013
+      url: 
+      summary: Full‑stack web development in Palermo.
   journey:
     - label: Italy
       year: 2013
@@ -144,17 +186,17 @@ about:
   # Places you've been / lived — grouped by continent/country
   places:
     # EUROPE — Spain (incl. islands & territories)
-    - { name: Málaga,      country: ES, lat: 36.7213, lon: -4.4214,  kind: living }
+    - { name: Malaga,      country: ES, lat: 36.7213, lon: -4.4214,  kind: living }
     - { name: Barcelona,   country: ES, lat: 41.3874, lon: 2.1686,   kind: lived }
     - { name: Gran Canaria,country: ES, lat: 28.1248, lon: -15.4300, kind: lived }
     - { name: Madrid,      country: ES, lat: 40.4168, lon: -3.7038,  kind: visited }
-    - { name: Sevilla,     country: ES, lat: 37.3891, lon: -5.9845,  kind: visited }
-    - { name: Cádiz,       country: ES, lat: 36.5271, lon: -6.2886,  kind: visited }
+    - { name: Seville,     country: ES, lat: 37.3891, lon: -5.9845,  kind: visited }
+    - { name: Cadiz,       country: ES, lat: 36.5271, lon: -6.2886,  kind: visited }
     - { name: Ronda,       country: ES, lat: 36.7460, lon: -5.1612,  kind: visited }
     - { name: Toledo,      country: ES, lat: 39.8628, lon: -4.0273,  kind: visited }
-    - { name: A Coruña,    country: ES, lat: 43.3623, lon: -8.4115,  kind: visited }
+    - { name: A Coruna,    country: ES, lat: 43.3623, lon: -8.4115,  kind: visited }
     - { name: Granada,     country: ES, lat: 37.1773, lon: -3.5986,  kind: visited }
-    - { name: Córdoba,     country: ES, lat: 37.8882, lon: -4.7794,  kind: visited }
+    - { name: Cordoba,     country: ES, lat: 37.8882, lon: -4.7794,  kind: visited }
     - { name: Almería,     country: ES, lat: 36.8340, lon: -2.4637,  kind: visited }
     - { name: Tarragona,   country: ES, lat: 41.1189, lon: 1.2445,   kind: visited }
     - { name: Sitges,      country: ES, lat: 41.2379, lon: 1.8059,   kind: visited }
@@ -167,10 +209,10 @@ about:
 
     # EUROPE — Italy (incl. islands)
     - { name: Palermo,     country: IT, lat: 38.1157, lon: 13.3613,  kind: lived }
-    - { name: Milano,      country: IT, lat: 45.4642, lon: 9.1900,   kind: lived }
+    - { name: Milan,       country: IT, lat: 45.4642, lon: 9.1900,   kind: lived }
     - { name: Rome,        country: IT, lat: 41.9028, lon: 12.4964,  kind: visited }
-    - { name: Torino,      country: IT, lat: 45.0703, lon: 7.6869,   kind: visited }
-    - { name: Genova,      country: IT, lat: 44.4056, lon: 8.9463,   kind: visited }
+    - { name: Turin,       country: IT, lat: 45.0703, lon: 7.6869,   kind: visited }
+    - { name: Genoa,       country: IT, lat: 44.4056, lon: 8.9463,   kind: visited }
     - { name: Padova,      country: IT, lat: 45.4064, lon: 11.8768,  kind: visited }
     - { name: Venezia,     country: IT, lat: 45.4408, lon: 12.3155,  kind: visited }
     - { name: Ferrara,     country: IT, lat: 44.8381, lon: 11.6198,  kind: visited }
@@ -179,13 +221,13 @@ about:
     - { name: Lucca,       country: IT, lat: 43.8430, lon: 10.5080,  kind: visited }
     - { name: Pisa,        country: IT, lat: 43.7228, lon: 10.4017,  kind: visited }
     - { name: Bari,        country: IT, lat: 41.1171, lon: 16.8719,  kind: visited }
-    - { name: Napoli,      country: IT, lat: 40.8518, lon: 14.2681,  kind: visited }
+    - { name: Naples,      country: IT, lat: 40.8518, lon: 14.2681,  kind: visited }
     - { name: Favignana,   country: IT, lat: 37.9360, lon: 12.3290,  kind: visited }
     - { name: Trapani,     country: IT, lat: 38.0176, lon: 12.5360,  kind: visited }
     - { name: Ustica,      country: IT, lat: 38.7080, lon: 13.1890,  kind: visited }
     - { name: Lipari,      country: IT, lat: 38.4710, lon: 14.9540,  kind: visited }
     - { name: Catania,     country: IT, lat: 37.5079, lon: 15.0830,  kind: visited }
-    - { name: Siracusa,    country: IT, lat: 37.0755, lon: 15.2866,  kind: visited }
+    - { name: Syracuse,    country: IT, lat: 37.0755, lon: 15.2866,  kind: visited }
     - { name: Marzamemi,   country: IT, lat: 36.7420, lon: 15.1020,  kind: visited }
 
     # EUROPE — Portugal
@@ -211,7 +253,7 @@ about:
     - { name: Vienna,      country: AT, lat: 48.2082, lon: 16.3738,  kind: visited }
     - { name: Zurich,      country: CH, lat: 47.3769, lon: 8.5417,   kind: visited }
     - { name: Prague,      country: CZ, lat: 50.0755, lon: 14.4378,  kind: visited }
-    - { name: Terezín,     country: CZ, lat: 50.5100, lon: 14.1500,  kind: visited }
+    - { name: Terezin,     country: CZ, lat: 50.5100, lon: 14.1500,  kind: visited }
     - { name: Budapest,    country: HU, lat: 47.4979, lon: 19.0402,  kind: visited }
     - { name: Bucharest,   country: RO, lat: 44.4268, lon: 26.1025,  kind: visited }
     - { name: Stockholm,   country: SE, lat: 59.3293, lon: 18.0686,  kind: visited }
