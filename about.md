@@ -68,3 +68,22 @@ hide_progress: true
 <script>
   window.ABOUT_PLACES = {{ site.about.places | jsonify }};
 </script>
+
+---
+
+## GitHub Stats
+{% if site.about.github.show_metrics and site.about.github.username %}
+{% assign gh = site.about.github.username %}
+<div class="gh-stack">
+  <div class="gh-row gh-two">
+    <img class="gh-img" src="https://raw.githubusercontent.com/{{ gh }}/{{ gh }}/main/metrics.svg" alt="GitHub overview metrics" loading="lazy">
+    <img class="gh-img" src="https://raw.githubusercontent.com/{{ gh }}/{{ gh }}/main/calendar.svg" alt="GitHub contributions calendar" loading="lazy">
+  </div>
+  <div class="gh-row gh-center">
+    <img class="gh-img" src="https://raw.githubusercontent.com/{{ gh }}/{{ gh }}/main/languages.svg" alt="GitHub languages breakdown" loading="lazy">
+  </div>
+  
+</div>
+{% else %}
+<p>Enable this by setting <code>about.github.show_metrics: true</code> and your <code>username</code> in <code>_config.yml</code>.</p>
+{% endif %}

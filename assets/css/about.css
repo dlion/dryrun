@@ -113,3 +113,20 @@
 .map-legend .leg.lived { background:#f59e0b; }
 .map-legend .leg.visited { background:#60a5fa; }
 .map-legend .sep { opacity:.6; }
+
+/* GitHub stats grid */
+/* GitHub metrics – stacked images at native size */
+.gh-stack { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+.gh-row { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: start; }
+@media (min-width: 820px) {
+  .gh-row { grid-template-columns: 1fr 1fr; }
+  .gh-row.gh-two .gh-img {
+    height: clamp(220px, 30vw, 320px);
+    object-fit: contain;
+    object-position: 50% 0%; /* keep image content aligned to the top */
+  }
+}
+.gh-center { display: flex; justify-content: center; }
+.gh-img { display: block; width: auto; max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 14px; background: color-mix(in srgb, var(--surface-1) 96%, transparent); box-shadow: 0 16px 36px rgba(15,23,42,.08); }
+.gh-row .gh-img { width: 100%; }
+.gh-center .gh-img { width: auto; max-width: 100%; }
