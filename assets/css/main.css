@@ -1014,6 +1014,35 @@ p { margin: .9em 0; color: var(--text); }
   color: color-mix(in srgb, var(--muted) 55%, var(--link) 45%);
 }
 .post-actions .rss:hover { color: var(--link); }
+
+/* On small screens: put RSS centered on its own row above the badge */
+@media (max-width: 760px) {
+  .post-actions .rss {
+    margin-left: 0;
+    flex: 0 0 100%;
+    text-align: center;
+    display: block;
+    margin-top: 8px;
+  }
+}
+
+/* Human-written badge */
+.human-badge { margin-top: 24px; display: flex; justify-content: center; }
+.human-badge-link { display: inline-flex; align-items: center; }
+.human-badge-img {
+  height: 28px; /* balanced size; scalable on wider screens */
+  width: auto;
+  opacity: .9;
+  transition: opacity .15s ease, transform .15s ease;
+}
+@media (min-width: 780px) { .human-badge-img { height: 30px; } }
+.human-badge-link:hover .human-badge-img { opacity: 1; transform: translateY(-1px); }
+
+/* Theme switching for badge */
+.human-badge-dark { display: none; }
+html[data-theme='dark'] .human-badge-light { display: none; }
+html[data-theme='dark'] .human-badge-dark { display: inline-block; }
+
 /* Search */
 .search h1 { margin-top: 0; }
 .search-input {
