@@ -172,19 +172,9 @@ about:
       to: 2013
       url: 
       summary: Full‑stack web development in Palermo.
-  journey:
-    - label: Italy
-      year: 2013
-    - label: Barcelona, ES
-      year: 2019
-    - label: Gran Canaria, ES
-      year: 2022
-    - label: Málaga, ES
-      year: 2023
   github:
     username: dlion
     show_metrics: true
-  timeline_limit: 3      # number of jobs shown before “Earlier roles”
   avatar_pos: 50% 50%    # default object-position for avatar (x y)
   # Places you've been / lived — grouped by continent/country
   places:
