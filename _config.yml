@@ -27,6 +27,7 @@ human_badge_link: "https://notbyai.fyi/"
 nav:
   - { title: Home,   url: "/" }
   - { title: About,  url: "/about/" }
+  - { title: Now, url: "/now/" }
   - { title: Tags,   url: "/tags/" }
   - { title: Search, url: "/search/" }
 
