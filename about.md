@@ -16,6 +16,10 @@ hide_progress: true
   <img class="about-avatar" src="{{ site.author_avatar | relative_url }}" alt="{{ site.author }}" width="72" height="72" style="object-position: {{ avatar_pos }};">
   <div class="about-intro">
     <h2 class="about-name">{{ site.author }}</h2>
+    {% if site.about.tagline %}
+    {% assign tl = site.about.tagline | newline_to_br %}
+    <p class="about-tagline">{{ tl }}</p>
+    {% endif %}
     <ul class="about-meta">
       {% if site.about.location %}<li><span class="emoji">📍</span>{{ site.about.location }}</li>{% endif %}
     </ul>

@@ -1,6 +1,6 @@
 # ——— Site identity ———
 title: "Domenico Luciani"
-description: "Software engineer notes on Go, distributed systems, infra, and pragmatic engineering."
+description: "Thoughts about life, tech and everything"
 
 # For project sites: url is the domain root, baseurl is the repo path
 url: "https://dlion.github.io"
@@ -84,33 +84,29 @@ include:
 hero:
   image: https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg
   kicker: Domenico Luciani
-  title: Pragmatic engineering notes on Go, infra, and the systems we ship.
-  subtext: >-
-    Field notes, debugging war stories, and practical trade-offs for distributed systems engineers.
-    No hype—just the lessons learned building reliable software.
-  cta_label: Follow via RSS
-  cta_url: /feed.xml
+  title: Tech Garden 🪴
 
 # ——— About page config ———
 about:
-  tagline: >-
-    Backend engineer and pragmatic builder. 10+ years shipping reliable
-    software; fan of small, sharp tools and clear trade‑offs.
-  location: Málaga, ES (remote)
+  tagline: |-
+    Passionate programmer, 🧑🏻‍💻
+    with 10+ years of experience as a software engineer, including 8 years as eXtreme programmer 🪂🤸
+    Working remotely from Spain. 🛰️ 🇪🇸
+    Open Source enthusiast and greedy learner. 📚🧑🏻‍🏫🧑🏻‍🎓
+    Focusing on software craftsmanship, and product engineering. 🪚🔨📐
+  location: Málaga, ES 🇪🇸
   highlights:
     - Ex‑VMware Tanzu Labs
     - Ex‑Thoughtworks
-    - Open source enthusiast
-    - Greedy learner
   photos:
     - src: /assets/images/about/trip1.png
-      alt: Ocean cliffs at sunset
+      alt: Cabo da Roca
       pos: 50% 50%
     - src: /assets/images/about/trip2.png
-      alt: Desert dunes
+      alt: Desert
       pos: 50% 10%   # show a bit more headroom for portrait framing
     - src: /assets/images/about/trip3.png
-      alt: Azulejos wall in Lisbon
+      alt: Lisbon
       pos: 50% 50%
   experience:
     - org: Deel
@@ -154,25 +150,25 @@ about:
       from: 2016
       to: 2016
       url: https://www.st.com/
-      summary: Short‑term software engineering role in Palermo.
+      summary: Part-time software engineering role.
     - org: Hyperion
-      role: Back‑End Lead Developer
+      role: Back-end Lead Developer
       from: 2014
       to: 2016
       url: 
       summary: Node.js backend with PostgreSQL/Sequelize; led delivery and technical decisions.
     - org: PanoramaFull
-      role: Web Developer
+      role: Full-stack and mobile developer
       from: 2013
       to: 2014
       url: 
       summary: Hybrid mobile apps (Intel XDK) and REST APIs in PHP/Elgg.
-    - org: Primafila
-      role: Full‑stack Developer
+    - org: ViviInPrimafila
+      role: Full-stack Developer
       from: 2012
       to: 2013
-      url: 
-      summary: Full‑stack web development in Palermo.
+      url: https://primafila.it.com/
+      summary: Full-stack development with php, js, html and css.
   github:
     username: dlion
     show_metrics: true
