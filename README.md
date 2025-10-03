@@ -204,7 +204,6 @@ Human‑Written Badge
 -------------------
 - The badge is included under every post via `_includes/human-badge.html`.
 - Images live in `assets/images/notai/` and switch automatically with the theme.
-- Set the click target with `human_badge_link` in `_config.yml` (currently `https://notbyai.fyi/`).
 
 About Page — Special Features
 -----------------------------

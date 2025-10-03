@@ -20,9 +20,6 @@ links:
   - label: "Twitter"
     url: "https://twitter.com/DLion92"
 
-# Link used by the human-written badge under posts
-human_badge_link: "https://notbyai.fyi/"
-
 # ——— Navigation ——— (consumed by the header)
 nav:
   - { title: Home,   url: "/" }
