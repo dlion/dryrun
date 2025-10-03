@@ -6,6 +6,7 @@ description: During our journey as developers, we often have to use external API
 tags:
 - engineering
 cover: "/assets/images/covers/consumer_driven_contracts.png"
+hn_url: "https://news.ycombinator.com/item?id=22916474"
 ---
 
 

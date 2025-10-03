@@ -8,6 +8,7 @@ tags:
 - security
 - highlights
 cover: "/assets/images/covers/error.jpg"
+hn_url: "https://news.ycombinator.com/item?id=30367279"
 ---
 
 

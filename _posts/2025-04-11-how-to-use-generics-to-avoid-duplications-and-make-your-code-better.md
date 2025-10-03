@@ -6,6 +6,7 @@ description: I recently worked on a project that had a lot of code duplication d
 tags:
 - engineering
 cover: "/assets/images/covers/go_generics.jpg"
+reddit_url: "https://www.reddit.com/r/golang/comments/1jwus6c/how_to_use_generics_to_avoid_duplications_and/"
 ---
 
 

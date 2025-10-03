@@ -6,6 +6,7 @@ description: One of the hottest topics of the moment in Big Data is undoubtedly 
 tags:
 - engineering
 cover: "/assets/images/covers/data_mesh.png"
+hn_url: "https://news.ycombinator.com/item?id=26902287"
 ---
 
 

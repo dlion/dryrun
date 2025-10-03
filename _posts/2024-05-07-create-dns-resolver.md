@@ -8,6 +8,7 @@ tags:
 - highlights
 cover: "/assets/images/covers/dns.png"
 hn_url: "https://news.ycombinator.com/item?id=43503561"
+reddit_url: "https://www.reddit.com/r/golang/comments/1cnul9f/create_a_dns_resolver_with_go/"
 ---
 
 

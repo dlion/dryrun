@@ -7,6 +7,7 @@ tags:
 - engineering
 - highlights
 cover: "/assets/images/covers/garden.png"
+hn_url: "https://news.ycombinator.com/item?id=30298936"
 ---
 
 

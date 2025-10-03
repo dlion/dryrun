@@ -6,6 +6,7 @@ description: Mastodon is a new hot-trend topic, so I spent some time trying to w
 tags:
 - personal
 cover: "/assets/images/covers/mastodon.png"
+hn_url: "https://news.ycombinator.com/item?id=33673765"
 ---
 
 

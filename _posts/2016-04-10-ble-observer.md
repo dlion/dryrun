@@ -6,6 +6,7 @@ description: For academic purposes I have to work with BLE, a new technology oft
 tags:
 - hardware
 cover: "/assets/images/covers/observer.jpg"
+hn_url: "https://news.ycombinator.com/item?id=11829161"
 ---
 
 

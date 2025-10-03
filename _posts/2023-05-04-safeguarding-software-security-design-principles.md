@@ -7,6 +7,7 @@ tags:
 - security
 - highlights
 cover: "/assets/images/covers/security-principles.png"
+hn_url: "https://news.ycombinator.com/item?id=35819941"
 ---
 
 

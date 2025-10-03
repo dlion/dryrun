@@ -6,6 +6,7 @@ description: Often I read that for simple tasks Rust is not a good choice. Go is
 tags:
 - engineering
 cover: "/assets/images/covers/mobile.png"
+hn_url: "https://news.ycombinator.com/item?id=27365846"
 ---
 
 

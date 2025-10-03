@@ -5,6 +5,7 @@ description: For years cryptography was considered like a witchcraft, until now!
 tags:
 - security
 cover: "/assets/images/covers/crypto.png"
+hn_url: "https://news.ycombinator.com/item?id=18252185"
 ---
 
 

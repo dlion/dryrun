@@ -5,6 +5,7 @@ description: It's been a while when I started using notional tools for my day to
 tags:
 - personal
 cover: "/assets/images/covers/obsidian.png"
+hn_url: "https://news.ycombinator.com/item?id=32866726"
 ---
 
 

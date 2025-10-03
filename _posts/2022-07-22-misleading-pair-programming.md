@@ -7,6 +7,8 @@ tags:
 - engineering
 - highlights
 cover: "/assets/images/covers/pairing.png"
+reddit_url: "https://www.reddit.com/r/programming/comments/wj2e74/misleading_pair_programming/"
+hn_url: "https://news.ycombinator.com/item?id=32763229"
 ---
 
 

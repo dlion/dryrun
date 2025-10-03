@@ -5,6 +5,7 @@ description: From today this blog is full encrypted by a full SSL protocol, for 
 tags:
 - security
 cover: "/assets/images/covers/letsencrypt.png"
+hn_url: "https://news.ycombinator.com/item?id=17001908"
 ---
 
 
