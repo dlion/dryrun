@@ -1151,6 +1151,44 @@ html[data-theme='dark'] .human-badge-dark { display: inline-block; }
 .footer-inner a[href$='feed.xml'] { color: color-mix(in srgb, var(--muted) 55%, var(--link) 45%); }
 .footer-inner a[href$='feed.xml']:hover { color: var(--link); }
 
+/* EthicalAds fallback styling */
+[data-ea-publisher].ea-fallback-visible {
+  position: relative;
+  padding: .65rem 1rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
+  background: color-mix(in srgb, var(--surface-1) 92%, transparent);
+}
+[data-ea-style="fixedfooter"].ea-fallback-visible {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  width: min(540px, calc(100vw - 32px));
+  margin: 0;
+  box-shadow: 0 18px 36px rgba(15,23,42,.12);
+  z-index: 60;
+}
+.ea-fallback {
+  margin: 0;
+  color: var(--muted);
+  text-align: center;
+  font-size: .9rem;
+}
+.ea-fallback a {
+  color: var(--link);
+  font-weight: 600;
+  text-decoration: none;
+}
+.ea-fallback a:hover { text-decoration: underline; }
+html[data-theme='dark'] [data-ea-publisher].ea-fallback-visible {
+  border-color: color-mix(in srgb, var(--border) 90%, transparent);
+  background: color-mix(in srgb, var(--surface-1) 85%, transparent);
+}
+html[data-theme='dark'] [data-ea-style="fixedfooter"].ea-fallback-visible {
+  box-shadow: 0 18px 36px rgba(0,0,0,.38);
+}
+
 /* Responsive tweaks */
 @media (max-width: 780px) {
   .home-hero { padding: 3rem 1.4rem 2.4rem; margin-top: -28px; }

@@ -88,7 +88,7 @@ layout: none
           {% endfor %}
         </p>
       </div>
-      <div data-ea-publisher="domenicolucianicom" data-ea-type="text" data-ea-style="fixedfooter" id="footer"></div>
+      <div class="adaptive-css raised" data-ea-publisher="domenicolucianicom" data-ea-type="text" data-ea-style="fixedfooter" id="footer"></div>
     </footer>
 
     <script>
@@ -134,14 +134,53 @@ layout: none
     </script>
     <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
     <script>
-    ethicalads.wait.then((placements) => {
-      if (!placements.length) {
-        console.debug('Loading backup content');
-        div = document.querySelector('[data-ea-publisher]')
-        div.innerHTML = '<p>Check out our first-party ad content.</p>'
-      } else {
-        console.debug('EthicalAds are loaded');
-      }});
+      (function() {
+        var placements = document.querySelectorAll('[data-ea-publisher]');
+        if (!placements.length) return;
+
+        var fallbackMarkup = '<p class="ea-fallback">Like the content? <a href="https://ethicalads.io/?utm_source=domenicolucianicom" rel="noopener" target="_blank">Support the site</a>.</p>';
+
+        function showFallback(target) {
+          if (!target) return;
+          console.debug('Loading backup content');
+          target.innerHTML = fallbackMarkup;
+          target.classList.add('ea-fallback-visible');
+        }
+
+        function showFallbackAll() {
+          placements.forEach(function(node) { showFallback(node); });
+        }
+
+        function attachListener() {
+          if (window.ethicalads && window.ethicalads.wait && typeof window.ethicalads.wait.then === 'function') {
+            window.ethicalads.wait.then(function(result) {
+              if (!result || !result.length) {
+                showFallbackAll();
+              } else {
+                console.debug('EthicalAds are loaded');
+              }
+            }).catch(function() {
+              showFallbackAll();
+            });
+            return true;
+          }
+          return false;
+        }
+
+        if (!attachListener()) {
+          var attempts = 0;
+          var maxAttempts = 25;
+          var poll = setInterval(function() {
+            attempts += 1;
+            if (attachListener()) {
+              clearInterval(poll);
+            } else if (attempts >= maxAttempts) {
+              clearInterval(poll);
+              showFallbackAll();
+            }
+          }, 200);
+        }
+      })();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>
     {% if page.cdn_js %}

@@ -22,6 +22,8 @@ links:
     url: "https://linkedin.com/in/dlion"
   - label: "Twitter"
     url: "https://twitter.com/DLion92"
+  - label: "Mastodon"
+    url: "https://mastodon.social/@dlion"
 
 # ——— Navigation ——— (consumed by the header)
 nav:
