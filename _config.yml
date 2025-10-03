@@ -8,7 +8,7 @@ baseurl: "/dryrun"
 
 # ——— Author ———
 author: "Domenico Luciani"
-author_avatar: "/assets/images/profile.png"  # used by post layout (add the file)
+author_avatar: "/assets/images/profile.png"  # used by post layout
 
 # Social links (render anywhere)
 links:
@@ -79,9 +79,11 @@ include:
   - .well-known
 
 hero:
-  image: https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg
+  image: /assets/images/covers/iron-giant-hero.jpg
   kicker: Domenico Luciani
   title: Tech Garden 🪴
+  # Position the hero image so the eyes are prominent
+  pos: 50% 30%
 
 # ——— About page config ———
 about:
@@ -92,9 +94,6 @@ about:
     Open Source enthusiast and greedy learner. 📚🧑🏻‍🏫🧑🏻‍🎓
     Focusing on software craftsmanship, and product engineering. 🪚🔨📐
   location: Málaga, ES 🇪🇸
-  highlights:
-    - Ex‑VMware Tanzu Labs
-    - Ex‑Thoughtworks
   photos:
     - src: /assets/images/about/trip1.png
       alt: Cabo da Roca

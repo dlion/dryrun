@@ -48,7 +48,7 @@ hide_progress: true
     <div class="timeline-dot" aria-hidden="true"></div>
     <div class="timeline-body">
       <div class="timeline-head">
-        <h3><a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.role }}</a> · {{ job.org }}</h3>
+        <h3>{{ job.role }} · <a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.org }}</a></h3>
         <span class="timeline-when">{{ job.from }}–{{ job.to }}</span>
       </div>
       {% if job.summary %}<p>{{ job.summary }}</p>{% endif %}

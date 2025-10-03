@@ -10,6 +10,7 @@ hide_progress: true
 {% assign hero_subtext = page.hero.subtext | default: page.hero_subtext | default: site.hero.subtext %}
 {% assign hero_cta_label = page.hero.cta_label | default: page.hero_cta_label | default: site.hero.cta_label %}
 {% assign hero_cta_url = page.hero.cta_url | default: page.hero_cta_url | default: site.hero.cta_url %}
+{% assign hero_pos = page.hero.pos | default: site.hero.pos | default: '' %}
 
 {% assign hero_image_url = hero_image | default: '' %}
 {% if hero_image_url != '' and hero_image_url contains '://' %}
@@ -25,7 +26,7 @@ hide_progress: true
   {% assign hero_cta_href = hero_cta_href | relative_url %}
 {% endif %}
 
-<section class="home-hero" {% if hero_image_url != '' %}style="--hero-image: url('{{ hero_image_url }}');"{% endif %}>
+<section class="home-hero" {% if hero_image_url != '' or hero_pos != '' %}style="{% if hero_image_url != '' %}--hero-image: url('{{ hero_image_url }}');{% endif %}{% if hero_pos != '' %} background-position: {{ hero_pos }};{% endif %}"{% endif %}>
   <div class="hero-inner">
     {% if hero_kicker %}<p class="hero-kicker">{{ hero_kicker }}</p>{% endif %}
     {% if hero_title %}<h1 class="hero-title">{{ hero_title }}</h1>{% endif %}

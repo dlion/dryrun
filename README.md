@@ -70,7 +70,6 @@ Human badge
 About page configuration (`about.*`)
 - `about.tagline` — short sentence below your name
 - `about.location` — e.g., `Málaga, ES (remote)`
-- `about.highlights` — bullet highlights
 - `about.photos` — array of images for the photo strip. Each item can be either a string path or an object with:
   - `src` — image path
   - `alt` — alt text
