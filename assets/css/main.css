@@ -1093,12 +1093,15 @@ html[data-theme='dark'] .kofi-dark { display: inline-block; }
     flex: 1 1 auto;
   }
   .post-actions-column--right {
-    align-items: flex-start;
+    align-items: center;
   }
   .post-actions-column--right > * {
-    align-self: flex-start;
+    align-self: center;
   }
-  .post-actions .kofi-wrap { text-align: left; }
+  .post-actions .kofi-wrap {
+    text-align: center;
+    justify-content: center;
+  }
 }
 
 /* Human-written badge */
