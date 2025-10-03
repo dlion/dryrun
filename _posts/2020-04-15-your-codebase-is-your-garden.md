@@ -5,6 +5,7 @@ description: I always liked the your codebase is like a garden metaphor, it says
   ways and from time to…
 tags:
 - engineering
+- highlights
 cover: "/assets/images/covers/garden.png"
 ---
 

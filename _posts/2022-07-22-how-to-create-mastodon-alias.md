@@ -4,7 +4,7 @@ description: Mastodon is a new hot-trend topic, so I spent some time trying to w
   my head around it. The decentralisation is an exciting part of Mastodon; if tomorrow
   I don't like the…
 tags:
-- tutorials
+- personal
 cover: "/assets/images/covers/mastodon.png"
 ---
 

@@ -4,7 +4,7 @@ description: As an Extreme Programmer I used to jumping often into different eng
   each of them has challenges I need to overcome and problems I need to solve. This
   time I jumped into…
 tags:
-- tutorials
+- engineering
 cover: "/assets/images/covers/mock_typescript.png"
 ---
 

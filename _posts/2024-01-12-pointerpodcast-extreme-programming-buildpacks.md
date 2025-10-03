@@ -2,11 +2,9 @@
 title: PointerPodcast - Buildpacks and Extreme Programming
 description: I decided to expose myself more and more, I like to share my opinions
   and experiences (you can say reading this blog), and this time I decided to attend
-  as a interviewee for a…
+  as a interviewee for a well known Podcast in Italy talking about something I've done for 3 months, are you curious about it?
 tags:
-- work
 - personal
-- devops
 cover: "/assets/images/covers/podcast.png"
 ---
 

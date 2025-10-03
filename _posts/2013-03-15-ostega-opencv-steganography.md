@@ -4,8 +4,7 @@ description: The steganography[^1] is a technique that allows to "hide" informat
   inside an image or an audio files, it's a very interesting security field, I can
   hide "secrets" into an…
 tags:
-- hardware
-- tutorials
+- engineering
 cover: "/assets/images/covers/hide.jpg"
 ---
 

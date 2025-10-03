@@ -79,7 +79,7 @@ include:
   - .well-known
 
 hero:
-  image: /assets/images/covers/iron-giant-hero.jpg
+  image: /assets/images/covers/iron-giant-hero.jpg #https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg
   kicker: Domenico Luciani
   title: Tech Garden 🪴
   # Position the hero image so the eyes are prominent
@@ -110,19 +110,22 @@ about:
       from: 2025
       to: present
       url: https://www.deel.com/
-      summary: Senior Software Engineer focused on developer experience and platform reliability; Node.js on AWS.
+      summary: |-
+        Working in the infra team, a Deel's core team to ensure adoption of best practices, owning the most important services, and delivery new features working with node.js on AWS.
     - org: Qonto
       role: Staff Backend Engineer
       from: 2024
       to: 2025
       url: https://qonto.com/
-      summary: Led technical excellence and scaling; microservices in Go on AWS, Kafka, strong observability.
+      summary: |-
+        I focused on driving technical excellence and delivering value to our customers, mentored both juniors and seniors, fostering a culture of collaboration and adherence to best practices.
+        Relied on cutting-edge technologies, with microservices primarily written in Go and hosted on AWS. 
     - org: VMware Tanzu Labs
       role: Senior Agile Software Engineer · Tech Lead
       from: 2021
       to: 2024
       url: https://tanzu.vmware.com/labs
-      summary: Tech lead across multiple engagements; XP (TDD, pairing, CI/CD). Contributed to Buildpacks (Go) as OSS engineer.
+      summary: Tech lead across multiple engagements; XP (TDD, pairing, CI/CD). Contributed to <a href="https://buildpacks.io/">Buildpacks (Go)</a> as OSS engineer.
     - org: Thoughtworks
       role: Senior Software Engineer
       from: 2019

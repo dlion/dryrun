@@ -53,7 +53,7 @@
 .timeline-head h3 a { text-decoration: none; }
 .timeline-head h3 a:hover { text-decoration: underline; }
 .timeline-head .timeline-when { color: var(--muted); font-size: .95rem; white-space: nowrap; }
-.timeline-body p { margin: 4px 0 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.timeline-body p { margin: 4px 0 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
 /* Collapsed older roles */
 /* (Removed collapse + residences timeline per request) */

@@ -5,7 +5,6 @@ description: I've been using Golang in the past months, and I was very happy abo
   for me is a lifelong…
 tags:
 - engineering
-- tutorials
 cover: "/assets/images/covers/wc.png"
 ---
 

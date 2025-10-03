@@ -4,7 +4,7 @@ description: I've finally found the time to customise my Github's profile. It sh
   some interesting stats about my activities, without any external browser extension,
   how?
 tags:
-- tutorials
+- personal
 cover: "/assets/images/covers/github_stats.png"
 ---
 

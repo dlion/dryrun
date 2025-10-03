@@ -4,7 +4,7 @@ description: As a greedy learner, I used to find myself full of bookmarks of stu
   I want to read or watch. I've never had a good place to keep all the things I read/watched
   until I found Toby.
 tags:
-- learning
+- personal
 cover: "/assets/images/covers/toby.png"
 ---
 

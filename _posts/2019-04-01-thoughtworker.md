@@ -4,6 +4,7 @@ description: 'Finally,, I found time to write this post, I want to say it to the
   I moved abroad.'
 tags:
 - personal
+- work
 cover: "/assets/images/covers/thoughtworks.jpg"
 ---
 

@@ -3,8 +3,7 @@ title: Learning Behavior-driver development with JavaScript
 description: Today PACKT is published my first book as _Technical Reviewer_ named
   "Learning Behavior-driver development with JavaScript". You can find it here
 tags:
-- learning
-- engineering
+- personal
 ---
 
 

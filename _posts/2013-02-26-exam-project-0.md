@@ -3,7 +3,8 @@ title: Exam Project 0
 description: I'm very fascinated about the possibility to give sight to a machine
   so for my final high school exam I made a computer vision project...
 tags:
-- learning
+- engineering
+- personal
 cover: "/assets/images/covers/eyes.jpg"
 ---
 

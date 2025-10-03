@@ -332,31 +332,39 @@ p { margin: .9em 0; color: var(--text); }
   font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
 .post-content img,
+.page-content img,
 .post-content video,
-.post-content iframe {
+.page-content video,
+.post-content iframe,
+.page-content iframe {
   display: block;
   max-width: 100%;
   border-radius: var(--radius);
   margin: 1.6rem auto;
 }
-.post-content figure {
+.post-content figure,
+.page-content figure {
   margin: 1.6rem auto;
   text-align: center;
 }
-.post-content figure img {
+.post-content figure img,
+.page-content figure img {
   margin: 0 auto;
 }
-.post-content iframe { border: 0; }
-.post-content iframe[src*="youtube.com"], .post-content iframe[src*="vimeo.com"] {
+.post-content iframe,
+.page-content iframe { border: 0; }
+.post-content iframe[src*="youtube.com"], .page-content iframe[src*="youtube.com"], .post-content iframe[src*="vimeo.com"], .page-content iframe[src*="vimeo.com"] {
   width: 100%; aspect-ratio: 16/9; height: auto; display: block; border-radius: var(--radius);
   box-shadow: var(--shadow); background: #000;
 }
 
-.post-content .has-anchor {
+.post-content .has-anchor,
+.page-content .has-anchor {
   position: relative;
 }
 
-.post-content .heading-anchor {
+.post-content .heading-anchor,
+.page-content .heading-anchor {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -371,12 +379,14 @@ p { margin: .9em 0; color: var(--text); }
   transition: opacity .18s ease, transform .18s ease, background .18s ease;
 }
 
-.post-content .heading-anchor svg {
+.post-content .heading-anchor svg,
+.page-content .heading-anchor svg {
   width: 16px;
   height: 16px;
 }
 
-.post-content .heading-anchor svg path {
+.post-content .heading-anchor svg path,
+.page-content .heading-anchor svg path {
   fill: none;
   stroke: currentColor;
   stroke-width: 1.7;
@@ -384,22 +394,27 @@ p { margin: .9em 0; color: var(--text); }
   stroke-linejoin: round;
 }
 
-.post-content .heading-anchor:focus-visible {
+.post-content .heading-anchor:focus-visible,
+.page-content .heading-anchor:focus-visible {
   outline: 2px solid color-mix(in srgb, var(--link) 65%, transparent);
   outline-offset: 2px;
 }
 
 .post-content .has-anchor:hover .heading-anchor,
-.post-content .has-anchor:focus-within .heading-anchor {
+.post-content .has-anchor:focus-within .heading-anchor,
+.page-content .has-anchor:hover .heading-anchor,
+.page-content .has-anchor:focus-within .heading-anchor {
   opacity: 1;
   transform: scale(1);
 }
 
-.post-content .has-anchor .heading-anchor:hover {
+.post-content .has-anchor .heading-anchor:hover,
+.page-content .has-anchor .heading-anchor:hover {
   background: color-mix(in srgb, var(--surface-2) 80%, transparent);
 }
 
-.post-content blockquote {
+.post-content blockquote,
+.page-content blockquote {
   margin: 1.3rem 0;
   padding: 1rem 1.2rem;
   border-left: 3px solid var(--link);
@@ -407,7 +422,8 @@ p { margin: .9em 0; color: var(--text); }
   border-radius: 12px;
 }
 
-.post-content blockquote.callout {
+.post-content blockquote.callout,
+.page-content blockquote.callout {
   --callout-icon: "💡";
   --callout-accent: var(--callout-info);
   margin: 1.6rem 0;
@@ -423,7 +439,8 @@ p { margin: .9em 0; color: var(--text); }
   color: var(--text);
 }
 
-.post-content blockquote.callout::before {
+.post-content blockquote.callout::before,
+.page-content blockquote.callout::before {
   content: var(--callout-icon);
   position: absolute;
   left: 1.2rem;
@@ -432,68 +449,88 @@ p { margin: .9em 0; color: var(--text); }
   line-height: 1;
 }
 
-.post-content blockquote.callout strong:first-child {
+.post-content blockquote.callout strong:first-child,
+.page-content blockquote.callout strong:first-child {
   display: block;
   margin-bottom: .35rem;
   font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   letter-spacing: .01em;
 }
 
-.post-content blockquote.callout p { margin: .6rem 0; }
-.post-content blockquote.callout p:first-of-type { margin-top: 0; }
-.post-content blockquote.callout p:last-of-type { margin-bottom: 0; }
+.post-content blockquote.callout p,
+.page-content blockquote.callout p { margin: .6rem 0; }
+.post-content blockquote.callout p:first-of-type,
+.page-content blockquote.callout p:first-of-type { margin-top: 0; }
+.post-content blockquote.callout p:last-of-type,
+.page-content blockquote.callout p:last-of-type { margin-bottom: 0; }
 
-.post-content blockquote.callout.info    { --callout-accent: var(--callout-info);    --callout-icon: "ℹ️"; }
-.post-content blockquote.callout.warn    { --callout-accent: var(--callout-warn);    --callout-icon: "⚠️"; }
-.post-content blockquote.callout.error   { --callout-accent: var(--callout-error);   --callout-icon: "⛔"; }
-.post-content blockquote.callout.success { --callout-accent: var(--callout-success); --callout-icon: "✅"; }
+.post-content blockquote.callout.info,    .page-content blockquote.callout.info    { --callout-accent: var(--callout-info);    --callout-icon: "ℹ️"; }
+.post-content blockquote.callout.warn,    .page-content blockquote.callout.warn    { --callout-accent: var(--callout-warn);    --callout-icon: "⚠️"; }
+.post-content blockquote.callout.error,   .page-content blockquote.callout.error   { --callout-accent: var(--callout-error);   --callout-icon: "⛔"; }
+.post-content blockquote.callout.success, .page-content blockquote.callout.success { --callout-accent: var(--callout-success); --callout-icon: "✅"; }
 
-.post-content table:not(.rouge-table) {
+.post-content table:not(.rouge-table),
+.page-content table:not(.rouge-table) {
   /* Keep table styling minimal so code tables (Rouge) are unaffected */
   overflow: hidden;
 }
 
-.post-content table:not(.rouge-table) caption {
+.post-content table:not(.rouge-table) caption,
+.page-content table:not(.rouge-table) caption {
   text-align: left;
   font-weight: 600;
   margin-bottom: .8rem;
   color: var(--muted);
 }
 
-.post-content table:not(.rouge-table) thead tr {
+.post-content table:not(.rouge-table) thead tr,
+.page-content table:not(.rouge-table) thead tr {
   background: color-mix(in srgb, var(--surface-2) 92%, transparent);
 }
 
 .post-content table:not(.rouge-table) th,
-.post-content table:not(.rouge-table) td {
+.page-content table:not(.rouge-table) th,
+.post-content table:not(.rouge-table) td,
+.page-content table:not(.rouge-table) td {
   padding: .75rem 1rem;
   border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
   text-align: left;
 }
 
-.post-content table:not(.rouge-table) tbody tr:nth-child(2n) {
+.post-content table:not(.rouge-table) tbody tr:nth-child(2n),
+.page-content table:not(.rouge-table) tbody tr:nth-child(2n) {
   background: color-mix(in srgb, var(--surface-2) 85%, transparent);
 }
 
-.post-content table:not(.rouge-table) tbody tr:last-child td {
+.post-content table:not(.rouge-table) tbody tr:last-child td,
+.page-content table:not(.rouge-table) tbody tr:last-child td {
   border-bottom: none;
 }
 
-.post-content table:not(.rouge-table) { display: block; overflow-x: auto; }
+.post-content table:not(.rouge-table),
+.page-content table:not(.rouge-table) { display: block; overflow-x: auto; }
 .post-content table:not(.rouge-table) thead,
+.page-content table:not(.rouge-table) thead,
 .post-content table:not(.rouge-table) tbody,
-.post-content table:not(.rouge-table) tfoot {
+.page-content table:not(.rouge-table) tbody,
+.post-content table:not(.rouge-table) tfoot,
+.page-content table:not(.rouge-table) tfoot {
   display: table;
   width: 100%;
   table-layout: fixed;
 }
 
 .post-content table:not(.rouge-table) th:first-child,
-.post-content table:not(.rouge-table) td:first-child { padding-left: 1.3rem; }
+.page-content table:not(.rouge-table) th:first-child,
+.post-content table:not(.rouge-table) td:first-child,
+.page-content table:not(.rouge-table) td:first-child { padding-left: 1.3rem; }
 .post-content table:not(.rouge-table) th:last-child,
-.post-content table:not(.rouge-table) td:last-child { padding-right: 1.3rem; }
+.page-content table:not(.rouge-table) th:last-child,
+.post-content table:not(.rouge-table) td:last-child,
+.page-content table:not(.rouge-table) td:last-child { padding-right: 1.3rem; }
 
-.post-content .mermaid {
+.post-content .mermaid,
+.page-content .mermaid {
   position: relative;
   margin: 1.6rem 0;
   padding: 1.2rem 1.4rem;
@@ -508,14 +545,16 @@ p { margin: .9em 0; color: var(--text); }
   text-align: center;
 }
 
-.post-content .mermaid svg {
+.post-content .mermaid svg,
+.page-content .mermaid svg {
   max-width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
 }
 
-.post-content .mermaid[data-processed="true"] {
+.post-content .mermaid[data-processed="true"],
+.page-content .mermaid[data-processed="true"] {
   padding: 1.2rem;
 }
 
@@ -808,14 +847,16 @@ p { margin: .9em 0; color: var(--text); }
 .highlight .gd { color: var(--code-tag); }
 .highlight .go { color: var(--code-comment); }
 
-.post-content pre:not(.highlight):not(.highlighter-rouge) {
+.post-content pre:not(.highlight):not(.highlighter-rouge),
+.page-content pre:not(.highlight):not(.highlighter-rouge) {
   /* Keep generic pre minimal; code blocks already styled above */
   margin: 0;
   padding: 1rem 1.25rem;
   background: var(--surface-2);
 }
 
-.post-content :not(pre) > code {
+.post-content :not(pre) > code,
+.page-content :not(pre) > code {
   display: inline-block;
   padding: .1rem .4rem;
   border-radius: 6px;

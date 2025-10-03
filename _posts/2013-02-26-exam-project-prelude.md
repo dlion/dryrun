@@ -4,7 +4,8 @@ description: In the previous article I introduced you my exam project about comp
   vision, now I'm going to explain to you how it works but first let me introduce
   a small header file I wrote…
 tags:
-- learning
+- engineering
+- personal
 cover: "/assets/images/covers/roboteye.png"
 ---
 

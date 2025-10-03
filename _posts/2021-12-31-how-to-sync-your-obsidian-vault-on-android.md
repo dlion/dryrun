@@ -4,7 +4,7 @@ description: I recently moved from Notion to Obsidian and one big problem I've h
   to face was how to sync my desktop instance with my android mobile one without having
   a paid plan on…
 tags:
-- tutorials
+- personal
 cover: "/assets/images/covers/obsidian_sync.png"
 ---
 

@@ -5,7 +5,7 @@ description: In today's digital landscape, developing software with a security-o
   attend the Secure…
 tags:
 - security
-- devops
+- highlights
 cover: "/assets/images/covers/security-principles.png"
 ---
 

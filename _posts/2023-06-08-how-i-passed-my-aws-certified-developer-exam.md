@@ -4,7 +4,6 @@ description: A few weeks ago I passed my AWS Certified Developer Associate (DVA-
   exam and I thought it would have been nice to document how _heck_ I accomplished
   to do it on a first try,…
 tags:
-- learning
 - engineering
 cover: "/assets/images/covers/cloud_cert_aws.png"
 ---

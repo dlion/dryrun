@@ -17,9 +17,12 @@ Learn from feedback and grow the number of people with whom I interact.
 So, today I decided to create my newsletter called: InnerSpace 🚀
 
 
-# UPDATE
+# UPDATE ---
 
-Elon Musk decided to delete Revue so for now I decided to stop deliverying it ~
+**Elon Musk decided to delete Revue so for now I decided to stop deliverying it ~**
+
+### UPDATE ---
+
 
 ---
 

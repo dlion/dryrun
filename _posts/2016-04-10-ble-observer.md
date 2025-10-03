@@ -5,7 +5,6 @@ description: For academic purposes I have to work with BLE, a new technology oft
   by ST
 tags:
 - hardware
-- tutorials
 cover: "/assets/images/covers/observer.jpg"
 ---
 

@@ -5,7 +5,7 @@ description: Since the beginning of my career in this industry, I've always been
   I finally joined…
 tags:
 - work
-- devops
+- engineering
 cover: "/assets/images/covers/take3.png"
 ---
 

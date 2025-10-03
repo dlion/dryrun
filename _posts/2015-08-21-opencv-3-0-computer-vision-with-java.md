@@ -3,8 +3,7 @@ title: OpenCV 3.0 Computer Vision with Java
 description: Today PACKT is published my second book as _Technical Reviewer_ named
   "OpenCV 3.0 Computer Vision with Java". You can find it here
 tags:
-- hardware
-- tutorials
+- personal
 ---
 
 

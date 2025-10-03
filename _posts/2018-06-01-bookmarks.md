@@ -4,7 +4,7 @@ description: "- The Wrong Abstraction — Sandi Metz - CORS in Dettaglio - Itali
   - Java 8 Parte 1 - Optional e Interfacce Funzionali - ItalianCoders - Java 8 Parte
   2 - Espressioni Lambda…"
 tags:
-- learning
+- bookmarks
 cover: "/assets/images/covers/bookmark.png"
 ---
 

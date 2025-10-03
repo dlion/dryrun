@@ -4,9 +4,7 @@ description: For academic purpose I have to interface the F401RE NUCLEO board wi
   the HY-SRF05 ultrasonic sensor, it uses the sonar principle to allow to measure
   the distance to an obstacle.
 tags:
-- devops
 - hardware
-- tutorials
 cover: "/assets/images/covers/ultrasonic.jpg"
 excerpt_separator: "<!--more-->"
 ---

@@ -4,7 +4,7 @@ description: "* The Liskov Substitution Principle * Understanding SOLID Principl
   Liskov Substitution Principle * Ten Reasons Why I Don't Like Golang * Composition
   vs inheritance: How to…"
 tags:
-- learning
+- bookmarks
 cover: "/assets/images/covers/bookmark.png"
 ---
 

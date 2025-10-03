@@ -4,7 +4,7 @@ description: I recently worked on a project that had a lot of code duplication d
   to repeated implementations of the same interfaces. I quickly realized it was a
   great opportunity to refactor…
 tags:
-- tutorials
+- engineering
 cover: "/assets/images/covers/go_generics.jpg"
 ---
 

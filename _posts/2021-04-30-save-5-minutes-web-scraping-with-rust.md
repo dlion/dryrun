@@ -5,7 +5,6 @@ description: Often I read that for simple tasks Rust is not a good choice. Go is
   true?
 tags:
 - engineering
-- tutorials
 cover: "/assets/images/covers/mobile.png"
 ---
 

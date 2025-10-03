@@ -4,7 +4,6 @@ description: Recently I've seen a thread on Twitter regarding distributed tracin
   systems. I recognise that sometimes it's an underestimated topic, so I thought to
   write a short and…
 tags:
-- devops
 - engineering
 cover: "/assets/images/covers/distributed-tracing.png"
 ---

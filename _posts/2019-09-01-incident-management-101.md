@@ -6,7 +6,7 @@ description: What's an incident? What to do in case of an incident? How to be a 
 tags:
 - work
 - security
-- devops
+- highlights
 cover: "/assets/images/covers/error.jpg"
 ---
 

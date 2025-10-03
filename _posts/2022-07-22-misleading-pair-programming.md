@@ -2,9 +2,10 @@
 title: Misleading Pair Programming
 description: I often read tweets, threads and posts about a weird practice called
   Pair Programming, full of complaints. But I find this usually due to a lack of understanding
-  and improper…
+  and implementation
 tags:
 - engineering
+- highlights
 cover: "/assets/images/covers/pairing.png"
 ---
 

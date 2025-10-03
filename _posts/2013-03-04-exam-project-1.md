@@ -4,7 +4,8 @@ description: In the previous article we saw a little library to semplify my work
   today I'm going to talk about a software that allows to track any color and at the
   same time tell other…
 tags:
-- learning
+- engineering
+- personal
 cover: "/assets/images/covers/roboteyes1.png"
 ---
 

@@ -4,7 +4,7 @@ description: "* SOLID Design principles : Software architecture, design and codi
   * Understanding SOLID Principles: Open Closed Principle * Lesser-Known Features
   of Go Test - Splice *…"
 tags:
-- learning
+- bookmarks
 cover: "/assets/images/covers/bookmark.png"
 ---
 

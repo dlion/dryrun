@@ -4,7 +4,6 @@ description: I found a cool library online to interface my pc with any usb joyst
   I have in my house... so why not to move my cursor pointer with a joystick ?
 tags:
 - hardware
-- tutorials
 cover: "/assets/images/covers/joystick.png"
 ---
 

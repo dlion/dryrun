@@ -5,6 +5,7 @@ description: Today I started to work on a Scala project, I spend most of my time
   using [neo]vim.
 tags:
 - engineering
+- personal
 cover: "/assets/images/covers/scala.png"
 ---
 

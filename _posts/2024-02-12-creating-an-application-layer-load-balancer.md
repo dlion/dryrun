@@ -4,9 +4,8 @@ description: Since the last time I had too much fun, I wanted to repeat the expe
   by taking another Coding Challenge. This time I'm gonna explain how I implemented
   an Application Load…
 tags:
-- devops
 - engineering
-- tutorials
+- highlights
 cover: "/assets/images/covers/loadbalancer.png"
 ---
 

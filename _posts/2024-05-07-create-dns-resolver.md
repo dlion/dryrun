@@ -4,9 +4,8 @@ description: 'Following the previous post about creating an Application Layer Lo
   Balancer, today I''m going to share my journey about another challenge I took and
   completed: Create a simple…'
 tags:
-- devops
 - engineering
-- tutorials
+- highlights
 cover: "/assets/images/covers/dns.png"
 ---
 

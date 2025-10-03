@@ -5,7 +5,6 @@ description: For academic purposes now I own a NUCLEO-F401RE board by ST Microel
   it has 3 leds and 2…
 tags:
 - hardware
-- tutorials
 cover: "/assets/images/covers/helloworldnucleo.jpg"
 ---
 

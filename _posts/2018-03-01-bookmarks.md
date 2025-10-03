@@ -4,7 +4,7 @@ description: "* Clean Coder Blog * Don’t Pursue Programming if You Aren’t Pa
   About It * The Dependency Inversion Principle * Mocks Aren't Stubs * Testing and
   Refactoring Legacy Code -…"
 tags:
-- learning
+- bookmarks
 cover: "/assets/images/covers/bookmark.png"
 ---
 

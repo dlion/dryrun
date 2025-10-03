@@ -4,7 +4,6 @@ description: Walking around the city I found a cheap nunchuck and obviously I fe
   the need to do something. This time I chose to interface my raspberry pi with it.
   Let's see how!
 tags:
-- tutorials
 - hardware
 cover: "/assets/images/covers/nunchuck.jpg"
 ---

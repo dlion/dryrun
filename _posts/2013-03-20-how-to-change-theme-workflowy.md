@@ -4,7 +4,6 @@ description: I was advised about a nice site that allows to organize my thoughts
   many hierarchical lists, every programmer should try it!
 tags:
 - security
-- tutorials
 cover: "/assets/images/covers/mrobot.png"
 ---
 
