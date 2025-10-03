@@ -7,6 +7,7 @@ tags:
 - engineering
 - highlights
 cover: "/assets/images/covers/dns.png"
+hn_url: "https://news.ycombinator.com/item?id=43503561"
 ---
 
 

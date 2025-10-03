@@ -6,6 +6,9 @@ description: "Thoughts about life, tech and everything"
 url: "https://dlion.github.io"
 baseurl: "/dryrun"
 
+# Ko-fi button link (used under posts)
+kofi_link: "https://ko-fi.com/I2I23YM3I"
+
 # ——— Author ———
 author: "Domenico Luciani"
 author_avatar: "/assets/images/profile.png"  # used by post layout
@@ -41,7 +44,7 @@ kramdown:
     span:
       disable: true
 
-permalink: /:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title.html
 timezone: Europe/Madrid
 paginate: 10
 paginate_path: "/page/:num/"
